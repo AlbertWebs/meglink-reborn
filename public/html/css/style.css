@@ -2968,7 +2968,7 @@ footer#pq-footer:before {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url(../images/background-Images/quick.jpg);
+	background-image: url(../images/background-Images/social.avif);
 }
 
 
@@ -6776,7 +6776,7 @@ Custom Css
 }
 
 .img-align img {
-	width: 85%;
+	width: 95%;
 	position: relative;
 }
 
@@ -6936,7 +6936,9 @@ Custom Css
 .skill .pq-button:hover {
 	background-color: var(--dark-color);
 }
-
+.mb-20{
+    margin-bottom:20px !important;
+}
 .pq-mb-200 {
 	margin-bottom: -200px;
 }
@@ -7058,6 +7060,10 @@ Custom Css
 .pq-client-grid {
 	border-bottom: 1px solid #0000001a;
 	border-right: 1px solid #0000001a;
+}
+
+.pq-client-grid img{
+    width:200px; height:100px; object-fit: contain;
 }
 
 .pq-heading-box-title {

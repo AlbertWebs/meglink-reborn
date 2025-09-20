@@ -1,51 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meglink Ventures Limited</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{asset('html/css/bootstrap.min.css')}}">
-    <!-- Simplebar -->
-    <link rel="stylesheet" href="{{asset('html/css/simplebar.min.css')}}">
-    <!-- Rev-slider -->
-    <link rel="stylesheet" href="{{asset('html/rev/css/rs6.css')}}">
-    <link rel="stylesheet" href="{{asset('html/rev/fonts/font-awesome/css/font-awesome.css')}}">
-    <link rel="stylesheet" href="{{asset('html/rev/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
-    <link rel="stylesheet" href="{{asset('html/rev/fonts/pe-icon-7-stroke/css/helper.css')}}">
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="{{asset('html/css/owl.carousel.min.css')}}">
-    <!-- Aimation -->
-    <link rel="stylesheet" href="{{asset('html/css/animations.min.css')}}">
-    <!-- Icons -->
-    <link rel="stylesheet" href="{{asset('html/fonts/font-awesome/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('html/css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('html/fonts/themify-icons/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('html/fonts/flaticon/flaticon.css')}}">
-    <!-- Magnefic Popup -->
-    <link rel="stylesheet" href="{{asset('html/css/magnific-popup.min.css')}}">
-    <!-- Style -->
-    <link rel="stylesheet" href="{{asset('html/css/style.css')}}">
-    <!-- Responsive -->
-    <link rel="stylesheet" href="{{asset('html/css/responsive.css')}}">
-</head>
-<body>
-
-    <!-- Loading -->
-    {{-- <div id="pq-loading">
-        <div id="pq-loading-center">
-            <img src="{{asset('html/images/Logo/logo.png')}}" alt="Loading">
-        </div>
-    </div> --}}
-    <!-- Loading -->
-
-    <!-- Header -->
-    @include('components.header')
-    <!-- Header -->
+@section('content')
 
     <!-- Banner -->
     <div class="banner py-0">
@@ -74,8 +29,7 @@
                             data-text="w:normal;s:14,14,12,12;l:22,22,20,20;ls:6px,4px,3px,1px;fw:500;"
                             data-frame_0="y:50,41,31,19;" data-frame_1="st:300;sp:1000;sR:300;"
                             data-frame_999="o:0;st:w;sR:7700;"
-                            style="z-index:8;font-family:'Plus Jakarta Sans';text-transform:uppercase;">welcome to digital
-                            marblex <br>
+                            style="z-index:8;font-family:'Plus Jakarta Sans';text-transform:uppercase; color:#f37920">Interior Design Consulting & Contracting <br>
 
                         </rs-layer><!--
 
@@ -92,12 +46,11 @@
                             data-text="w:normal;s:72,52,40,28;l:80,60,48,36;fw:500;" data-dim="w:817px,588px,421px,259px;"
                             data-frame_0="y:50,41,31,19;" data-frame_1="st:800;sp:1000;sR:800;"
                             data-frame_999="o:0;st:w;sR:7200;"
-                            style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize;">Forever fresh and
-                            stunning
+                            style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize; font-weight:900 !important;">Experience Design At Its <strong>Majesty</strong>.
                         </rs-layer><!--
 
     							--><a id="slider-13-slide-43-layer-4" class="rs-layer pq-button pq-button-flat pq-btn-font  rev-btn"
-                            href="index.html" target="_self" data-type="button" data-rsp_ch="on"
+                            href="{{route('about')}}" target="_self" data-type="button" data-rsp_ch="on"
                             data-xy="xo:30px,30px,30px,15px;y:m;yo:128px,95px,81px,53px;"
                             data-text="w:normal;s:14,14,14,12;l:28,22,22,20;ls:1.6px,0px,0px,0px;fw:600;"
                             data-dim="minh:0px,none,none,none;"
@@ -125,81 +78,8 @@
                             data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:7350;" style="z-index:12;"><img
                                 src="{{asset('html/rev/assets/dummy.png')}}" alt="" class="tp-rs-img rs-lazyload" width="352" height="458"
                                 data-lazyload="{{asset('html/rev/assets/Banner-1-11.jpg')}}" data-no-retina>
-                        </rs-layer><!--
-    --> </rs-slide>
-                    <rs-slide style="position: absolute;" data-key="rs-45" data-title="Slide"
-                        data-thumb="{{asset('html/rev/assets/Banner-3-50x100.jpg')}}" data-anim="adpr:false;ms:300;" data-in="o:0;"
-                        data-out="a:false;">
-                        <img src="{{asset('html/rev/assets/dummy.png')}}" alt="" title="Banner-3" width="1920" height="1035"
-                            class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{asset('html/rev/assets/Banner-3.jpg')}}"
-                            data-parallax="off" data-no-retina>
-                        <!--
-    							--><rs-layer id="slider-13-slide-45-layer-0" data-type="shape" data-rsp_ch="on"
-                            data-xy="xo:30px,30px,22px,13px;y:m;yo:-156px,-115px,-106px,-75px;"
-                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;" data-dim="w:30px,24px,18px,11px;h:1px;"
-                            data-frame_0="y:50,41,31,19;" data-frame_1="st:300;sp:1000;" data-frame_999="o:0;st:w;"
-                            style="z-index:7;background-color:#e6af5d;">
-                        </rs-layer><!--
-
-    							--><rs-layer id="slider-13-slide-45-layer-1" data-type="text" data-rsp_ch="on"
-                            data-xy="xo:75px,70px,52px,33px;y:m;yo:-156px,-115px,-106px,-75px;"
-                            data-text="w:normal;s:14,14,12,12;l:22,22,20,20;ls:6px,4px,3px,1px;fw:500;"
-                            data-frame_0="y:50,41,31,19;" data-frame_1="st:300;sp:1000;sR:300;"
-                            data-frame_999="o:0;st:w;sR:7700;"
-                            style="z-index:8;font-family:'Plus Jakarta Sans';text-transform:uppercase;">welcome to digital
-                            marblex <br>
-
-                        </rs-layer><!--
-
-    							--><rs-layer id="slider-13-slide-45-layer-2" data-type="shape" data-rsp_ch="on"
-                            data-xy="xo:873px,720px,547px,337px;yo:-24px,-19px,-14px,-8px;"
-                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
-                            data-dim="w:1873px,1546px,1174px,724px;h:1200px,990px,750px,462px;"
-                            data-frame_0="x:50,41,31,19;" data-frame_1="e:none;" data-frame_999="o:0;st:w;sR:8700;"
-                            style="z-index:6;background-color:#e6af5d;">
-                        </rs-layer><!--
-
-    							--><rs-layer id="slider-13-slide-45-layer-3" data-type="text" data-rsp_ch="on"
-                            data-xy="xo:30px,30px,22px,13px;y:m;yo:-50px,-38px,-35px,-27px;"
-                            data-text="w:normal;s:72,52,40,28;l:80,60,48,36;fw:500;" data-dim="w:798px,588px,481px,296px;"
-                            data-frame_0="y:50,41,31,19;" data-frame_1="st:800;sp:1000;sR:800;"
-                            data-frame_999="o:0;st:w;sR:7200;"
-                            style="z-index:9;font-family:'Plus Jakarta Sans';text-transform:capitalize;">best stone
-                            suppliers tiles slabs pavers
-                        </rs-layer><!--
-
-    							--><a id="slider-13-slide-45-layer-4" class="rs-layer pq-button pq-button-flat pq-btn-font  rev-btn"
-                            href="index.html" target="_self" data-type="button" data-rsp_ch="on"
-                            data-xy="xo:30px,30px,30px,15px;y:m;yo:128px,95px,81px,53px;"
-                            data-text="w:normal;s:14,14,14,12;l:28,22,22,20;ls:1.6px,0px,0px,0px;fw:600;"
-                            data-dim="minh:0px,none,none,none;"
-                            data-padding="t:18,14,14,10;r:30,25,22,20;b:18,14,14,10;l:30,25,22,20;"
-                            data-frame_0="y:50,41,31,19;" data-frame_1="st:1400;sp:1000;sR:1400;"
-                            data-frame_999="o:0;st:w;sR:6600;"
-                            data-frame_hover="bgc:#19130b;bor:0px,0px,0px,0px;sp:100;e:power1.inOut;bri:120%;"
-                            style="z-index:10;background-color:#e6af5d;font-family:'Plus Jakarta Sans';text-transform:uppercase;">
-                            <div class="pq-button-block"><span class="pq-button-text">read more </span><span
-                                    class="pq-button-line-right"></span><i class="ion ion-ios-arrow-right"></i></div>
-                        </a><!--
-
-    							--><rs-layer id="slider-13-slide-45-layer-5" data-type="image" data-rsp_ch="on"
-                            data-xy="x:r;xo:-26px,26px,19px,11px;y:m;" data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
-                            data-dim="w:507px,418px,317px,195px;h:625px,516px,392px,241px;" data-frame_0="sX:0.9;sY:0.9;"
-                            data-frame_1="e:power2.inOut;st:300;sp:1000;sR:300;" data-frame_999="o:0;st:w;sR:7700;"
-                            style="z-index:11;"><img src="{{asset('html/rev/assets/dummy.png')}}" alt="" class="tp-rs-img rs-lazyload" width="466"
-                                height="574" data-lazyload="{{asset('html/rev/assets/Banner-11.jpg')}}" data-no-retina>
-                        </rs-layer><!--
-
-    							--><rs-layer id="slider-13-slide-45-layer-7" data-type="image" data-rsp_ch="on"
-                            data-xy="x:r;xo:-226px,-80px,-60px,-37px;y:m;yo:-1px,0,0,0;"
-                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
-                            data-dim="w:385px,317px,240px,148px;h:501px,413px,313px,193px;" data-vbility="t,f,f,f"
-                            data-frame_0="x:100%;" data-frame_0_mask="u:t;" data-frame_1="st:650;sp:1000;sR:650;"
-                            data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:7350;" style="z-index:12;"><img
-                                src="{{asset('html/rev/assets/dummy.png')}}" alt="" class="tp-rs-img rs-lazyload" width="352" height="458"
-                                data-lazyload="{{asset('html/rev/assets/Banner-21.jpg')}}" data-no-retina>
-                        </rs-layer><!--
-    --> </rs-slide>
+                        </rs-layer>
+                    </rs-slide>
                 </rs-slides>
             </rs-module>
         </rs-module-wrap>
@@ -207,84 +87,59 @@
     </div>
     <!-- Banner -->
 
-    <!-- About Us -->
-    <section class="about-us-page-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInLeft">
-                    <div class="pq-section-title pq-style-1">
-                        <span class="pq-section-sub-title">about us</span>
-                        <h5 class="pq-section-main-title">we have a to  of fun process we grow</h5>
-                    </div>
-                    <ul class="pq-list-check-2">
-                        <li>
-                            <i class="ion ion-checkmark-round"></i>
-                            <span>Come to Our marblex Store for a Visit</span>
-                        </li>
-                        <li>
-                            <i class="ion ion-checkmark-round"></i>
-                            <span>Take Your time to choose our collection</span>
-                        </li>
-                        <li>
-                            <i class="ion ion-checkmark-round"></i>
-                            <span>Let's Find the Best Natural Stone</span>
-                        </li>
-                        <li>
-                            <i class="ion ion-checkmark-round"></i>
-                            <span>Delivery & Installation</span>
-                        </li>
-                    </ul>
-                    <div class="pq-manager-info">
-                        <div class="pq-image-box pq-style-3">
-                            <div class="pq-image-box-img">
-                                <img src="{{asset('html/images/testimonial/6.jpg')}}" alt="">
-                            </div>
-                            <div class="pq-image-box-content">
-                                <h5 class="pq-image-box-title">Alex Jhon Martin</h5>
-                                <p class="pq-image-box-description">Manager</p>
-                            </div>
-                        </div>
-                        <img src="{{asset('html/images/sign.png')}}" class="sign" alt="">
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 mt-4 mt-md-0 wow animated zoomIn">
-                    <img src="{{asset('html/images/about-us/5.jpg')}}" class="img-fluid w-100" alt="">
-                </div>
-                <div class="col-xl-4 col-lg-12 mt-4 mt-xl-0 wow animated fadeInRight">
-                    <div class="pq-section-title pq-style-1">
-                        <h5 class="pq-section-main-title">provide solutions of every kind</h5>
-                        <p class="pq-section-description"> providing solutions to its customers, Marblex can take a consultative approach, working closely with clients to understand their needs &amp; preferences.</p>
-                    </div>
-                    <div class="pq-progressbar-box pq-progressbar-style-1 pq-mb-45">
-                        <div class="pq-progressbar-content">
-                            <span class="progress-title">Wooden Flooring</span>
-                            <span class="progress-value">90% </span>
-                            <div class="pq-progress-bar">
-                                <span data-width="90" class="show-progress"></span>
-                            </div>
-                        </div>
-                        <div class="pq-progressbar-content">
-                            <span class="progress-title">Ceramic Tiles</span>
-                            <span class="progress-value">79% </span>
-                            <div class="pq-progress-bar">
-                                <span data-width="79" class="show-progress"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="pq-button pq-button-flat" href="about-us.html">
-                        <div class="pq-button-block">
-                            <span class="pq-button-text">read more </span>
-                            <span class="pq-button-line-right"></span>
-                            <i class="ion ion-ios-arrow-right"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About Us -->
+     <!-- About Us -->
+      <section class="about-us">
+         <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+               <div class="col-lg-6 mt-4 mt-lg-0 wow animated fadeInLeft">
+                  <div class="pq-section-title pq-style-1 pq-mb-30">
+                     <span class="pq-section-sub-title">about us</span>
+                     <h5 class="pq-section-main-title" style="text-transform:none">Design at its <strong>Majesty</strong></h5>
+                     <p class="pq-section-description">
+                        Founded in 2008 as an interior design outlet
+                        studio, the Nairobi-based company has
+                        evolved into an interdisciplinary regional
+                        lifestyle brand that is leading the
+                        contemporary Interior design consulting and
+                        contracting conversation with experiential
+                        residential, hospitality, commercial and retail
+                        industry with an expansive portfolio of home
+                        product designs and brand collaborations.
+                     </p>
+                      <p class="pq-section-description">
+                        Our creative work is more than aesthetics; it is a narrative. We approach each space with a
+                        singular vision, where interior design, architecture, and creative direction converge to create
+                        environments that speak. Rooted in timeless elegance and modern sensibility, we craft spaces
+                        that not only inspire but also embody the essence of those who inhabit them.
+                      </p>
+                  </div>
 
-    <!-- Warehouse -->
+
+                  <a href="{{route('about')}}" class="pq-button pq-button-flat">
+                     <div class="pq-button-block">
+                        <span class="pq-button-text">read more</span>
+                        <span class="pq-button-line-right"></span>
+                        <i class="ion ion-ios-arrow-right"></i>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-lg-6 ps-xl-5">
+                  <div class="about-us-img">
+                     <div class="img-align">
+                        <img src="{{asset('html/images/about-us/6.jpg')}}" class="img-fluid wow animated fadeInRight" alt="">
+                     </div>
+                     <h5 class="pq-floating-heading wow animated zoomIn">
+                         "Good design eliminates the unnecessary so that the necessary may speak." <br> – Hans Hofmann.
+                    </h5>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- About Us -->
+
+
+    <!-- Warehouse - > Why Us Guys -->
     <section class="warehouse pq-bg-dark pq-bg-img-2">
         <div class="container">
             <div class="row align-items-center pq-pb-130">
@@ -295,118 +150,33 @@
                 </div>
                 <div class="col-xl-6 mt-4 mt-xl-0 ps-xl-30 wow animated fadeInRight">
                     <div class="pq-section-title pq-style-1">
-                        <span class="pq-section-sub-title">about us</span>
-                        <h5 class="pq-section-main-title pq-text-white">Visit Our Marble &amp; Granite Display Warehouse</h5>
-                        <p class="pq-section-description pq-text-white">Marblex could potentially use a display warehouse to showcase its range of marble products, such as slabs, tiles, countertops.</p>
+                        <span class="pq-section-sub-title">Why Choose us</span>
+                        <h5 class="pq-section-main-title pq-text-white" style="text-transform: none">What do we stand for?</h5>
+                        <p class="pq-section-description pq-text-white"> <span style="font-weight:800">Innovation | Quality | Collaborations</span> <br>
+                             These three words represent who we are today, they are aspirational of who we want to be
+                             in the future and drive us to all make better decisions in how we work, what we build and
+                             how we engage with our clients.
+                        </p>
                     </div>
-                    <div class="pq-heading-box pq-mt-30">
-                        <h5 class="pq-heading-box-title"><span>01</span>The Best Company For Marble</h5>
-                        <div class="divider pq-my-30"></div>
-                        <h5 class="pq-heading-box-title"><span>02</span>Granite And Marble Suppliers</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-8 col-md-8 wow animated fadeInLeft">
-                    <div class="pq-section-title pq-style-1">
-                        <span class="pq-section-sub-title">choose your stone</span>
-                        <h5 class="pq-section-main-title pq-text-white">showroom with 250 selections</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 wow animated fadeInLeft">
-                    <div class="button-align">
-                        <a class="pq-button pq-button-flat" href="services-1.html">
-                            <div class="pq-button-block">
-                                <span class="pq-button-text">view more </span>
-                                <span class="pq-button-line-right"></span>
-                                <i class="ion ion-ios-arrow-right"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12 wow animated fadeInLeft">
-                    <div class="divider pq-left-border pq-45"></div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow animated fadeInUp">
-                    <div class="pq-image-box pq-style-4">
-                        <div class="pq-image-box-img">
-                            <a href="#"><img src="{{asset('html/images/stone/grid/1.jpg')}}" class="img-fluid w-100" alt=""></a>
-                        </div>
-                        <div class="pq-image-box-content">
-                            <h4 class="pq-image-box-title"><a href="#">Marble</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 mt-md-0 wow animated fadeInUp">
-                    <div class="pq-image-box pq-style-4">
-                        <div class="pq-image-box-img">
-                            <a href="#"><img src="{{asset('html/images/stone/grid/2.jpg')}}" class="img-fluid w-100" alt=""></a>
-                        </div>
-                        <div class="pq-image-box-content">
-                            <h4 class="pq-image-box-title"><a href="#">Granite</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp">
-                    <div class="pq-image-box pq-style-4">
-                        <div class="pq-image-box-img">
-                            <a href="#"><img src="{{asset('html/images/stone/grid/3.jpg')}}" class="img-fluid w-100" alt=""></a>
-                        </div>
-                        <div class="pq-image-box-content">
-                            <h4 class="pq-image-box-title"><a href="#">Quartzite</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 wow animated fadeInUp">
-                    <div class="pq-image-box pq-style-4">
-                        <div class="pq-image-box-img">
-                            <a href="#"><img src="{{asset('html/images/stone/grid/4.jpg')}}" class="img-fluid w-100" alt=""></a>
-                        </div>
-                        <div class="pq-image-box-content">
-                            <h4 class="pq-image-box-title"><a href="#">Limestone</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 wow animated fadeInUp">
-                    <div class="pq-image-box pq-style-4">
-                        <div class="pq-image-box-img">
-                            <a href="#"><img src="{{asset('html/images/stone/grid/5.jpg')}}" class="img-fluid w-100" alt=""></a>
-                        </div>
-                        <div class="pq-image-box-content">
-                            <h4 class="pq-image-box-title"><a href="#">Travertine</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 wow animated fadeInUp">
-                    <div class="pq-image-box pq-style-4">
-                        <div class="pq-image-box-img">
-                            <a href="#"><img src="{{asset('html/images/stone/grid/6.jpg')}}" class="img-fluid w-100" alt=""></a>
-                        </div>
-                        <div class="pq-image-box-content">
-                            <h4 class="pq-image-box-title"><a href="#">Onyx</a></h4>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
     <!-- Warehouse -->
-
-    <!-- Skill -->
-    <section class="skill">
+      <!-- Services -->
+    <section class="services">
         <div class="container">
-            <div class="floating-image floating-image-left floating-image-6">
-                <img src="{{asset('html/images/floating-images/4.png')}}" alt="">
-            </div>
-            <div class="row">
-                <div class="col-lg-6 wow animated fadeInLeft">
-                    <div class="pq-sticky-top">
-                        <div class="pq-section-title pq-style-1 pq-mb-30">
-                            <span class="pq-section-sub-title">our skill</span>
-                            <h5 class="pq-section-main-title">Flooring Installation Services</h5>
-                            <p class="pq-section-description">Flooring installation services are a key offering of Marblex, where the company installs flooring made from a variety of materials, including marble, granite, limestone, and other natural stones.</p>
-                        </div>
-                        <a class="pq-button pq-button-flat" href="services-1.html">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-8 wow animated fadeInRight">
+                    <div class="pq-section-title pq-style-1">
+                        <span class="pq-section-sub-title">In a nutshell</span>
+                        <h5 class="pq-section-main-title">What We Do</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 wow animated fadeInRight">
+                    <div class="button-align">
+                        <a class="pq-button pq-button-flat" href="{{route('services')}}">
                             <div class="pq-button-block">
                                 <span class="pq-button-text">read more </span>
                                 <span class="pq-button-line-right"></span>
@@ -415,57 +185,103 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-4 mt-lg-0 wow animated fadeInRight">
-                    <div class="pq-icon-box pq-style-4">
-                        <div class="pq-icon-box-content">
-                            <h3 class="pq-icon-box-title">Carpets & Rugs</h3>
-                            <p class="pq-icon-box-content">Carpets and rugs are popular flooring options for their softness, warmth & noise-reduce quality.</p>
+                <div class="col-lg-12">
+                    <div class="divider pq-right-border pq-45"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow animated fadeInUp mb-20">
+                    <div class="pq-service-box pq-style-3 text-center">
+                        <div class="pq-service-media">
+                            <div class="pq-service-img">
+                                <img decoding="async" src="{{asset('html/images/service/1.jpg')}}" alt="servicebox">
+                            </div>
                         </div>
-                        <div class="pq-icon">
-                            <i class="flaticon-stone"></i>
-                        </div>
-                    </div>
-                    <div class="pq-icon-box pq-style-4 pq-mt-30">
-                        <div class="pq-icon-box-content">
-                            <h3 class="pq-icon-box-content">Laminate Flooring</h3>
-                            <p class="pq-icon-box-description">Laminate flooring is a popular flooring option that simulates the look of hardwood or tile.</p>
-                        </div>
-                        <div class="pq-icon">
-                            <i class="flaticon-floor"></i>
-                        </div>
-                    </div>
-                    <div class="pq-icon-box pq-style-4 pq-mt-30">
-                        <div class="pq-icon-box-content">
-                            <h3 class="pq-icon-box-title">Marble Flooring</h3>
-                            <p class="pq-icon-box-description">Marble flooring is a luxurious and elegant flooring option that can add beauty & value any space</p>
-                        </div>
-                        <div class="pq-icon">
-                            <i class="flaticon-tile-1"></i>
-                        </div>
-                    </div>
-                    <div class="pq-icon-box pq-style-4 pq-mt-30">
-                        <div class="pq-icon-box-content">
-                            <h3 class="pq-icon-box-title">Ceramic Tile</h3>
-                            <p class="pq-icon-box-description">Ceramic tile is a popular and versatile flooring option that is known for its durability & easy maintenance</p>
-                        </div>
-                        <div class="pq-icon">
-                            <i class="flaticon-tile"></i>
-                        </div>
-                    </div>
-                    <div class="pq-icon-box pq-style-4 pq-mt-30">
-                        <div class="pq-icon-box-content">
-                            <h3 class="pq-icon-box-title">Industrial Flooring</h3>
-                            <p class="pq-icon-box-description">industrial flooring options include concrete, epoxy, & other specialized materials that are designed</p>
-                        </div>
-                        <div class="pq-icon">
-                            <i class="flaticon-wood"></i>
+                        <div class="pq-service-info">
+                            <h5 class="pq-service-title">
+                                <a href="stone-flooring.html">Kitchen & Kitchenettes</a>
+                            </h5>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 mt-4 mt-md-0 wow animated fadeInUp mb-20">
+                    <div class="pq-service-box pq-style-3 text-center">
+                        <div class="pq-service-media">
+                            <div class="pq-service-img">
+                                <img decoding="async" src="{{asset('html/images/service/2.jpg')}}" alt="servicebox">
+                            </div>
+                        </div>
+                        <div class="pq-service-info">
+                            <h4 class="pq-service-title">
+                                <a href="marble-flooring.html">Vanities</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
+                    <div class="pq-service-box pq-style-3 text-center">
+                        <div class="pq-service-media">
+                            <div class="pq-service-img">
+                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            </div>
+                        </div>
+                        <div class="pq-service-info">
+                            <h5 class="pq-service-title">
+                                <a href="laminate-flooring.html">Interior Doors</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
+                    <div class="pq-service-box pq-style-3 text-center">
+                        <div class="pq-service-media">
+                            <div class="pq-service-img">
+                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            </div>
+                        </div>
+                        <div class="pq-service-info">
+                            <h5 class="pq-service-title">
+                                <a href="laminate-flooring.html">Wall Finishing</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
+                    <div class="pq-service-box pq-style-3 text-center">
+                        <div class="pq-service-media">
+                            <div class="pq-service-img">
+                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            </div>
+                        </div>
+                        <div class="pq-service-info">
+                            <h5 class="pq-service-title">
+                                <a href="laminate-flooring.html">Gypsum Works</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
+                    <div class="pq-service-box pq-style-3 text-center">
+                        <div class="pq-service-media">
+                            <div class="pq-service-img">
+                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            </div>
+                        </div>
+                        <div class="pq-service-info">
+                            <h5 class="pq-service-title">
+                                <a href="laminate-flooring.html">Wardrobes</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
-    <!-- Skill -->
+    <!-- Services -->
+
+
 
     <!-- Flooring -->
     <section class="flooring p-0">
@@ -614,8 +430,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-8 wow animated fadeInRight">
                     <div class="pq-section-title pq-style-1">
-                        <span class="pq-section-sub-title">our client</span>
-                        <h5 class="pq-section-main-title">discover our creation</h5>
+                        <span class="pq-section-sub-title">Our Partners</span>
+                        <h5 class="pq-section-main-title">Backed By The Best</h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
@@ -646,10 +462,10 @@
                 </div>
                 <div class="col-lg-3 col-md-6 p-0 wow animated fadeInUp">
                     <div class="pq-client-box pq-client-style-2">
-                        <div class="pq-client-grid">
+                        <div class="pq-client-grid" >
                             <a>
-                                <img decoding="async" src="{{asset('html/images/client/1.png')}}" alt="pq-client-img" class="pq-client-img">
-                                <img decoding="async" src="{{asset('html/images/client/h1.png')}}" alt="pq-client-img" class="pq-client-hover-img">
+                                <img style="background-color: #f37920;" decoding="async" src="{{asset('html/images/client/drenla-logo-tp.png')}}" alt="pq-client-img" class="pq-client-img">
+                                <img style="background-color: #f37920;" decoding="async" src="{{asset('html/images/client/drenla-logo-tp.png')}}" alt="pq-client-img" class="pq-client-hover-img">
                             </a>
                         </div>
                     </div>
@@ -658,8 +474,8 @@
                     <div class="pq-client-box pq-client-style-2">
                         <div class="pq-client-grid">
                             <a>
-                                <img decoding="async" src="{{asset('html/images/client/2.png')}}" alt="pq-client-img" class="pq-client-img">
-                                <img decoding="async" src="{{asset('html/images/client/h2.png')}}" alt="pq-client-img" class="pq-client-hover-img">
+                                <img decoding="async" src="{{asset('html/images/client/Edition 1-01.png')}}" alt="pq-client-img" class="pq-client-img">
+                                <img decoding="async" src="{{asset('html/images/client/Edition 1-01.png')}}" alt="pq-client-img" class="pq-client-hover-img">
                             </a>
                         </div>
                     </div>
@@ -668,8 +484,8 @@
                     <div class="pq-client-box pq-client-style-2">
                         <div class="pq-client-grid border-end-0">
                             <a>
-                                <img decoding="async" src="{{asset('html/images/client/6.png')}}" alt="pq-client-img" class="pq-client-img">
-                                <img decoding="async" src="{{asset('html/images/client/h6.png')}}" alt="pq-client-img" class="pq-client-hover-img">
+                                <img decoding="async" src="{{asset('html/images/client/twyford.jpg')}}" alt="pq-client-img" class="pq-client-img">
+                                <img decoding="async" src="{{asset('html/images/client/twyford.jpg')}}" alt="pq-client-img" class="pq-client-hover-img">
                             </a>
                         </div>
                     </div>
@@ -1028,43 +844,4 @@
         </div>
     </section>
     <!-- Discover -->
-
-    <!-- Footer -->
-    @include('components.footer')
-    <!-- Footer -->
-
-    <!-- Back To Top -->
-    <div id="back-to-top" class="active">
-        <a class="top" id="top" href="#top">
-            <i class="ion-ios-arrow-up"></i>
-        </a>
-    </div>
-    <!-- Back To Top -->
-
-    <!-- Jquery -->
-    <script src="{{asset('html/js/jquery.min.js')}}"></script>
-    <!-- Bootstrap -->
-    <script src="{{asset('html/js/bootstrap.min.js')}}"></script>
-    <!-- Owl Carousel -->
-    <script src="{{asset('html/js/owl.carousel.min.js')}}"></script>
-    <!-- Progressbar -->
-    <script src="{{asset('html/js/progressbar.js')}}"></script>
-    <!-- Isotope -->
-    <script src="{{asset('html/js/isotope.pkgd.min.js')}}"></script>
-    <!-- Counter -->
-    <script src="{{asset('html/js/jquery.countTo.min.js')}}"></script>
-    <!-- Wow -->
-    <script src="{{asset('html/js/wow.min.js')}}"></script>
-    <!-- Magnefic Popup -->
-    <script src="{{asset('html/js/jquery.magnific-popup.min.js')}}"></script>
-    <!-- Revslider -->
-    <script src="{{asset('html/rev/js/rbtools.min.js')}}"></script>
-    <script src="{{asset('html/rev/js/rs6.min.js')}}"></script>
-    <script src="{{asset('html/js/rev-custom.js')}}"></script>
-    <!-- Custom Scrollbar -->
-    <script src="{{asset('html/js/simplebar.min.js')}}"></script>
-    <!-- Custom -->
-    <script src="{{asset('html/js/custom.js')}}"></script>
-</body>
-
-</html>
+@endsection

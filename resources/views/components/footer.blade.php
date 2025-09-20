@@ -8,8 +8,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="pq-footer-logo">
-                                            <img src="{{asset('html/images/Logo/logo-2.png')}}" class="pq-footer-logo"
-                                                alt="marblex-footer-logo">
+                                            <img style="width:300px" src="{{asset('uploads/logo-footer.png')}}" class="pq-footer-logo"
+                                                alt="Meglink Ventures Limited">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 align-self-center">
