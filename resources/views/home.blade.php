@@ -296,10 +296,10 @@
                         </div>
                         <div class="pq-service-info">
                             <div class="pq-service-icon">
-                                <i class=" flaticon-floor" aria-hidden="true"></i>
+                                {{-- <i class=" flaticon-floor" aria-hidden="true"></i> --}}
                             </div>
                             <h5 class="pq-service-title"><a>laminate flooring</a></h5>
-                            <p>There are many variations of passages of Lorem Ipsum available, but majority have suffered</p>
+                            <p>Meglink Ventures creates inspiring interior spaces, blending functionality and elegance to enhance everyday living</p>
                         </div>
                         <div class="pq-btn-container">
                             <a class="pq-button pq-button-link">
@@ -329,10 +329,10 @@
                         </div>
                         <div class="pq-service-info">
                             <div class="pq-service-icon">
-                                <i class=" flaticon-stones" aria-hidden="true"></i>
+                                {{-- <i class=" flaticon-stones" aria-hidden="true"></i> --}}
                             </div>
                             <h5 class="pq-service-title"><a>marble flooring</a></h5>
-                            <p>There are many variations of passages of Lorem Ipsum available, but majority have suffered</p>
+                            <p>Meglink Ventures creates inspiring interior spaces, blending functionality and elegance to enhance everyday living</p>
                         </div>
                         <div class="pq-btn-container">
                             <a class="pq-button pq-button-link">
@@ -362,10 +362,10 @@
                         </div>
                         <div class="pq-service-info">
                             <div class="pq-service-icon">
-                                <i class=" flaticon-tile-1" aria-hidden="true"></i>
+                                {{-- <i class=" flaticon-tile-1" aria-hidden="true"></i> --}}
                             </div>
                             <h5 class="pq-service-title"><a>kitchen renovation</a></h5>
-                            <p>There are many variations of passages of Lorem Ipsum available, but majority have suffered</p>
+                            <p>Meglink Ventures creates inspiring interior spaces, blending functionality and elegance to enhance everyday living</p>
                         </div>
                         <div class="pq-btn-container">
                             <a class="pq-button pq-button-link">
@@ -395,10 +395,10 @@
                         </div>
                         <div class="pq-service-info">
                             <div class="pq-service-icon">
-                                <i class=" flaticon-tile-1" aria-hidden="true"></i>
+                                {{-- <i class=" flaticon-tile-1" aria-hidden="true"></i> --}}
                             </div>
                             <h5 class="pq-service-title"><a>industrial flooring</a></h5>
-                            <p>There are many variations of passages of Lorem Ipsum available, but majority have suffered</p>
+                            <p>Meglink Ventures creates inspiring interior spaces, blending functionality and elegance to enhance everyday living</p>
                         </div>
                         <div class="pq-btn-container">
                             <a class="pq-button pq-button-link">
@@ -758,15 +758,15 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-8 wow animated fadeInRight">
                     <div class="pq-section-title pq-style-1">
-                        <span class="pq-section-sub-title">our client</span>
-                        <h5 class="pq-section-main-title">descover our creation</h5>
+                        <span class="pq-section-sub-title">FAQ</span>
+                        <h5 class="pq-section-main-title">Frequently Asked Questions</h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 wow animated fadeInRight">
                     <div class="button-align">
-                        <a class="pq-button pq-button-flat" href="faq.html">
+                        <a class="pq-button pq-button-flat" href="portfolio.html">
                             <div class="pq-button-block">
-                                <span class="pq-button-text">view more </span>
+                                <span class="pq-button-text">View More</span>
                                 <span class="pq-button-line-right"></span>
                                 <i class="ion ion-ios-arrow-right"></i>
                             </div>
@@ -778,88 +778,114 @@
                 </div>
                 <div class="col-lg-12 wow fadeInUp">
                     <div class="pq-accordion-block pq-style-3">
+
                         <div class="pq-accordion-block">
                             <div class="pq-accordion-box pq-active 1">
                                 <div class="pq-ad-title">
                                     <h4 class="ad-title-text">
-                                        What are the different types of marble?
-                                        <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                        What services does Meglink Ventures provide?
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
                                     </h4>
                                 </div>
                                 <div class="pq-accordion-details">
-                                    <p class="pq-detail-text"> There are many different types of marble, each with its own unique characteristics, color, and veining patterns. Some popular types of marble include Carrara, Calacatta, Crema Marfil, Emperador, and Nero Marquina.</p>
+                                    <p class="pq-detail-text">
+                                        Meglink Ventures offers a wide range of digital solutions including web design, branding, hosting, content management, and SEO strategies to help businesses build strong online visibility.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="pq-accordion-block ">
+
+                        <div class="pq-accordion-block">
                             <div class="pq-accordion-box 2">
                                 <div class="pq-ad-title">
                                     <h4 class="ad-title-text">
-                                        Can marble be used in high-traffic areas?
-                                        <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                        Can Meglink Ventures support startups as well as established companies?
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
                                     </h4>
                                 </div>
                                 <div class="pq-accordion-details">
-                                    <p class="pq-detail-text"> Marble is a durable material that can be used in high-traffic areas, but it may require more maintenance and care than other materials. It’s important to choose a type of marble that is suitable for the specific application and to properly seal and maintain the surface.</p>
+                                    <p class="pq-detail-text">
+                                        Absolutely. We provide tailored digital solutions for startups, SMEs, and established enterprises. Our goal is to meet each client at their point of need and scale solutions as they grow.
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="pq-accordion-block">
                             <div class="pq-accordion-box 3">
                                 <div class="pq-ad-title">
                                     <h4 class="ad-title-text">
-                                        What is the best way to clean marble?
-                                        <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                        Do you offer ongoing website maintenance?
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
                                     </h4>
                                 </div>
                                 <div class="pq-accordion-details">
-                                    <p class="pq-detail-text"> Marble should be cleaned regularly with a soft, damp cloth and a pH-neutral cleaning solution. Avoid using acidic or abrasive cleaners that can damage the surface of the marble.</p>
+                                    <p class="pq-detail-text">
+                                        Yes, Meglink Ventures provides continuous website maintenance, updates, and security monitoring to ensure our clients’ platforms remain secure, functional, and optimized for performance.
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="pq-accordion-block">
                             <div class="pq-accordion-box 4">
                                 <div class="pq-ad-title">
                                     <h4 class="ad-title-text">
-                                        How can I prevent stains on my marble surface?
-                                        <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                        What makes Meglink Ventures different from other agencies?
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
                                     </h4>
                                 </div>
                                 <div class="pq-accordion-details">
-                                    <p class="pq-detail-text"> To prevent stains on a marble surface, it’s important to clean up spills as soon as possible and to avoid using acidic or abrasive substances on the surface. Additionally, the marble should be properly sealed to protect against stains and etching.</p>
+                                    <p class="pq-detail-text">
+                                        Our client-first approach, commitment to quality, and ability to provide custom-made solutions set us apart. We combine creativity with technology to deliver results-driven projects.
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="pq-accordion-block">
                             <div class="pq-accordion-box 5">
                                 <div class="pq-ad-title">
                                     <h4 class="ad-title-text">
-                                        Can marble be repaired if it's damaged?
-                                        <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                        How long does it take to complete a project?
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
                                     </h4>
                                 </div>
                                 <div class="pq-accordion-details">
-                                    <p class="pq-detail-text"> Minor damage to marble, such as scratches or chips, can often be repaired using a marble repair kit. However, more extensive damage may require professional repair or replacement of the affected area.</p>
+                                    <p class="pq-detail-text">
+                                        Project timelines vary depending on complexity. A typical web design project can take 3–6 weeks, while branding and smaller tasks may be completed faster. We always agree on timelines before starting.
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="pq-accordion-block">
                             <div class="pq-accordion-box 6">
                                 <div class="pq-ad-title">
                                     <h4 class="ad-title-text">
-                                        Is marble durable?
-                                        <i aria-hidden="true" class="ion ion-plus-round active"></i><i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                        Do you help with SEO and online visibility?
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
                                     </h4>
                                 </div>
                                 <div class="pq-accordion-details">
-                                    <p class="pq-detail-text"> Marble is a relatively soft stone compared to other natural stones, such as granite or quartzite, and can be prone to scratches, chips, and staining. However, with proper care and maintenance, marble can be a durable material that can last for many year</p>
+                                    <p class="pq-detail-text">
+                                        Yes, SEO and digital visibility are at the core of what we do. Meglink Ventures ensures that websites are optimized for search engines, helping businesses attract and retain the right audience online.
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Discover -->
 @endsection

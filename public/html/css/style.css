@@ -3408,7 +3408,7 @@ Breadcrumb
 }
 
 .pq-breadcrumb {
-	background-image: url(../images/Breadcrumb/1.jpg);
+	background-image: url(../images/Breadcrumb/bg.jpg);
 }
 
 .pq-breadcrumb:before {
@@ -6753,9 +6753,17 @@ Custom Css
 }
 
 .pq-about-us-img {
-	margin: 0 0 -90px -390px;
+	/* margin: 0 0 -90px -390px; */
 	position: relative;
 	z-index: 1;
+}
+.pq-about-bg-color{
+    background-color: var(--dark-color) !important;
+}
+
+.pq-btn-white{
+    background-color: var(--primary-color) !important;
+    color: var(--dark-color) !important;
 }
 
 .pq-testimonial-img-overflow {
@@ -6782,6 +6790,18 @@ Custom Css
 
 .about-us-img {
 	position: relative;
+}
+
+.about-us-img img{
+    width:100%;
+    min-height:578px;
+    height:auto;
+    object-fit: cover;
+}
+
+.about-us-text{
+    color:var(--white-color);
+    position:absolute;
 }
 
 .pq-image1 {

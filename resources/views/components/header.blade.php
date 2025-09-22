@@ -127,9 +127,25 @@
                                         <li class="menu-item ">
                                             <a href="{{route('home')}}" aria-current="page">Home</a>
                                         </li>
-                                        <li class="menu-item ">
+                                        {{-- <li class="menu-item ">
                                             <a href="{{route('about')}}" aria-current="page">About Us</a>
+                                        </li> --}}
+
+                                         <li class="menu-item current-menu-item menu-item-has-children">
+                                            <a href="{{route('about')}}" aria-current="page">About Us</a><i
+                                                class="fa fa-chevron-down pq-submenu-icon"></i>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item current-menu-item">
+                                                    <a href="{{route('team')}}" aria-current="page">Meet Our Team</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{{route('history')}}">Our History</a>
+                                                </li>
+
+                                            </ul>
                                         </li>
+
+
 
                                         <li class="menu-item ">
                                             <a href="{{route('services')}}" aria-current="page">What We Do</a>
