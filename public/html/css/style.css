@@ -3839,7 +3839,7 @@ Background Images
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url(../images/background-Images/bg-img-2.png);
+	background-image: url(../images/background-Images/board_4227759_97d4b027.png);
 }
 
 .showroom.pq-bg-img-2:before,
@@ -7409,6 +7409,11 @@ Custom Css
 /* hover */
 .product-name a:hover{
 	color:#1c186c !important;
+}
+.product-image img{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 767px) {

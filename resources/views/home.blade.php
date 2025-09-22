@@ -191,8 +191,8 @@
                 <div class="col-lg-4 col-md-6 wow animated fadeInUp mb-20">
                     <div class="pq-service-box pq-style-3 text-center">
                         <div class="pq-service-media">
-                            <div class="pq-service-img">
-                                <img decoding="async" src="{{asset('html/images/service/1.jpg')}}" alt="servicebox">
+                            <div class="pq-service-img product-image">
+                                <img decoding="async" src="{{asset('uploads/products/aaa.avif')}}" alt="servicebox">
                             </div>
                         </div>
                         <div class="pq-service-info">
@@ -205,8 +205,8 @@
                 <div class="col-lg-4 col-md-6 mt-4 mt-md-0 wow animated fadeInUp mb-20">
                     <div class="pq-service-box pq-style-3 text-center">
                         <div class="pq-service-media">
-                            <div class="pq-service-img">
-                                <img decoding="async" src="{{asset('html/images/service/2.jpg')}}" alt="servicebox">
+                            <div class="pq-service-img product-image">
+                                <img decoding="async" src="{{asset('uploads/products/vannitie.webp')}}" alt="servicebox">
                             </div>
                         </div>
                         <div class="pq-service-info">
@@ -219,8 +219,8 @@
                 <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
                     <div class="pq-service-box pq-style-3 text-center">
                         <div class="pq-service-media">
-                            <div class="pq-service-img">
-                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            <div class="pq-service-img product-image">
+                                <img decoding="async" src="{{asset('uploads/products/notranja-vrata-toscana.jpg')}}" alt="servicebox">
                             </div>
                         </div>
                         <div class="pq-service-info">
@@ -233,8 +233,8 @@
                 <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
                     <div class="pq-service-box pq-style-3 text-center">
                         <div class="pq-service-media">
-                            <div class="pq-service-img">
-                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            <div class="pq-service-img product-image">
+                                <img decoding="async" src="{{asset('uploads/products/wall.jpg')}}" alt="servicebox">
                             </div>
                         </div>
                         <div class="pq-service-info">
@@ -248,8 +248,8 @@
                 <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
                     <div class="pq-service-box pq-style-3 text-center">
                         <div class="pq-service-media">
-                            <div class="pq-service-img">
-                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            <div class="pq-service-img product-image">
+                                <img decoding="async" src="{{asset('uploads/products/cat538a137fe5ef4.jpg')}}" alt="servicebox">
                             </div>
                         </div>
                         <div class="pq-service-info">
@@ -263,8 +263,8 @@
                 <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 wow animated fadeInUp mb-20">
                     <div class="pq-service-box pq-style-3 text-center">
                         <div class="pq-service-media">
-                            <div class="pq-service-img">
-                                <img decoding="async" src="{{asset('html/images/service/3.jpg')}}" alt="servicebox">
+                            <div class="pq-service-img product-image">
+                                <img decoding="async" src="{{asset('uploads/products/Wardrobes.jpg')}}" alt="servicebox">
                             </div>
                         </div>
                         <div class="pq-service-info">
@@ -438,7 +438,7 @@
                     <div class="button-align wow animated fadeInRight">
                         <a class="pq-button pq-button-flat" href="services-1.html">
                             <div class="pq-button-block">
-                                <span class="pq-button-text">view more </span>
+                                <span class="pq-button-text">view more collaborators</span>
                                 <span class="pq-button-line-right"></span>
                                 <i class="ion ion-ios-arrow-right"></i>
                             </div>
@@ -456,7 +456,7 @@
                             <i class="flaticon-tile"></i>
                         </div>
                         <div class="pq-icon-box-content">
-                            <h5 class="pq-icon-box-title">trusted<br>clients</h5>
+                            <h5 class="pq-icon-box-title">trusted<br>Colaborators</h5>
                         </div>
                     </div>
                 </div>
@@ -494,8 +494,8 @@
                     <div class="pq-client-box pq-client-style-2">
                         <div class="pq-client-grid border-bottom-0">
                             <a>
-                                <img decoding="async" src="{{asset('html/images/client/4.png')}}" alt="pq-client-img" class="pq-client-img">
-                                <img decoding="async" src="{{asset('html/images/client/h4.png')}}" alt="pq-client-img" class="pq-client-hover-img">
+                                <img decoding="async" src="{{asset('html/images/client/Noble-logo.png')}}" alt="pq-client-img" class="pq-client-img">
+                                <img decoding="async" src="{{asset('html/images/client/Noble-logo.png')}}" alt="pq-client-img" class="pq-client-hover-img">
                             </a>
                         </div>
                     </div>
@@ -504,8 +504,8 @@
                     <div class="pq-client-box pq-client-style-2">
                         <div class="pq-client-grid border-bottom-0">
                             <a>
-                                <img decoding="async" src="{{asset('html/images/client/3.png')}}" alt="pq-client-img" class="pq-client-img">
-                                <img decoding="async" src="{{asset('html/images/client/h3.png')}}" alt="pq-client-img" class="pq-client-hover-img">
+                                <img decoding="async" src="{{asset('html/images/client/Mothokinju.png')}}" alt="pq-client-img" class="pq-client-img">
+                                <img decoding="async" src="{{asset('html/images/client/Mothokinju.png')}}" alt="pq-client-img" class="pq-client-hover-img">
                             </a>
                         </div>
                     </div>
@@ -514,15 +514,20 @@
                     <div class="pq-client-box pq-client-style-2">
                         <div class="pq-client-grid border-bottom-0">
                             <a>
-                                <img decoding="async" src="{{asset('html/images/client/7.png')}}" alt="pq-client-img" class="pq-client-img">
-                                <img decoding="async" src="{{asset('html/images/client/h7.png')}}" alt="pq-client-img" class="pq-client-hover-img">
+                                <img decoding="async" src="{{asset('html/images/client/impala.png')}}" alt="pq-client-img" class="pq-client-img">
+                                <img decoding="async" src="{{asset('html/images/client/impala.png')}}" alt="pq-client-img" class="pq-client-hover-img">
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 p-0 wow animated fadeInUp">
-                    <div class="pq-client-grid border-bottom-0 border-end-0">
-                        <h5 class="pq-client-title">join the team</h5>
+                   <div class="pq-client-box pq-client-style-2">
+                        <div class="pq-client-grid border-bottom-0">
+                            <a>
+                                <img decoding="async" src="{{asset('html/images/client/cropped-logo.jpeg')}}" alt="pq-client-img" class="pq-client-img">
+                                <img decoding="async" src="{{asset('html/images/client/cropped-logo.jpeg')}}" alt="pq-client-img" class="pq-client-hover-img">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -541,6 +546,7 @@
                     </div>
                     <div class="pq-testimonial-box-slider pq-style-5">
                         <div class="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false" data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="false" data-margin="30">
+
                             <div class="item">
                                 <div class="pq-testimonial-box pq-style-5">
                                     <div class="pq-testimonial-info">
@@ -549,24 +555,29 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
                                             </div>
                                             <div class="pq-testimonial-icon">
                                                 <i class="fas fa-quote-right"></i>
                                             </div>
-                                            <p class="pq-testimonial-description">I recently worked with Marblex on a project to install marble flooring in my home, and I couldn’t be happier with the results! The team at Marblex was professional, knowledgeable, and attentive to my needs throughout the entire process. They helped me select the perfect marble.</p>
+                                            <p class="pq-testimonial-description">
+                                                Working with Meglink Ventures was a seamless experience. Their team understood our needs perfectly and delivered a professional website that has elevated our brand visibility. Their dedication and attention to detail exceeded our expectations.
+                                            </p>
                                         </div>
                                         <div class="pq-testimonial-media">
                                             <div class="pq-testimonial-img">
-                                                <img decoding="async" src="{{asset('html/images/testimonial/2.jpg')}}" alt="Testimonial-image">
+                                                <img decoding="async" src="{{asset('html/images/testimonial/avatar.jpg')}}" alt="Testimonial-image">
                                             </div>
                                             <div class="pq-testimonial-meta">
                                                 <h5 class="pq-testmonial-title">Iliena Brown</h5>
-                                                <span>marketing officer</span>
+                                                <span>Marketing Officer</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="item">
                                 <div class="pq-testimonial-box pq-style-5">
                                     <div class="pq-testimonial-info">
@@ -581,20 +592,23 @@
                                             <div class="pq-testimonial-icon">
                                                 <i class="fas fa-quote-right"></i>
                                             </div>
-                                            <p class="pq-testimonial-description">Marblex should look for ones that are specific, detailed, and highlight the unique benefits of working with the company. This can include aspects such as the quality of the marble products and and excellent customer service Marblex can these reviews to differentiate itself.</p>
+                                            <p class="pq-testimonial-description">
+                                                Meglink Ventures provided outstanding service from start to finish. They were responsive, reliable, and creative in their approach. Thanks to their work, our online presence is stronger, and we’ve gained more client inquiries.
+                                            </p>
                                         </div>
                                         <div class="pq-testimonial-media">
                                             <div class="pq-testimonial-img">
-                                                <img decoding="async" src="{{asset('html/images/testimonial/1.jpg')}}" alt="Testimonial-image">
+                                                <img decoding="async" src="{{asset('html/images/testimonial/avatar.jpg')}}" alt="Testimonial-image">
                                             </div>
                                             <div class="pq-testimonial-meta">
                                                 <h5 class="pq-testmonial-title">Naidan Smith</h5>
-                                                <span>manager</span>
+                                                <span>Manager</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="item">
                                 <div class="pq-testimonial-box pq-style-5">
                                     <div class="pq-testimonial-info">
@@ -609,11 +623,13 @@
                                             <div class="pq-testimonial-icon">
                                                 <i class="fas fa-quote-right"></i>
                                             </div>
-                                            <p class="pq-testimonial-description">They helped me select the perfect marble for my space, and their installation services were top-notch. The end result is absolutely stunning, and I receive compliments on my new floors every time someone comes to my home. I would highly recommend Marblex.</p>
+                                            <p class="pq-testimonial-description">
+                                                We truly appreciate the professionalism of Meglink Ventures. Their expertise helped us streamline our digital platforms, and the results speak for themselves. I highly recommend them to any business seeking reliable digital solutions.
+                                            </p>
                                         </div>
                                         <div class="pq-testimonial-media">
                                             <div class="pq-testimonial-img">
-                                                <img decoding="async" src="{{asset('html/images/testimonial/6.jpg')}}" alt="Testimonial-image">
+                                                <img decoding="async" src="{{asset('html/images/testimonial/avatar.jpg')}}" alt="Testimonial-image">
                                             </div>
                                             <div class="pq-testimonial-meta">
                                                 <h5 class="pq-testmonial-title">Robert Anderson</h5>
@@ -623,8 +639,10 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
                 <div class="col-lg-6 wow animated fadeInRight pq-form-position">
                     <div class="pq-form-box">
@@ -690,14 +708,14 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 mt-4 mt-md-0">
                     <div class="pq-counter pq-counter-style-1 text-center pq-border-right">
                         <div class="pq-counter-media">
-                            <i class="flaticon-chisel"></i>
+                            <i class="fas fa-arrow-up"></i>
                         </div>
                         <div class="pq-counter-info">
                             <div class="pq-counter-num-prefix">
-                                <h5 class="timer" data-to="600" data-speed="5000">600</h5>
-                                <span class="pq-counter-prefix">+</span>
+                                <h5 class="timer" data-to="40" data-speed="5000">600</h5>
+                                <span class="pq-counter-prefix">%</span>
                             </div>
-                            <p class="pq-counter-description">Export On Worldwide</p>
+                            <p class="pq-counter-description">Project Growth Trajectory</p>
                         </div>
                     </div>
                 </div>
