@@ -9,11 +9,11 @@
             <div class="pq-sidebar-header">
                 <img src="{{asset('uploads/logo.png')}}" class="pq-sidebar-logo" alt="Meglink-sidebar-logo">
             </div>
-            <div class="pq-sidebar-content">
+            {{-- <div class="pq-sidebar-content">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. search for will uncover
                     many web sites still.</p>
-            </div>
-            <div class="pq-sidebars">
+            </div> --}}
+            {{-- <div class="pq-sidebars">
                 <div class="pq-widget">
                     <div class="wp-block-group">
                         <div class="wp-block-group__inner-container">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="pq-sidebar-contact">
                 <ul class="pq-contact">
                     <li>
@@ -62,9 +62,9 @@
             <div class="pq-sidebar-social">
                 <ul>
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -124,41 +124,40 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <div id="pq-menu-contain" class="pq-menu-contain">
                                     <ul id="pq-main-menu" class="navbar-nav ml-auto">
-                                        <li class="menu-item ">
+                                        <li class="menu-item @if($page == 'home')  current-menu-item @endif">
                                             <a href="{{route('home')}}" aria-current="page">Home</a>
                                         </li>
                                         {{-- <li class="menu-item ">
                                             <a href="{{route('about')}}" aria-current="page">About Us</a>
                                         </li> --}}
 
-                                         <li class="menu-item current-menu-item menu-item-has-children">
+                                        <li class="menu-item @if($page == 'about'  || $page == 'history') current-menu-item @endif menu-item-has-children">
                                             <a href="{{route('about')}}" aria-current="page">About Us</a><i
                                                 class="fa fa-chevron-down pq-submenu-icon"></i>
                                             <ul class="sub-menu">
-                                                <li class="menu-item current-menu-item">
+                                                <li class="menu-item">
                                                     <a href="{{route('team')}}" aria-current="page">Meet Our Team</a>
                                                 </li>
-                                                <li class="menu-item">
+                                                <li class="menu-item @if($page == 'history') current-menu-item @endif">
                                                     <a href="{{route('history')}}">Our History</a>
                                                 </li>
-
                                             </ul>
                                         </li>
 
 
 
-                                        <li class="menu-item ">
+                                        <li class="menu-item @if($page == 'services') current-menu-item @endif">
                                             <a href="{{route('services')}}" aria-current="page">What We Do</a>
                                         </li>
-                                         <li class="menu-item ">
+                                         <li class="menu-item @if($page == 'portfolio') current-menu-item @endif">
                                             <a href="{{route('our-work')}}" aria-current="page">Our Work</a>
                                         </li>
-                                        <li class="menu-item ">
+                                        <li class="menu-item @if($page == 'updates') current-menu-item @endif">
                                             <a href="{{route('trendy-updates')}}" aria-current="page">Trendy Updates</a>
                                         </li>
 
-                                        <li class="menu-item">
-                                            <a href="contact-us.html">Contact Us</a>
+                                        <li class="menu-item @if($page == 'contact') current-menu-item @endif">
+                                            <a href="{{route('contact')}}">Contact Us</a>
                                         </li>
                                     </ul>
                                 </div>

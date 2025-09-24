@@ -94,7 +94,7 @@
                <div class="col-lg-6 mt-4 mt-lg-0 wow animated fadeInLeft">
                   <div class="pq-section-title pq-style-1 pq-mb-30">
                      <span class="pq-section-sub-title">about us</span>
-                     <h5 class="pq-section-main-title" style="text-transform:none">Design at its <strong>Majesty</strong></h5>
+                     <h5 class="pq-section-main-title" style="text-transform:none; font-weight:900"><strong> </strong>Meglink Ventures</h5>
                      <p class="pq-section-description">
                         Founded in 2008 as an interior design outlet
                         studio, the Nairobi-based company has
@@ -126,7 +126,7 @@
                <div class="col-lg-6 ps-xl-5">
                   <div class="about-us-img">
                      <div class="img-align">
-                        <img src="{{asset('html/images/about-us/6.jpg')}}" class="img-fluid wow animated fadeInRight" alt="">
+                        <img style="height:478px; width:100%;" src="{{asset('uploads/home/about.jpg')}}" class="img-fluid wow animated fadeInRight" alt="">
                      </div>
                      <h5 class="pq-floating-heading wow animated zoomIn">
                          "Good design eliminates the unnecessary so that the necessary may speak." <br> – Hans Hofmann.
@@ -142,10 +142,10 @@
     <!-- Warehouse - > Why Us Guys -->
     <section class="warehouse pq-bg-dark pq-bg-img-2">
         <div class="container">
-            <div class="row align-items-center pq-pb-130">
+            <div class="row align-items-center">
                 <div class="col-xl-6 wow animated fadeInLeft">
                     <div class="pq-warehouse-img-overflow">
-                        <img src="{{asset('html/images/warehouse/1.jpg')}}" class="img-fluid w-100" alt="">
+                        <img style="border:1px solid #f37920" src="{{asset('uploads/home/why.jpg')}}" class="img-fluid w-100" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6 mt-4 mt-xl-0 ps-xl-30 wow animated fadeInRight">
@@ -157,6 +157,14 @@
                              in the future and drive us to all make better decisions in how we work, what we build and
                              how we engage with our clients.
                         </p>
+                        <br>
+                        <a href="{{route('about')}}" class="pq-button pq-button-flat">
+                            <div class="pq-button-block">
+                                <span class="pq-button-text">read more</span>
+                                <span class="pq-button-line-right"></span>
+                                <i class="ion ion-ios-arrow-right"></i>
+                            </div>
+                        </a>
                     </div>
 
                 </div>

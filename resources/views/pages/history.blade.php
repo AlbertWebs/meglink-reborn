@@ -3,7 +3,7 @@
 @section('content')
  <!-- Timeline -->
 
- <!-- Breadcrumb -->
+    <!-- Breadcrumb -->
     <div class="pq-breadcrumb">
         <div class="container">
             <div class="row align-items-center">
@@ -27,7 +27,7 @@
     </div>
     <!-- Breadcrumb -->
 
-  <!-- Timeline -->
+    <!-- Timeline -->
     <section class="history">
         <div class="container">
             <div class="row">
@@ -38,8 +38,8 @@
                             <h5 class="pq-section-main-title">Over a decade of design and consulting journey…(and counting)</h5>
                             <p>
                                 Meglink began as a small interior design studio in 2008, from a small studio to a regional leader in consulting
-and sustainable interior design solutions. Over the past 16 years, we have transformed into a regional leader,
-offering a wide range of design services & building a strong reputation.
+                                and sustainable interior design solutions. Over the past 16 years, we have transformed into a regional leader,
+                                offering a wide range of design services & building a strong reputation.
                             </p>
 
 
@@ -55,8 +55,8 @@ offering a wide range of design services & building a strong reputation.
                                 <span class="cntl-bar-fill"></span>
                             </span>
                             <div class="cntl-states">
-                                <div class="cntl-state">
-                                    <div class="cntl-content">
+                                <div class="cntl-state ">
+                                    <div class="cntl-content d-flex flex-column justify-content-center history-component">
                                         <h4>The Beginning</h4>
                                         <p>
                                             Meglink started as a small interior design outlet studio in 2008,
@@ -68,13 +68,13 @@ offering a wide range of design services & building a strong reputation.
                                             on word-of-mouth recommendations.
                                         </p>
                                     </div>
-                                    <div class="cntl-image">
+                                    <div class="cntl-image history-image">
                                         <img decoding="async" src="{{asset('html/images/timeline/1.jpg')}}" alt="history-image">
                                     </div>
                                     <div class="cntl-icon cntl-center">2008</div>
                                 </div>
                                 <div class="cntl-state">
-                                    <div class="cntl-content">
+                                    <div class="cntl-content d-flex flex-column justify-content-center history-component">
                                         <h4>2012: Expanding Services</h4>
                                         <p>As demand grew, Meglink expanded its service portfolio to include
                                             office partitioning, floor finishing, and custom cabinetry.
@@ -84,13 +84,13 @@ offering a wide range of design services & building a strong reputation.
                                             contract, marking its transition from a purely residential focus.
                                         </p>
                                     </div>
-                                    <div class="cntl-image">
+                                    <div class="cntl-image history-image">
                                         <img decoding="async" src="{{asset('html/images/timeline/2.jpg')}}" alt="history-image">
                                     </div>
                                     <div class="cntl-icon cntl-center">2012</div>
                                 </div>
                                 <div class="cntl-state">
-                                    <div class="cntl-content">
+                                    <div class="cntl-content d-flex flex-column justify-content-center history-component">
                                         <h4>Service Diversification</h4>
                                         <p>
                                             Meglink cemented its reputation for high-end interior design by
@@ -102,13 +102,13 @@ offering a wide range of design services & building a strong reputation.
                                             developers and corporate clients.
                                         </p>
                                     </div>
-                                    <div class="cntl-image">
+                                    <div class="cntl-image history-image">
                                         <img decoding="async" src="{{asset('html/images/timeline/3.jpg')}}" alt="history-image">
                                     </div>
                                     <div class="cntl-icon cntl-center">2015</div>
                                 </div>
                                 <div class="cntl-state">
-                                    <div class="cntl-content">
+                                    <div class="cntl-content d-flex flex-column justify-content-center history-component">
                                         <h4>Geographic Expansion</h4>
                                         <p>
                                             Meglink moved beyond Nairobi and began working on regional
@@ -122,13 +122,13 @@ offering a wide range of design services & building a strong reputation.
 
                                         </p>
                                     </div>
-                                    <div class="cntl-image">
+                                    <div class="cntl-image history-image">
                                         <img decoding="async" src="{{asset('html/images/timeline/4.jpg')}}" alt="history-image">
                                     </div>
                                     <div class="cntl-icon cntl-center">2018</div>
                                 </div>
                                 <div class="cntl-state">
-                                    <div class="cntl-content">
+                                    <div class="cntl-content d-flex flex-column justify-content-center history-component">
                                         <h4>High-End Design, Consultation & Regional Expansion</h4>
                                         <p>
                                             Meglink diversified into high-end commercial projects, including
@@ -141,13 +141,13 @@ offering a wide range of design services & building a strong reputation.
                                             improve efficiency and client transparency.
                                         </p>
                                     </div>
-                                    <div class="cntl-image">
+                                    <div class="cntl-image history-image">
                                         <img decoding="async" src="{{asset('html/images/timeline/5.jpg')}}" alt="history-image">
                                     </div>
                                     <div class="cntl-icon cntl-center">2021</div>
                                 </div>
                                 <div class="cntl-state">
-                                    <div class="cntl-content">
+                                    <div class="cntl-content d-flex flex-column justify-content-center history-component">
                                         <h4>Regional Recognition</h4>
                                         <p>
                                             By 2024, Meglink had become a regional leader in interior design and
@@ -159,7 +159,7 @@ offering a wide range of design services & building a strong reputation.
                                             focus on innovation, sustainability, and client satisfaction.
                                         </p>
                                     </div>
-                                    <div class="cntl-image">
+                                    <div class="cntl-image d-flex flex-column justify-content-center history-image">
                                         <img decoding="async" src="{{asset('html/images/timeline/5.jpg')}}" alt="history-image">
                                     </div>
                                     <div class="cntl-icon cntl-center">2023</div>

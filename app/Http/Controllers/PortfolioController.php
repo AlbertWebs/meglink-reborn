@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class PortfolioController extends Controller
 {
     public function index(){
-        return view('pages.portfolio');
+        $page = 'portfolio';
+        return view('pages.portfolio', compact('page'));
     }
 }

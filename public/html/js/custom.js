@@ -39,7 +39,7 @@ Design and Developed by: PeacefulQode
         // jQuery("#pq-loading").fadeOut();
         // jQuery("#pq-loading").delay(0).fadeOut("slow");
 
-        var Scrollbar = window.Scrollbar;
+        // var Scrollbar = window.Scrollbar;
 
 
         /*==================================================

@@ -8,6 +8,7 @@ class HistoryController extends Controller
 {
     public function index()
     {
-        return view('pages.history');
+        $page = 'history';
+        return view('pages.history', compact('page'));
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class ServicesController extends Controller
 {
     public function index(){
-        return view('pages.services');
+        $page = 'services';
+        return view('pages.services', compact('page'));
     }
 }

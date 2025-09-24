@@ -6720,6 +6720,10 @@ Custom Css
 	padding-bottom: 180px;
 }
 
+.pq-pb-80{
+    padding-bottom: 80px;
+}
+
 .pq-pb-260 {
 	padding-bottom: 260px;
 }
@@ -6797,6 +6801,10 @@ Custom Css
     min-height:578px;
     height:auto;
     object-fit: cover;
+}
+
+.padding-reset{
+    padding:0px !important;
 }
 
 .about-us-text{
@@ -7068,14 +7076,15 @@ Custom Css
 }
 
 .pq-floating-heading {
-	padding: 45px 30px;
-	background-color: var(--primary-color);
+	padding: 20px 20px;
+	background-color: rgba(230, 175, 93, 0.8); /* semi-transparent */
 	color: var(--white-color);
 	width: 48%;
 	position: absolute;
 	top: 65%;
 	left: 0;
 }
+
 
 .pq-client-grid {
 	border-bottom: 1px solid #0000001a;
@@ -7435,6 +7444,26 @@ Custom Css
     width: 100%;
     object-fit: cover;
 }
+.history-image img{
+   min-height:360px !important;
+   height: 100%;
+   object-fit: cover;
+}
+.history-component{
+    min-height:360px !important;
+   height: 100%;
+}
+
+.pq-floating-heading{
+    /* position: relative;
+    bottom:0;
+    left:0;
+    text-align: center;
+    margin:0 auto; */
+    /* transparency:0.4; */
+}
+
+
 
 @media (max-width: 767px) {
     .pellete-img {

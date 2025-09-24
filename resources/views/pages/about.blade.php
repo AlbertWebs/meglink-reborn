@@ -64,9 +64,9 @@
             </div>
             <div class="col-lg-4 col-md-4 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
                 <div class="button-align">
-                    <a class="pq-button pq-button-flat" download="" href="{{route('our-work')}}">
+                    <a class="pq-button pq-button-flat" download="" href="{{route('services')}}">
                         <div class="pq-button-block">
-                        <span class="pq-button-text">Browse Portfolio </span>
+                        <span class="pq-button-text">Browse Services </span>
                         <span class="pq-button-line-right"></span>
                         <i class="ion ion-ios-arrow-right"></i>
                         </div>
