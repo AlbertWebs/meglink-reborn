@@ -31,7 +31,7 @@
  <!-- About Us -->
     <section style="padding-bottom: 0" >
 
-        <div class="container-fluid">
+        <div class="container">
 
             {{--  --}}
             <div class="row align-items-center">
@@ -77,18 +77,24 @@
     {{--  --}}
 
      <!-- About Us -->
-    <section class="about-us pq-pb-180 .pq-about-bg-color">
+    <section class="about-us .pq-about-bg-color">
 
         <div class="container-fluid">
+            <?php
+                $Services = \App\Models\Service::all();
+                $Count = 1;
+            ?>
+            @foreach ($Services as $service )
+            @if ($Count % 2 !== 0)
             <div class="row">
                 <div class="col-xl-6 padding-reset">
                     <div class="about-us-img">
-                        <img src="{{asset('html/images/background-images/29ebc0_dc1c4b96292c44d6b5980861bb8d8a66~mv2.avif')}}" class="pq-image1 wow animated fadeInLeft" alt="">
+                        <img src="{{ asset('storage/'.$service->image) }}" class="service-images pq-image1 wow animated fadeInLeft" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6 pq-about-us-padding d-flex flex-column justify-content-center wow animated fadeInRight pq-about-bg-color">
                     <div class="pq-section-title pq-style-1 pq-mb-35">
-                         <h5  style="text-transform: capitalize; color:#f37920; font-weight:800;">Interior Design Consulting & Contracting</h5>
+                         <h5  style="text-transform: capitalize; color:#f37920; font-weight:800;">{{$service->title}}</h5>
 
                         <p class="pq-section-description about-us-text">
                             Our creative work is more than aesthetics; it is a narrative. We approach each space with a
@@ -116,11 +122,12 @@
                     </div>
                 </div>
             </div>
+            @else
             {{--  --}}
             <div class="row">
                 <div class="col-xl-6 pq-about-us-padding d-flex flex-column justify-content-center wow animated fadeInLeft pq-about-bg-color">
                     <div class="pq-section-title pq-style-1 pq-mb-35">
-                        <h5  style="text-transform: capitalize; color:#f37920; font-weight:800;">Interior Design Consulting & Contracting</h5>
+                        <h5  style="text-transform: capitalize; color:#f37920; font-weight:800;">{{$service->title}}</h5>
 
                         <p class="pq-section-description about-us-text service-text">
                             Our creative work is more than aesthetics; it is a narrative. We approach each space with a
@@ -149,10 +156,13 @@
                 </div>
                 <div class="col-xl-6 padding-reset">
                     <div class="about-us-img">
-                        <img src="{{asset('html/images/background-images/29ebc0_dc1c4b96292c44d6b5980861bb8d8a66~mv2.avif')}}" class="pq-image1 wow animated fadeInRight" alt="">
+                        <img src="{{ asset('storage/'.$service->image) }}" class="service-images pq-image1 wow animated fadeInRight" alt="">
                     </div>
                 </div>
             </div>
+            @endif
+            <?php $Count++; ?>
+            @endforeach
         </div>
     </section>
     <!-- About Us -->

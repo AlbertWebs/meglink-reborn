@@ -7463,6 +7463,10 @@ Custom Css
     /* transparency:0.4; */
 }
 
+.service-images{
+    height:177px !important;
+    object-fit: cover;
+}
 
 
 @media (max-width: 767px) {

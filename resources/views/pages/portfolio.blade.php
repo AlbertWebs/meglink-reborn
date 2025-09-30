@@ -26,9 +26,9 @@
     </div>
     <!-- Breadcrumb -->
 
-        <section style="padding-bottom: 0" >
+    <section style="padding-bottom: 0" >
 
-        <div class="container-fluid">
+        <div class="container">
 
             {{--  --}}
             <div class="row align-items-center">
@@ -65,7 +65,7 @@
                 <div class="divider pq-right-border pq-45"></div>
             </div>
 
-            </div>
+        </div>
             {{--  --}}
 
         </div>
