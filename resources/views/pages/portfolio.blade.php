@@ -27,9 +27,7 @@
     <!-- Breadcrumb -->
 
     <section style="padding-bottom: 0" >
-
         <div class="container">
-
             {{--  --}}
             <div class="row align-items-center">
             <div class="col-lg-8 col-md-8 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
@@ -64,10 +62,8 @@
             <div class="col-lg-12">
                 <div class="divider pq-right-border pq-45"></div>
             </div>
-
         </div>
-            {{--  --}}
-
+        {{--  --}}
         </div>
     </section>
 
