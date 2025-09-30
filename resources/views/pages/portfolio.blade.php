@@ -26,46 +26,51 @@
     </div>
     <!-- Breadcrumb -->
 
-    <section style="padding-bottom: 0">
-        <div class="container">
-            {{--  --}}
-            <div class="row align-items-center">
-            <div class="col-lg-8 col-md-8 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
-                <div class="pq-section-title pq-style-1">
-                    <h2 class="headline-intro"  style="font-weight:900;">
-                        Our Portfolio
-                    </h2>
-                    <br>
+        <section style="padding-bottom: 0" >
 
-                    <p>
-                        {{--  --}}
-                            Our portfolio highlights our expertise in creating functional
-                            and stylish spaces. From residential to commercial projects,
-                            we deliver bespoke interiors that blend aesthetics with
-                            purpose, crafting environments that inspire and endure.
-                        {{--  --}}
-                    </p>
+            <div class="container">
+
+                {{--  --}}
+                <div class="row align-items-center">
+                <div class="col-lg-8 col-md-8 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="pq-section-title pq-style-1">
+                        <h2 class="headline-intro"  style="font-weight:900;">
+                            Our Portfolio
+                        </h2>
+                        <br>
+
+                        <p>
+                            {{--  --}}
+                                Our portfolio highlights our expertise in creating functional
+                                and stylish spaces. From residential to commercial projects,
+                                we deliver bespoke interiors that blend aesthetics with
+                                purpose, crafting environments that inspire and endure.
+                            {{--  --}}
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="button-align">
+                        <a class="pq-button pq-button-flat" href="{{route('services')}}">
+                            <div class="pq-button-block">
+                            <span class="pq-button-text">Browse Services </span>
+                            <span class="pq-button-line-right"></span>
+                            <i class="ion ion-ios-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="divider pq-right-border pq-45"></div>
+                </div>
 
                 </div>
+                {{--  --}}
+
             </div>
-            <div class="col-lg-4 col-md-4 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
-                <div class="button-align">
-                    <a class="pq-button pq-button-flat" href="{{route('services')}}">
-                        <div class="pq-button-block">
-                        <span class="pq-button-text">Browse Services </span>
-                        <span class="pq-button-line-right"></span>
-                        <i class="ion ion-ios-arrow-right"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="divider pq-right-border pq-45"></div>
-            </div>
-        </div>
-        {{--  --}}
-        </div>
-    </section>
+
+        </section>
 
        <!-- Masnory -->
     <section class="masonrys">
@@ -83,11 +88,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/1.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">indoor court</a></h5>
-                                            <span><a href="portfolio-single.html">Laminate</a></span>
+                                            <h5><a href="#">indoor court</a></h5>
+                                            <span><a href="#">Laminate</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
@@ -113,11 +118,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/2.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">Awesome Outdoor Project</a></h5>
-                                            <span><a href="portfolio-single.html">Laminate</a></span>
+                                            <h5><a href="#">Awesome Outdoor Project</a></h5>
+                                            <span><a href="#">Laminate</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
@@ -143,11 +148,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/3.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">kitchen renovation</a></h5>
-                                            <span><a href="portfolio-single.html">flooring</a></span>
+                                            <h5><a href="#">kitchen renovation</a></h5>
+                                            <span><a href="#">flooring</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
@@ -173,11 +178,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/4.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">Industrial Flooring</a></h5>
-                                            <span><a href="portfolio-single.html">flooring</a></span>
+                                            <h5><a href="#">Industrial Flooring</a></h5>
+                                            <span><a href="#">flooring</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
@@ -203,11 +208,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/5.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">eco-friendly-flooring</a></h5>
-                                            <span><a href="portfolio-single.html">marble</a></span>
+                                            <h5><a href="#">eco-friendly-flooring</a></h5>
+                                            <span><a href="#">marble</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg"><svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
                                                             <g transform="translate(-6.444 -1.74)">
@@ -232,11 +237,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/6.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">Laminate Flooring</a></h5>
-                                            <span><a href="portfolio-single.html">flooring</a></span>
+                                            <h5><a href="#">Laminate Flooring</a></h5>
+                                            <span><a href="#">flooring</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
@@ -262,11 +267,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/7.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">Bamboo flooring</a></h5>
-                                            <span><a href="portfolio-single.html">tiles</a></span>
+                                            <h5><a href="#">Bamboo flooring</a></h5>
+                                            <span><a href="#">tiles</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
@@ -292,11 +297,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/8.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">Stone Cladding</a></h5>
-                                            <span><a href="portfolio-single.html">flooring</a></span>
+                                            <h5><a href="#">Stone Cladding</a></h5>
+                                            <span><a href="#">flooring</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html"
+                                            <a href="#"
                                                 class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
@@ -323,11 +328,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/9.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">Ceramic Tiles</a></h5>
-                                            <span><a href="portfolio-single.html">Laminate</a></span>
+                                            <h5><a href="#">Ceramic Tiles</a></h5>
+                                            <span><a href="#">Laminate</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
@@ -353,11 +358,11 @@
                                             <img decoding="async" src="{{asset('html/images/gallery/10.jpg')}}" alt="">
                                         </div>
                                         <div class="pq-portfolio-info">
-                                            <h5><a href="portfolio-single.html">Wall Carpeting</a></h5>
-                                            <span><a href="portfolio-single.html">stone</a></span>
+                                            <h5><a href="#">Wall Carpeting</a></h5>
+                                            <span><a href="#">stone</a></span>
                                         </div>
                                         <div class="pq-btn-container">
-                                            <a href="portfolio-single.html" class="pq-button pq-button-link">
+                                            <a href="#" class="pq-button pq-button-link">
                                                 <div class="pq-button-block">
                                                     <div class="pq-svg">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
