@@ -26,51 +26,51 @@
     </div>
     <!-- Breadcrumb -->
 
-        <section style="padding-bottom: 0" >
+    <section style="padding-bottom: 0" >
 
-            <div class="container">
+        <div class="container">
 
-                {{--  --}}
-                <div class="row align-items-center">
-                <div class="col-lg-8 col-md-8 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
-                    <div class="pq-section-title pq-style-1">
-                        <h2 class="headline-intro"  style="font-weight:900;">
-                            Our Portfolio
-                        </h2>
-                        <br>
+            {{--  --}}
+            <div class="row align-items-center">
+            <div class="col-lg-8 col-md-8 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+                <div class="pq-section-title pq-style-1">
+                    <h2 class="headline-intro"  style="font-weight:900;">
+                        Our Portfolio
+                    </h2>
+                    <br>
 
-                        <p>
-                            {{--  --}}
-                                Our portfolio highlights our expertise in creating functional
-                                and stylish spaces. From residential to commercial projects,
-                                we deliver bespoke interiors that blend aesthetics with
-                                purpose, crafting environments that inspire and endure.
-                            {{--  --}}
-                        </p>
-
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
-                    <div class="button-align">
-                        <a class="pq-button pq-button-flat" href="{{route('services')}}">
-                            <div class="pq-button-block">
-                            <span class="pq-button-text">Browse Services </span>
-                            <span class="pq-button-line-right"></span>
-                            <i class="ion ion-ios-arrow-right"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="divider pq-right-border pq-45"></div>
-                </div>
+                    <p>
+                        {{--  --}}
+                            Our portfolio highlights our expertise in creating functional
+                            and stylish spaces. From residential to commercial projects,
+                            we deliver bespoke interiors that blend aesthetics with
+                            purpose, crafting environments that inspire and endure.
+                        {{--  --}}
+                    </p>
 
                 </div>
-                {{--  --}}
-
+            </div>
+            <div class="col-lg-4 col-md-4 wow  fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+                <div class="button-align">
+                    <a class="pq-button pq-button-flat" href="{{route('services')}}">
+                        <div class="pq-button-block">
+                        <span class="pq-button-text">Browse Services </span>
+                        <span class="pq-button-line-right"></span>
+                        <i class="ion ion-ios-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="divider pq-right-border pq-45"></div>
             </div>
 
-        </section>
+            </div>
+            {{--  --}}
+
+        </div>
+
+    </section>
 
        <!-- Masnory -->
     <section class="masonrys">
