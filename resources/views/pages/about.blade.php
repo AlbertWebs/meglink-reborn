@@ -82,7 +82,7 @@
             <div class="row">
                 <div class="col-xl-6">
                     <div class="about-us-img">
-                        <img src="{{asset('html/images/background-images/29ebc0_dc1c4b96292c44d6b5980861bb8d8a66~mv2.jpg')}}" class="pq-image1 wow animated fadeInLeft" alt="">
+                        <img src="{{asset('html/images/background-images/29ebc0_dc1c4b96292c44d6b5980861bb8d8a66mv2.jpg')}}" class="pq-image1 wow animated fadeInLeft" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6 pq-about-us-padding wow animated fadeInRight pq-about-bg-color">
