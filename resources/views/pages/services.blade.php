@@ -77,7 +77,7 @@
     {{--  --}}
 
      <!-- About Us -->
-    <section class="about-us .pq-about-bg-color" style="padding-bottom: 0">
+    <section class="about-us .pq-about-bg-color">
 
         <div class="container-fluid">
             <?php

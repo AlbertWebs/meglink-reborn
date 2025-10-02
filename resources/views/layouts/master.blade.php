@@ -27,25 +27,7 @@
     <meta property="twitter:description" content="Bespoke interior solutions across Kenya: kitchens, wardrobes, vanities, and more. Trusted quality from Meglink Ventures.">
     <meta property="twitter:image" content="https://meglinkventures.co.ke/public/images/og-banner.jpg"> <!-- same image -->
 
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Meglink Ventures Limited",
-    "url": "https://meglinkventures.co.ke/",
-    "logo": "https://meglinkventures.co.ke/public/images/logo.png",
-    "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+2547XXXXXXX",
-        "contactType": "Customer Service",
-        "areaServed": "KE"
-    },
-    "sameAs": [
-        "https://facebook.com/meglinkventures",
-        "https://instagram.com/meglinkventures"
-    ]
-    }
-    </script>
+
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('uploads/favicon.png')}}" type="image/x-icon">
