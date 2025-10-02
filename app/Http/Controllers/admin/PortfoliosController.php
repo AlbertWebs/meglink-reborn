@@ -7,6 +7,7 @@ use App\Models\PortfolioImage;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PortfoliosController extends Controller
 {
@@ -37,13 +38,27 @@ class PortfoliosController extends Controller
             'meta' => 'nullable|string',
         ]);
 
+        // Generate initial slug from title
+        $baseSlug = Str::slug($data['title'], '-');
+        $slug = $baseSlug;
+        $counter = 1;
+
+        // Ensure slug is unique
+        while (\App\Models\Portfolio::where('slung', $slug)->exists()) {
+            $slug = $baseSlug . '-' . $counter++;
+        }
+
+        $data['slung'] = $slug;
+
+        // Handle main image
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('portfolios', 'public');
         }
 
+        // Create portfolio with slug
         $portfolio = Portfolio::create($data);
 
-        // multiple images
+        // Handle multiple gallery images
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
                 $path = $img->store('portfolios/gallery', 'public');
@@ -51,7 +66,7 @@ class PortfoliosController extends Controller
             }
         }
 
-        return redirect()->route('admin.portfolio.index')->with('success','Portfolio saved.');
+        return redirect()->route('admin.portfolio.index')->with('success', 'Portfolio saved.');
     }
 
     public function edit(Portfolio $portfolio)
@@ -72,13 +87,35 @@ class PortfoliosController extends Controller
             'meta' => 'nullable|string',
         ]);
 
+        // Check if title changed, and regenerate slug only if needed
+        if ($data['title'] !== $portfolio->title) {
+            $baseSlug = Str::slug($data['title'], '-');
+            $slug = $baseSlug;
+            $counter = 1;
+
+            // Ensure unique slug excluding current portfolio
+            while (
+                \App\Models\Portfolio::where('slung', $slug)
+                ->where('id', '!=', $portfolio->id)
+                ->exists()
+            ) {
+                $slug = $baseSlug . '-' . $counter++;
+            }
+
+            $data['slung'] = $slug;
+        }
+
+        // Handle main image update
         if ($request->hasFile('image')) {
-            if ($portfolio->image) Storage::disk('public')->delete($portfolio->image);
+            if ($portfolio->image) {
+                Storage::disk('public')->delete($portfolio->image);
+            }
             $data['image'] = $request->file('image')->store('portfolios', 'public');
         }
 
         $portfolio->update($data);
 
+        // Handle additional gallery images
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
                 $path = $img->store('portfolios/gallery', 'public');
@@ -86,7 +123,7 @@ class PortfoliosController extends Controller
             }
         }
 
-        return redirect()->route('admin.portfolio.index')->with('success','Portfolio updated.');
+        return redirect()->route('admin.portfolio.index')->with('success', 'Portfolio updated.');
     }
 
     public function destroy(Portfolio $portfolio)

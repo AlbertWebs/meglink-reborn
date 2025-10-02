@@ -145,16 +145,59 @@
                                         </li>
 
 
+                                        <li class="menu-item @if($page == 'services') current-menu-item @endif menu-item-has-children">
+                                            <a href="{{route('services')}}" aria-current="page">What We Do</a><i
+                                                class="fa fa-chevron-down pq-submenu-icon"></i>
+                                            <?php $Service = \App\Models\Service::all(); ?>
+                                            <ul class="sub-menu">
+                                                @foreach ($Service as $service)
+                                                <li class="menu-item">
+                                                    <a href="{{route('services')}}/{{$service->slung}}" aria-current="page">{{$service->title}}</a>
+                                                </li>
+                                                @endforeach
 
-                                        <li class="menu-item @if($page == 'services') current-menu-item @endif">
-                                            <a href="{{route('services')}}" aria-current="page">What We Do</a>
+                                            </ul>
                                         </li>
-                                         <li class="menu-item @if($page == 'portfolio') current-menu-item @endif">
-                                            <a href="{{route('our-work')}}" aria-current="page">Our Work</a>
+
+                                        <li class="menu-item @if($page == 'portfolio') current-menu-item @endif menu-item-has-children">
+                                            <a href="{{route('our-work')}}">Our Work</a><i
+                                                class="fa fa-chevron-down pq-submenu-icon"></i>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item menu-item-has-children">
+                                                    <a href="#">Porfolio</a><i
+                                                        class="fa fa-chevron-down pq-submenu-icon"></i>
+                                                    <ul class="sub-menu">
+                                                        @foreach ($Service as $service)
+                                                        <li class="menu-item">
+                                                            <a href="{{ route('portfolio-service', $service->slung) }}" aria-current="page">{{$service->title}}</a>
+                                                        </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                                 <li class="menu-item @if($page == 'history') current-menu-item @endif">
+                                                    <a href="{{route('renders')}}">Renders</a>
+                                                </li>
+                                            </ul>
                                         </li>
-                                        <li class="menu-item @if($page == 'updates') current-menu-item @endif">
+
+                                        {{-- <li class="menu-item @if($page == 'portfolio'  || $page == 'portfolio') current-menu-item @endif menu-item-has-children">
+                                            <a href="{{route('our-work')}}" aria-current="page">Our Work</a><i
+                                                class="fa fa-chevron-down pq-submenu-icon"></i>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="{{route('our-work')}}" aria-current="page">Interiors</a>
+                                                </li>
+                                                <li class="menu-item @if($page == 'history') current-menu-item @endif">
+                                                    <a href="{{route('renders')}}">Renders</a>
+                                                </li>
+                                            </ul>
+                                        </li> --}}
+                                        <li class="menu-item @if($page == 'portfolio') current-menu-item @endif">
+                                            <a href="{{route('land-for-sale')}}" aria-current="page">Land For Sale</a>
+                                        </li>
+                                        {{-- <li class="menu-item @if($page == 'updates') current-menu-item @endif">
                                             <a href="{{route('trendy-updates')}}" aria-current="page">Trendy Updates</a>
-                                        </li>
+                                        </li> --}}
 
                                         <li class="menu-item @if($page == 'contact') current-menu-item @endif">
                                             <a href="{{route('contact')}}">Contact Us</a>

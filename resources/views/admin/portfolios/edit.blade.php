@@ -30,8 +30,11 @@
 
                 <div class="form-group">
                     <label>Content</label>
-                    <textarea name="content" class="form-control" rows="5">{{ $portfolio->content }}</textarea>
+                    <textarea name="content" class="form-control" id="content" rows="5">{{ $portfolio->content }}</textarea>
                 </div>
+
+
+
 
                 <div class="form-group">
                     <label>Meta</label>
@@ -53,7 +56,7 @@
                     <div class="mt-3 d-flex flex-wrap">
                         @foreach($portfolio->images as $img)
                             <div class="position-relative m-2">
-                                <img src="{{ asset('storage/'.$img->image_link) }}" width="100" style="border:1px solid #ddd;">
+                                <img style="width:200px; height:200px; object-fit:cover" src="{{ asset('storage/'.$img->image_link) }}" width="100" style="border:1px solid #ddd;">
                                 <form action="{{ route('portfolio-images.destroy', $img->id) }}" method="POST" class="position-absolute top-0 end-0">
                                     @csrf @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">x</button>
@@ -62,10 +65,30 @@
                         @endforeach
                     </div>
                 </div>
+                <br><br><br>
 
-                <button type="submit" class="btn btn-success">Update Portfolio</button>
+                <button type="submit" class="btn btn-success" style="cursor: pointer;">Update Portfolio</button>
+
                 <a href="{{ route('admin.portfolio.index') }}" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>
 @stop
+
+
+@section('js')
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#content'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+@stop
+
+<script>
+    document.querySelector('form').addEventListener('submit', function() {
+        console.log('Form submission working!');
+    });
+</script>

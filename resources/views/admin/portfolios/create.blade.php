@@ -5,7 +5,7 @@
 @section('content_header')
     <h1>Add New Portfolio</h1>
 @stop
-
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 @section('content')
     <div class="card">
         <div class="card-body">
@@ -29,8 +29,20 @@
 
                 <div class="form-group">
                     <label>Content</label>
-                    <textarea name="content" class="form-control" rows="5"></textarea>
+                    <textarea name="content" class="form-control" id="content" rows="5"></textarea>
                 </div>
+
+                {{--  --}}
+                <script>
+                    ClassicEditor
+                        .create(document.querySelector('#content'))
+                        .catch(error => {
+                            console.error(error);
+                        });
+                </script>
+
+                {{--  --}}
+
 
                 <div class="form-group">
                     <label>Meta</label>

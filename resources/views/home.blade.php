@@ -145,7 +145,7 @@
             <div class="row align-items-center">
                 <div class="col-xl-6 wow animated fadeInLeft">
                     <div class="pq-warehouse-img-overflow">
-                        <img style="border:1px solid #f37920" src="{{asset('uploads/home/why.jpg')}}" class="img-fluid w-100" alt="">
+                        <img src="{{asset('uploads/home/why.jpg')}}" class="img-fluid w-100" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6 mt-4 mt-xl-0 ps-xl-30 wow animated fadeInRight">

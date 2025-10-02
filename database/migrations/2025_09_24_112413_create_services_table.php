@@ -11,6 +11,7 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slung');
             $table->text('content')->nullable();
             $table->string('image')->nullable(); // stored path in storage/app/public/...
             $table->text('meta')->nullable(); // optional JSON meta (SEO etc)

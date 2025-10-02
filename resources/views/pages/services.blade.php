@@ -77,7 +77,7 @@
     {{--  --}}
 
      <!-- About Us -->
-    <section class="about-us .pq-about-bg-color">
+    <section class="about-us .pq-about-bg-color" style="padding-bottom: 0">
 
         <div class="container-fluid">
             <?php
@@ -112,7 +112,7 @@
                     </div>
 
                    <div class="d-flex justify-content-centers">
-                        <a class="pq-button pq-button-flat pq-btn-white pq-mb-35" href="{{route('our-work')}}">
+                        <a class="pq-button pq-button-flat pq-btn-white pq-mb-35" href="{{route('services')}}/{{$service->slung}}">
                             <div class="pq-button-block">
                                 <span class="pq-button-text">Learn More </span>
                                 <span class="pq-button-line-right"></span>
@@ -145,7 +145,7 @@
                     </div>
 
                     <div class="d-flex justify-content-centers">
-                        <a class="pq-button pq-button-flat pq-btn-white pq-mb-35" href="{{route('our-work')}}">
+                        <a class="pq-button pq-button-flat pq-btn-white pq-mb-35" href="{{route('services')}}/{{$service->slung}}">
                             <div class="pq-button-block">
                                 <span class="pq-button-text">Learn More </span>
                                 <span class="pq-button-line-right"></span>
