@@ -5,7 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meglink Ventures Limited</title>
+    <!-- Primary Meta Tags -->
+    <title>Meglink Ventures Limited – Interior Fit-Out & Finishing Experts in Kenya</title>
+    <meta name="title" content="Meglink Ventures Limited – Interior Fit-Out & Finishing Experts in Kenya">
+    <meta name="description" content="Meglink Ventures specializes in bespoke interior solutions including kitchens, wardrobes, vanities, gypsum work, office partitioning, and more. Quality craftsmanship for homes and commercial spaces.">
+    <meta name="keywords" content="Meglink Ventures, interior fit-out Kenya, kitchen cabinets Nairobi, wardrobes Kenya, vanities, gypsum, office partitioning, wall finishes, floor finishes, custom cabinetry, title work, interior doors, interior designers Kenya">
+    <meta name="author" content="Meglink Ventures Limited">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meglinkventures.co.ke/">
+    <meta property="og:title" content="Meglink Ventures Limited – Interior Fit-Out & Finishing Experts in Kenya">
+    <meta property="og:description" content="Transform your spaces with Meglink Ventures. Experts in kitchens, wardrobes, vanities, gypsum work, floor and wall finishes, and more.">
+    <meta property="og:image" content="https://meglinkventures.co.ke/public/images/og-banner.jpg"> <!-- replace with actual image path -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://meglinkventures.co.ke/">
+    <meta property="twitter:title" content="Meglink Ventures Limited – Interior Fit-Out & Finishing Experts in Kenya">
+    <meta property="twitter:description" content="Bespoke interior solutions across Kenya: kitchens, wardrobes, vanities, and more. Trusted quality from Meglink Ventures.">
+    <meta property="twitter:image" content="https://meglinkventures.co.ke/public/images/og-banner.jpg"> <!-- same image -->
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Meglink Ventures Limited",
+    "url": "https://meglinkventures.co.ke/",
+    "logo": "https://meglinkventures.co.ke/public/images/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+2547XXXXXXX",
+        "contactType": "Customer Service",
+        "areaServed": "KE"
+    },
+    "sameAs": [
+        "https://facebook.com/meglinkventures",
+        "https://instagram.com/meglinkventures"
+    ]
+    }
+    </script>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('uploads/favicon.png')}}" type="image/x-icon">
     <!-- Bootstrap -->
