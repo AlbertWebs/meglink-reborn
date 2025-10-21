@@ -67,7 +67,7 @@
     <!-- Loading -->
 
     <!-- Header -->
-    @include('components.header')
+    @include('components.header-2')
     <!-- Header -->
 
     @yield('content')
