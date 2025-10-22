@@ -299,52 +299,98 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
-        [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type' => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
-
-        // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
-        [
-            'text' => 'Dashboard',
-            'url' => 'admin',
-            'icon' => 'far fa-fw fa-dashboard',
-        ],
-        [
-            'text' => 'Go to Website',
-            'url' => '/',
-            'icon' => 'fas fa-fw fa-home',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-
-
-
+    // Navbar items:
+    [
+        'type' => 'navbar-search',
+        'text' => 'search',
+        'topnav_right' => true,
     ],
+    [
+        'type' => 'fullscreen-widget',
+        'topnav_right' => true,
+    ],
+
+    // Sidebar items:
+    [
+        'type' => 'sidebar-menu-search',
+        'text' => 'search',
+    ],
+
+    // Dashboard
+    [
+        'text' => 'Dashboard',
+        'url'  => 'admin',
+        'icon' => 'fas fa-tachometer-alt',
+    ],
+
+    // Website Management Section
+    ['header' => 'Website Management'],
+
+    [
+        'text' => 'Blog Posts',
+        'url'  => 'admin/blog',
+        'icon' => 'fas fa-blog',
+    ],
+    [
+        'text' => 'Portfolios',
+        'url'  => 'admin/portfolios',
+        'icon' => 'fas fa-briefcase',
+    ],
+    [
+        'text' => 'Services',
+        'url'  => 'admin/services',
+        'icon' => 'fas fa-cogs',
+    ],
+    [
+        'text' => 'Testimonials',
+        'url'  => 'admin/testimonials',
+        'icon' => 'fas fa-comments',
+    ],
+    [
+        'text' => 'Team',
+        'url'  => 'admin/team',
+        'icon' => 'fas fa-users',
+    ],
+    [
+        'text' => 'Lands for Sale',
+        'url'  => 'lands',
+        'icon' => 'fas fa-tree',
+    ],
+    [
+        'text' => 'Renders',
+        'url'  => 'renders',
+        'icon' => 'fas fa-image',
+    ],
+    [
+        'text' => 'Hero Slides',
+        'url'  => 'admin/slides',
+        'icon' => 'fas fa-sliders-h',
+    ],
+    [
+        'text' => 'Website Settings',
+        'url'  => 'admin/settings',
+        'icon' => 'fas fa-tools',
+    ],
+    [
+        'text' => 'Public Website',
+        'url'  => '/',
+        'icon' => 'fas fa-globe',
+        'target' => '_blank',
+    ],
+
+    // Account Management Section
+    ['header' => 'Account Settings'],
+    [
+        'text' => 'Profile',
+        'url'  => 'admin/settings',
+        'icon' => 'fas fa-user',
+    ],
+    [
+        'text' => 'Change Password',
+        'url'  => 'admin/settings',
+        'icon' => 'fas fa-lock',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------

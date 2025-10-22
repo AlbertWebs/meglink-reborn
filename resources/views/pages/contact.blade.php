@@ -1,31 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
+<section class="about-hero position-relative">
+  <!-- Background Image -->
+   <div class="about-hero-bg" style=" background-image: url('{{ asset('uploads/IMG-20250609-WA0018.jpg') }}');"></div>
 
- <!-- Breadcrumb -->
-    <div class="pq-breadcrumb">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <nav aria-label="breadcrumb">
-                        <div class="pq-breadcrumb-title">
-                            <h1>Contact Us</h1>
-                        </div>
-                        <div class="pq-breadcrumb-container">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="{{url('/')}}"><i class="fas fa-home me-2"></i>Home</a>
-                                </li>
-                                <li class="breadcrumb-item active">Contact Us</li>
-                            </ol>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb -->
+  <!-- Overlay -->
+  <div class="about-hero-overlay"></div>
 
+  <!-- Text Content -->
+  <div class="container position-relative about-hero-content">
+    <h1 class="about-title">
+      Contact Us
+      <span class="about-underline"></span>
+    </h1>
+  </div>
+</section>
 
       <!-- Contact Us -->
     <section class="contact-us pq-pb-80">

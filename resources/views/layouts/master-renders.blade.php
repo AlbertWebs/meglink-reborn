@@ -112,6 +112,39 @@
     <script src="{{asset('html/js/simplebar.min.js')}}"></script>
     <!-- Custom -->
     <script src="{{asset('html/js/custom.js')}}"></script>
+
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Magnific Popup JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- Magnific Popup CSS CDN (add in <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+    <!-- Your Popup Gallery Script -->
+    <script>
+    $(document).ready(function() {
+        console.log("Magnific Popup initialized ✅");
+
+        $('.popup-gallery').magnificPopup({
+            delegate: 'a', // child items selector
+            type: 'image',
+            gallery: {
+                enabled: true // enable gallery mode
+            },
+            mainClass: 'mfp-fade', // smooth fade transition
+            removalDelay: 300, // delay before popup disappears
+            zoom: {
+                enabled: true,
+                duration: 300 // zoom animation duration
+            }
+        });
+    });
+    </script>
+
+
 </body>
 
 </html>

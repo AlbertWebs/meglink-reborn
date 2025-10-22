@@ -1,8 +1,10 @@
 <!-- START: Fullscreen Hero Slider -->
 <section id="hero-banner" class="hero-slider">
-  <div class="slide active" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');"></div>
-  <div class="slide" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');"></div>
-  <div class="slide" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');"></div>
+    @foreach(\App\Models\Slide::where('is_active', true)->get() as $slide)
+  <div class="slide active" style="background-image: url('{{ asset('storage/' . $slide->image) }}');"></div>
+  @endforeach
+  {{-- <div class="slide" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');"></div>
+  <div class="slide" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');"></div> --}}
 
   <!-- Navigation -->
   <button class="nav prev">&#10094;</button>
@@ -11,6 +13,9 @@
   <!-- Dots -->
   <div class="dots"></div>
 </section>
+
+
+
 
 <style>
 /* --- Hero Slider Styles --- */

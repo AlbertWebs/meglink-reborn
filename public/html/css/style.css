@@ -2440,7 +2440,7 @@ header#pq-header.pq-header-default .pq-bottom-header .navbar .navbar-nav>li:hove
 
 header#pq-header.pq-header-default .pq-bottom-header .navbar .navbar-nav>li.current-menu-ancestor>a,
 header#pq-header.pq-header-default .pq-bottom-header .navbar .navbar-nav>li.current-menu-item>a {
-	color: var(--dark-color);
+	color: var(--primary-color);
 }
 
 header#pq-header.pq-header-default .pq-bottom-header .navbar .navbar-nav>li.current-menu-ancestor>a:before,
@@ -7580,12 +7580,12 @@ Custom Css
    ========================================================= */
 
 /* --- Base Font & Reset --- */
-body {
+/* body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #222;
   overflow-x: hidden;
-}
+} */
 
 /* --- Shared Button Styles --- */
 .btn-primary,
@@ -7680,7 +7680,7 @@ body {
 
 .image-grid-section {
   width: 100%;
-  padding: 60px 30px;
+  padding: 30px 30px;
   background-color: #fff;
 }
 
@@ -7778,3 +7778,440 @@ body {
     font-size: 0.95rem;
   }
 }
+
+
+/* --- Partners Section Styling --- */
+/* --- Partners Section Styling --- */
+.partners {
+  padding: 60px 0;
+}
+
+.partners .pq-awardbox-1 a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  height: 200px; /* Taller box for larger logos */
+}
+
+.partners .pq-awardbox-1 a:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+/* Larger, centered, and proportional logos */
+.partners .pq-awardbox-1 img {
+  max-width: 200px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partners .pq-awardbox-1 a:hover img {
+  transform: scale(1.08);
+}
+
+/* Partner title */
+.partners .pq-award-title {
+  margin-top: 12px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #444;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .partners .pq-awardbox-1 a {
+    height: 180px;
+    padding: 20px;
+  }
+
+  .partners .pq-awardbox-1 img {
+    max-width: 160px;
+    max-height: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+  .partners .pq-awardbox-1 a {
+    height: 160px;
+    padding: 15px;
+  }
+
+  .partners .pq-awardbox-1 img {
+    max-width: 130px;
+    max-height: 70px;
+  }
+
+  .partners .pq-award-title {
+    font-size: 13px;
+  }
+}
+
+/* --- Premium Land for Sale Section --- */
+.land-sale-section {
+  padding: 90px 0;
+  background-color: #f8f8f8;
+}
+
+.land-premium-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.land-premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.land-premium-image {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.land-premium-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.land-premium-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Dark gradient overlay for text readability */
+.land-gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+}
+
+/* Text overlay */
+.land-info {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  right: 25px;
+  color: #fff;
+  z-index: 2;
+}
+
+.land-info .land-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.land-info .land-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 8px;
+}
+
+.land-info .land-price {
+  display: inline-block;
+  background: #f37920;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 7px 14px;
+  border-radius: 30px;
+  border:2px solid #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .land-premium-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .land-premium-image {
+    height: 300px;
+  }
+
+  .land-info .land-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .land-premium-image {
+    height: 250px;
+  }
+
+  .land-info {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .land-info .land-title {
+    font-size: 16px;
+  }
+
+  .land-info .land-price {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+    background-color: #20b858;
+    transform: scale(1.05);
+}
+/* Renders */
+.renders-gallery {
+  background-color: #111;
+}
+
+.renders-gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.renders-gallery .gallery-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.renders-gallery .gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Always visible dark overlay */
+.renders-gallery .gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0,0,0,0.2));
+  color: #f37920;
+  padding: 20px;
+  text-align: center;
+  opacity: 1; /* Always visible */
+  transition: background 0.4s ease;
+}
+
+.renders-gallery .gallery-item:hover .gallery-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0,0,0,0.4));
+}
+
+.renders-gallery .gallery-overlay h5 {
+  color: #f37920;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.gallery-item a {
+  display: block;
+}
+
+.gallery-item img {
+  cursor: zoom-in;
+}
+
+
+ .about-content-section {
+    background-color: #fff;
+  }
+
+  .about-image img {
+    border-radius: 12px;
+    width: 100%;
+    min-height: 580px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .about-text h2 {
+    color: #000;
+    font-size: 2rem;
+  }
+
+  .orange-divider {
+    width: 80px;
+    height: 5px;
+    background-color: #f37920;
+    border-radius: 5px;
+  }
+
+  .btn-orange {
+    background-color: #f37920;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 10px 25px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .btn-orange:hover {
+    background-color: #d8681d;
+    color: #fff;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .about-text {
+      text-align: center;
+    }
+
+    .orange-divider {
+      margin: 0 auto 20px auto;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .about-text h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+
+    .about-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .about-hero-bg {
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+
+  .about-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    padding-top: 120px;
+    padding-right: 80px;
+  }
+
+  .about-title {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    position: relative;
+    padding-right: 120px;
+  }
+
+  .about-underline {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 6px;
+    background-color: #f37920;
+    border-radius: 4px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .about-hero {
+      height: 80vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-hero-content {
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .about-title {
+      font-size: 2.8rem;
+      padding-right: 0;
+    }
+
+    .about-underline {
+      position: static;
+      display: block;
+      width: 80px;
+      height: 5px;
+      margin: 12px auto 0 auto;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .about-hero {
+      height: 70vh;
+    }
+
+    .about-title {
+      font-size: 2.2rem;
+    }
+
+    .about-underline {
+      width: 60px;
+      height: 4px;
+    }
+  }

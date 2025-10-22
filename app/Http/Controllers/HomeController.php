@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Service; // Make sure this matches your actual model path
 use App\Models\Portfolio;
+use App\Models\Team;
+
+use App\Models\Render;
+
+use App\Models\Land;
 
 class HomeController extends Controller
 {
@@ -17,7 +22,8 @@ class HomeController extends Controller
 
     public function portfolio(){
         $page = 'portfolio';
-        return view('pages.portfolio', compact('page'));
+        $Portfolio = Portfolio::all();
+        return view('pages.portfolio', compact('page','Portfolio'));
     }
 
     public function services(){
@@ -25,10 +31,17 @@ class HomeController extends Controller
         return view('pages.services', compact('page'));
     }
 
+    public function service($slung){
+        $page = 'services';
+        $service = Service::where('slung', $slung)->firstOrFail();
+        return view('pages.service', compact('page','service'));
+    }
+
      public function about()
     {
         $page = 'about';
-        return view('pages.about', compact('page'));
+        $teams = Team::all();
+        return view('pages.about', compact('page','teams'));
     }
 
      public function contact()
@@ -53,7 +66,8 @@ class HomeController extends Controller
     public function renders()
     {
         $page = 'Renders';
-        return view('pages.renders', compact('page'));
+        $renders = Render::latest()->get();
+        return view('pages.renders', compact('renders','page'));
     }
 
  public function update_slung()
@@ -116,12 +130,16 @@ class HomeController extends Controller
             'service' => $service,
             'portfolios' => $portfolios,
             'Service' => $allServices,
-            'page' => 'services', // for menu highlighting
+            'page' => 'portfolio', // for menu highlighting
         ]);
     }
     public function land()
     {
-       $page = 'land-for-sale';
-       return view('pages.land-for-sale', compact('page'));
+        $page = 'land';
+
+       $landsForSale = Land::where('type', 'sale')->latest()->take(4)->get();
+       $jointVentures = Land::where('type', 'joint_venture')->latest()->take(4)->get();
+
+       return view('pages.land-for-sale', compact('landsForSale', 'jointVentures','page'));
     }
 }

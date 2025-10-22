@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\PortfolioImageController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\LandController;
+use App\Http\Controllers\RenderController;
 
 
 
@@ -36,9 +38,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
+      Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class)->names('admin.teams');
     Route::resource('services', ServiceController::class)->names('admin.services');
     Route::resource('blogs', BlogController::class)->names('admin.blog');
     Route::resource('testimonials', TestimonialController::class)->names('admin.testimonials');
+    Route::resource('slides', \App\Http\Controllers\SlideController::class)->names('admin.slides');
+
+
     Route::resource('portfolios', PortfoliosController::class)->names('admin.portfolio');
     Route::delete('portfolio-images/{image}', [PortfoliosController::class,'destroyImage'])->name('portfolio-images.destroy');
 
@@ -46,6 +52,24 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('settings', [SettingController::class, 'update'])->name('admin.settings.update');
 
     Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
+
+    Route::prefix('lands')->group(function () {
+        Route::get('/', [LandController::class, 'index'])->name('lands.index');
+        Route::get('/create', [LandController::class, 'create'])->name('lands.create');
+        Route::post('/store', [LandController::class, 'store'])->name('lands.store');
+        Route::get('/{land}', [LandController::class, 'show'])->name('lands.show');
+        Route::get('/{land}/edit', [LandController::class, 'edit'])->name('lands.edit');
+        Route::put('/{land}', [LandController::class, 'update'])->name('lands.update');
+        Route::delete('/{land}', [LandController::class, 'destroy'])->name('lands.destroy');
+    });
+    Route::prefix('renders')->group(function () {
+        Route::get('/', [RenderController::class, 'index'])->name('renders.index');
+        Route::get('/create', [RenderController::class, 'create'])->name('renders.create');
+        Route::post('/', [RenderController::class, 'store'])->name('renders.store');
+        Route::get('/{render}/edit', [App\Http\Controllers\RenderController::class, 'edit'])->name('renders.edit');
+        Route::put('/{render}', [App\Http\Controllers\RenderController::class, 'update'])->name('renders.update');
+        Route::delete('/{render}', [App\Http\Controllers\RenderController::class, 'destroy'])->name('renders.destroy');
+    });
 });
 
 Route::middleware(['auth', 'is_admin'])->group(function () {

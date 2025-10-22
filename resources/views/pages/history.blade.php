@@ -3,29 +3,21 @@
 @section('content')
  <!-- Timeline -->
 
-    <!-- Breadcrumb -->
-    <div class="pq-breadcrumb">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <nav aria-label="breadcrumb">
-                        <div class="pq-breadcrumb-title">
-                            <h1>How We Got Here</h1>
-                        </div>
-                        <div class="pq-breadcrumb-container">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="{{url('/')}}"><i class="fas fa-home me-2"></i>Home</a>
-                                </li>
-                                <li class="breadcrumb-item active">How We Got Here</li>
-                            </ol>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+    <section class="about-hero position-relative">
+        <!-- Background Image -->
+        <div class="about-hero-bg" style=" background-image: url('{{ asset('uploads/IMG-20250612-WA0016.jpg') }}');"></div>
+
+        <!-- Overlay -->
+        <div class="about-hero-overlay"></div>
+
+        <!-- Text Content -->
+        <div class="container position-relative about-hero-content">
+            <h1 class="about-title">
+                Our History
+                <span class="about-underline"></span>
+            </h1>
         </div>
-    </div>
-    <!-- Breadcrumb -->
+    </section>
 
     <!-- Timeline -->
     <section class="history">

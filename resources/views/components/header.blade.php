@@ -7,7 +7,7 @@
         </div>
         <div class="pq-sidebar-block mCustomScrollbar" data-simplebar>
             <div class="pq-sidebar-header">
-                <img src="{{asset('uploads/logo.png')}}" class="pq-sidebar-logo" alt="Meglink-sidebar-logo">
+                <img src="{{asset('uploads/logos.png')}}" class="pq-sidebar-logo" alt="Meglink-sidebar-logo">
             </div>
             {{-- <div class="pq-sidebar-content">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. search for will uncover

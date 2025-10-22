@@ -25,7 +25,7 @@
 </section>
 
 <!-- START: Full Width Statement Section -->
-<section class="statement-section wow fadeInUp" data-wow-duration="1.2s" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');">
+<section class="statement-section wow fadeInUp" data-wow-duration="1.2s" style="background-image: url('{{ asset('uploads/palour.jpg') }}');">
   <div class="statement-overlay">
     <div class="statement-content">
       <h2 class="wow fadeInDown" data-wow-delay="0.4s">Creating Timeless Spaces That Inspire</h2>
@@ -40,7 +40,7 @@
 <section class="image-grid-section" id="services">
   <div class="image-grid">
     <!-- Item 1 -->
-    <div class="image-item wow fadeInUp" data-wow-delay="0.2s" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');">
+    <div class="image-item wow fadeInUp" data-wow-delay="0.2s" style="background-image: url('{{ asset('uploads/living.jpg') }}');">
       <div class="overlay"></div>
       <div class="content">
         <h3>Living Room Designs</h3>
@@ -58,7 +58,7 @@
     </div>
 
     <!-- Item 3 -->
-    <div class="image-item wow fadeInUp" data-wow-delay="0.6s" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');">
+    <div class="image-item wow fadeInUp" data-wow-delay="0.6s" style="background-image: url('{{ asset('uploads/bedroom.jpg') }}');">
       <div class="overlay"></div>
       <div class="content">
         <h3>Bedroom Spaces</h3>
@@ -67,80 +67,110 @@
     </div>
 
     <!-- Item 4 -->
-    <div class="image-item wow fadeInUp" data-wow-delay="0.8s" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');">
+    <div class="image-item wow fadeInUp" data-wow-delay="0.8s" style="background-image: url('{{ asset('uploads/outdoor.jpg') }}');">
       <div class="overlay"></div>
       <div class="content">
         <h3>Outdoor Inspirations</h3>
         <a href="#" class="btn-explore">Explore Collection</a>
       </div>
     </div>
+
+      <!-- Item 5 -->
+    <div class="image-item wow fadeInUp" data-wow-delay="0.6s" style="background-image: url('{{ asset('uploads/staircases.jpg') }}');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h3>Premium Staircases</h3>
+        <a href="#" class="btn-explore">Explore Collection</a>
+      </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="image-item wow fadeInUp" data-wow-delay="0.8s" style="background-image: url('{{ asset('uploads/wardrobes.jpg') }}');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h3>Wardrobes</h3>
+        <a href="#" class="btn-explore">Explore Collection</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- START: Centered Statement Section -->
-<section class="statement-section-center wow fadeIn" data-wow-duration="1.2s" style="background-image: url('{{ asset('html/images/background-Images/board_4227759_97d4b027.png') }}');">
+<!-- START: Renders Section -->
+<section class="statement-section-center wow fadeIn" data-wow-duration="1.2s" style="background-image: url('{{ asset('uploads/Renders-interiores-scaled.webp') }}');">
   <div class="statement-overlay-center">
     <div class="statement-content-center wow fadeInUp" data-wow-delay="0.4s">
       <h1 class="italized">Interior Design Consulting & Contracting</h1>
-      <h2>Creating Timeless Spaces That Inspire</h2>
-      <a href="#collection" class="statement-btn wow fadeInLeft" data-wow-delay="0.8s">
+      <h2>Designing Experiences That Endure</h2>
+      <a href="{{url('/')}}/renders" class="statement-btn wow fadeInLeft" data-wow-delay="0.8s">
         Explore Renders &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
       </a>
-      <a href="#collection" class="statement-btn wow fadeInRight" data-wow-delay="1s">
+      <a href="{{url('/')}}/contact-us" class="statement-btn wow fadeInRight" data-wow-delay="1s">
         Request Consultation &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Client Section -->
-<section class="our-client wow fadeInUp" data-wow-duration="1.2s">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-8 col-md-8 wow fadeInLeft" data-wow-delay="0.3s">
-        <div class="pq-section-title pq-style-1">
-          <span class="pq-section-sub-title">Our Partners</span>
-          <h5 class="pq-section-main-title">Backed By The Best</h5>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 wow fadeInRight" data-wow-delay="0.4s">
-        <div class="button-align">
-          <a class="pq-button pq-button-flat" href="#">
-            <div class="pq-button-block">
-              <span class="pq-button-text">view more collaborators</span>
-              <span class="pq-button-line-right"></span>
-              <i class="ion ion-ios-arrow-right"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="divider pq-right-border pq-45 wow fadeIn" data-wow-delay="0.5s"></div>
 
-    <div class="row align-items-center">
-      @foreach (['drenla-logo-tp.png','Edition 1-01.png','twyford.jpg','Noble-logo.png','Mothokinju.png','impala.png','cropped-logo.jpeg'] as $index => $logo)
-      <div class="col-lg-3 col-md-6 p-0 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.2) }}s">
-        <div class="pq-client-box pq-client-style-2">
-          <div class="pq-client-grid">
-            <a>
-              <img decoding="async" src="{{asset('html/images/client/'.$logo)}}" alt="client logo" class="pq-client-img">
-              <img decoding="async" src="{{asset('html/images/client/'.$logo)}}" alt="client hover logo" class="pq-client-hover-img">
-            </a>
-          </div>
+
+<!-- Partners -->
+<section class="partners">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Title Section -->
+            <div class="col-lg-12 col-md-12 wow animated fadeInRight" style="text-align: center">
+                <div class="pq-section-title pq-style-1">
+                    <span class="pq-section-sub-title">our partners</span>
+                    <h5 class="pq-section-main-title" style="font-weight:900">backed by the best</h5>
+                    <br><br>
+                </div>
+            </div>
+            <!-- Right Button Section -->
+
+
+
+            <!-- Partners Slider -->
+            <div class="col-lg-12 wow animated fadeInLeft">
+                <div class="pq-awardbox-1-slider pq-awardbox-1">
+                    <div class="owl-carousel owl-loaded owl-drag"
+                        data-dots="true"
+                        data-nav="false"
+                        data-desk_num="4"
+                        data-lap_num="3"
+                        data-tab_num="2"
+                        data-mob_num="1"
+                        data-mob_sm="1"
+                        data-autoplay="true"
+                        data-loop="true"
+                        data-margin="30">
+
+                        @foreach (['Edition 1-01.png','twyford.jpg','Noble-logo.png','Mothokinju.png','impala.png','cropped-logo.jpeg'] as $logo)
+                        <div class="item">
+                            <div class="pq-awardbox-1">
+                                <a>
+                                    <img decoding="async" src="{{asset('html/images/client/'.$logo)}}" alt="client logo">
+                                    {{-- <span class="pq-award-title">trusted partner</span> --}}
+                                </a>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      @endforeach
     </div>
-  </div>
 </section>
+<!-- Partners -->
+
 
 <!-- END: Final Statement Section -->
-<section class="statement-section wow fadeInUp" data-wow-delay="0.3s" style="background-image: url('{{ asset('uploads/portfolio.jpg') }}');">
+<section class="statement-section wow fadeInUp" data-wow-delay="0.3s" style="background-image: url('{{ asset('uploads/joint-ventures.jpg') }}');">
   <div class="statement-overlay">
     <div class="statement-content wow fadeIn" data-wow-delay="0.6s">
-      <h2>Our Creative Vault</h2>
-      <a href="#collection" class="statement-btn wow fadeInUp" data-wow-delay="0.9s">
-        Explore Portfolio &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
+      <h2>Joint Ventures Vault</h2>
+      <a href="{{url('/')}}/land-for-sale" class="statement-btn wow fadeInUp" data-wow-delay="0.9s">
+        Explore Land Portfolio &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
       </a>
     </div>
   </div>

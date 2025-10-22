@@ -1,5 +1,48 @@
 
  <header id="pq-header" class="pq-header-default pq-has-sticky ">
+    <div class="pq-top-header  top-style-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pq-top-right">
+                            <div class="pq-header-time">
+                                <ul>
+                                    <li>
+                                        <i class="ti-timer"></i>
+                                        <span>Mon to Fri 9:00 am to 6:00pm</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pq-header-social">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <div class="pq-header-contact text-right">
+                            <ul>
+                                <li>
+                                    <a href="tel:+1800001658"><i class="fas fa-phone"></i>
+                                        <span> +2547 23 000 000</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@meglinkvenures.co.ke">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>info@meglinkvenures.co.ke</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="pq-bottom-header">
             <div class="container">
                 <div class="row">
@@ -24,7 +67,7 @@
                                                 class="fa fa-chevron-down pq-submenu-icon"></i>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
-                                                    <a href="{{route('team')}}" aria-current="page">Meet Our Team</a>
+                                                    <a href="{{route('about')}}/#team" aria-current="page">Meet Our Team</a>
                                                 </li>
                                                 <li class="menu-item @if($page == 'history') current-menu-item @endif">
                                                     <a href="{{route('history')}}">Our History</a>
@@ -95,7 +138,7 @@
                                 </div>
                             </div>
                             <div class="pq-btn-container">
-                                <a href="contact-us.html" class="pq-button pq-button-flat">
+                                <a href="{{route('contact')}}" class="pq-button pq-button-flat">
                                     <div class="pq-button-block">
                                         <span class="pq-button-text">Get Quote</span>
                                         <span class="pq-button-line-right"></span>
