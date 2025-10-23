@@ -16,8 +16,9 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $teams = Team::all();
         $page = 'home';
-        return view('home', compact('page'));
+        return view('home', compact('page','teams'));
     }
 
     public function portfolio(){

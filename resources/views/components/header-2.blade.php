@@ -90,25 +90,23 @@
                                             </ul>
                                         </li>
 
+
+
                                         <li class="menu-item @if($page == 'portfolio') current-menu-item @endif menu-item-has-children">
                                             <a href="{{route('our-work')}}">Our Work</a><i
                                                 class="fa fa-chevron-down pq-submenu-icon"></i>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item menu-item-has-children">
-                                                    <a href="#">Porfolio</a><i
-                                                        class="fa fa-chevron-down pq-submenu-icon"></i>
-                                                    <ul class="sub-menu">
+                                                <ul class="sub-menu">
                                                         @foreach ($Service as $service)
                                                         <li class="menu-item">
                                                             <a href="{{ route('portfolio-service', $service->slung) }}" aria-current="page">{{$service->title}}</a>
                                                         </li>
                                                         @endforeach
                                                     </ul>
-                                                </li>
-                                                 <li class="menu-item @if($page == 'history') current-menu-item @endif">
-                                                    <a href="{{route('renders')}}">Renders</a>
-                                                </li>
-                                            </ul>
+
+                                        </li>
+
+                                           <li class="menu-item @if($page == 'portfolio') current-menu-item @endif">
+                                            <a href="{{route('renders')}}">Design Renders</a>
                                         </li>
 
                                         {{-- <li class="menu-item @if($page == 'portfolio'  || $page == 'portfolio') current-menu-item @endif menu-item-has-children">

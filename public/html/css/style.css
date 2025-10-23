@@ -8274,19 +8274,19 @@ Custom Css
     font-size: 1.4rem;
   }
   .intro-btn{
-     padding: 6px 12px; /* Adjust button padding */
-    font-size: 0.6rem; /* Slightly smaller font */
+     padding: 7px 13px; /* Adjust button padding */
+    font-size: 0.8rem; /* Slightly smaller font */
     display: inline-block; /* Ensure proper button display */
   }
   .btn-explore{
-    padding: 6px 12px; /* Adjust button padding */
-    font-size: 0.6rem; /* Slightly smaller font */
+    padding: 7px 13px; /* Adjust button padding */
+    font-size: 0.8rem; /* Slightly smaller font */
     display: inline-block; /* Ensure proper button display */
   }
   /* Button adjustments for mobile */
   .statement-btn {
-    padding: 6px 12px; /* Adjust button padding */
-    font-size: 0.6rem; /* Slightly smaller font */
+    padding: 7px 13px; /* Adjust button padding */
+    font-size: 0.8rem; /* Slightly smaller font */
     display: inline-block; /* Ensure proper button display */
   }
 }
@@ -8323,6 +8323,7 @@ Custom Css
     padding: 10px 20px;
     font-size: 0.85rem;
   }
+
 }
 .whatsapp-float{
     display:none;
