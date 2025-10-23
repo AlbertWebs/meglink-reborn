@@ -7674,6 +7674,9 @@ Custom Css
   margin-bottom: 10px;
 }
 
+/*  */
+
+
 /* =========================================================
    IMAGE GRID SECTION
    ========================================================= */
@@ -8215,3 +8218,123 @@ Custom Css
       height: 4px;
     }
   }
+
+  /* =========================================================
+   STATEMENT SECTIONS - MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .statement-section,
+  .statement-section-center {
+    height: 60vh; /* Reduced height for mobile */
+    min-height: 400px; /* Minimum height to ensure content fits */
+  }
+
+  .statement-overlay,
+  .statement-overlay-center {
+    padding: 30px 20px; /* Reduced padding for mobile */
+    align-items: center; /* Center content vertically on mobile */
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3)); /* Darker overlay for better text readability */
+  }
+
+  /* --- Mobile: Center Aligned Version --- */
+  .statement-content {
+    position: relative; /* Change from absolute to relative */
+    right: auto; /* Remove right positioning */
+    bottom: auto; /* Remove bottom positioning */
+    text-align: center; /* Center align text on mobile */
+    max-width: 100%; /* Full width on mobile */
+    padding: 0 20px; /* Add side padding */
+  }
+
+  .statement-content h2,
+  .statement-content-center h2 {
+    font-size: 1.4rem; /* Smaller font size for mobile */
+    font-weight: 700; /* Slightly reduced weight */
+    margin-bottom: 15px; /* Reduced margin */
+    line-height: 1.2; /* Tighter line height */
+  }
+
+  /* --- Center-Bottom Version Mobile --- */
+  .statement-content-center {
+    max-width: 100%; /* Full width on mobile */
+    padding: 0 20px; /* Add side padding */
+  }
+
+  .statement-section-center .statement-overlay-center {
+    align-items: center; /* Center align on mobile */
+  }
+
+  .statement-content-center h1.italized {
+    font-size: 1.4rem; /* Adjust font size for mobile */
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  .content h3{
+    font-size: 1.4rem;
+  }
+  .intro-btn{
+     padding: 6px 12px; /* Adjust button padding */
+    font-size: 0.6rem; /* Slightly smaller font */
+    display: inline-block; /* Ensure proper button display */
+  }
+  .btn-explore{
+    padding: 6px 12px; /* Adjust button padding */
+    font-size: 0.6rem; /* Slightly smaller font */
+    display: inline-block; /* Ensure proper button display */
+  }
+  /* Button adjustments for mobile */
+  .statement-btn {
+    padding: 6px 12px; /* Adjust button padding */
+    font-size: 0.6rem; /* Slightly smaller font */
+    display: inline-block; /* Ensure proper button display */
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+  .statement-section,
+  .statement-section-center {
+    height: 50vh; /* Even smaller height for very small screens */
+    min-height: 350px;
+  }
+
+  .statement-content h2,
+  .statement-content-center h2 {
+    font-size: 1.5rem; /* Even smaller font size */
+    margin-bottom: 12px;
+  }
+
+  .statement-content-center h1.italized {
+    font-size: 1.7rem;
+  }
+
+  .statement-overlay,
+  .statement-overlay-center {
+    padding: 20px 15px;
+  }
+
+  .statement-content,
+  .statement-content-center {
+    padding: 0 15px;
+  }
+
+  .statement-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
+.whatsapp-float{
+    display:none;
+}
+
+/* Ensure Wow.js animations work properly on mobile */
+@media (max-width: 768px) {
+  .wow {
+    animation-duration: 0.8s !important; /* Slightly faster animations on mobile */
+  }
+
+  .wow[data-wow-delay] {
+    animation-delay: 0.2s !important; /* Reduced delays on mobile */
+  }
+}
