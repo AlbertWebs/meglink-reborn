@@ -121,7 +121,7 @@
                                                 </li>
                                             </ul>
                                         </li> --}}
-                                        <li class="menu-item @if($page == 'portfolio') current-menu-item @endif">
+                                        <li class="menu-item @if($page == 'land') current-menu-item @endif">
                                             <a href="{{route('land-for-sale')}}" aria-current="page">Land For Sale</a>
                                         </li>
                                         {{-- <li class="menu-item @if($page == 'updates') current-menu-item @endif">
