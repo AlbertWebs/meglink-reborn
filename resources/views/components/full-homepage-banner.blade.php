@@ -351,36 +351,22 @@
 
     <!-- START: Fullscreen Hero Slider -->
     <section id="hero-banner" class="hero-slider">
-        <!-- Sample slides for demonstration -->
-        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1758&q=80');">
-            <div class="slide-content">
-                <div class="text-container">
-                    <h1 class="slide-title">Crafting Timeless Designs for Modern Living</h1>
-                    <p class="slide-description">Experience the perfect blend of elegance and functionality in every piece we create.</p>
-                    <a href="#" class="slide-btn">Explore Collection</a>
-                </div>
-            </div>
-        </div>
+        @php
+            $slides = \App\Models\Slide::where('is_active', true)->get();
+        @endphp
 
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');">
+        @foreach($slides as $index => $slide)
+        <div class="slide {{ $index === 0 ? 'active' : '' }}"
+            style="background-image: url('{{ asset('storage/' . $slide->image) }}');">
             <div class="slide-content">
                 <div class="text-container">
-                    <h1 class="slide-title">Elevate Your Space with Premium Craftsmanship</h1>
-                    <p class="slide-description">Transform your home with our exclusive collection of handcrafted furniture.</p>
-                    <a href="#" class="slide-btn">View Gallery</a>
+                    <h1 class="slide-title">{{ $slide->title ?? 'Meglink Ventures' }}</h1>
+                    <p class="slide-description">{{ $slide->subtitle ?? 'We Create Timeless Interiors for Modern Living' }}</p>
+                    <a href="#about" class="slide-btn">Explore More</a>
                 </div>
             </div>
         </div>
-
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');">
-            <div class="slide-content">
-                <div class="text-container">
-                    <h1 class="slide-title">Where Comfort Meets Contemporary Style</h1>
-                    <p class="slide-description">Discover furniture that complements your lifestyle and enhances your daily comfort.</p>
-                    <a href="#" class="slide-btn">Learn More</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
 
         <!-- Navigation -->
         <button class="nav prev hero-nav">&#10094;</button>
@@ -389,6 +375,7 @@
         <!-- Dots -->
         <div class="dots"></div>
     </section>
+
 
     <script>
         // --- Hero Slider Script ---
