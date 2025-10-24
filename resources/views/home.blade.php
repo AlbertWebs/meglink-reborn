@@ -5,8 +5,31 @@
     <!-- Banner -->
     @include('components.full-homepage-banner')
     <!-- Banner -->
+
+<style>
+    /* Zoom Scroll Animation Styles */
+    .zoom-scroll-section {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .zoom-scroll-section.zoom-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Staggered animation delays for multiple sections */
+    .zoom-scroll-section:nth-child(1) { transition-delay: 0.1s; }
+    .zoom-scroll-section:nth-child(2) { transition-delay: 0.2s; }
+    .zoom-scroll-section:nth-child(3) { transition-delay: 0.3s; }
+    .zoom-scroll-section:nth-child(4) { transition-delay: 0.4s; }
+    .zoom-scroll-section:nth-child(5) { transition-delay: 0.5s; }
+    .zoom-scroll-section:nth-child(6) { transition-delay: 0.6s; }
+</style>
+
 <!-- START: Intro Section -->
-<section class="intro-section">
+<section class="intro-section zoom-scroll-section">
   <div class="intro-container">
     <div class="intro-text">
       <h2 style="color:#f37920; font-weight:900">Meglink Ventures</h2>
@@ -24,7 +47,7 @@
 </section>
 
 <!-- START: Full Width Statement Section -->
-<section class="statement-section" style="background-image: url('{{ asset('uploads/palour.jpg') }}');">
+<section class="statement-section zoom-scroll-section" style="background-image: url('{{ asset('uploads/palour.jpg') }}');">
   <div class="statement-overlay">
     <div class="statement-content">
       <h2>Creating Timeless Spaces That Inspire</h2>
@@ -36,7 +59,7 @@
 </section>
 
 <!-- START: Image Grid Section -->
-<section class="image-grid-section" id="services">
+<section class="image-grid-section zoom-scroll-section" id="services">
   <div class="image-grid">
     <!-- Item 1 -->
     <div class="image-item" style="background-image: url('{{ asset('uploads/living.jpg') }}');">
@@ -95,7 +118,7 @@
 </section>
 
 <!-- START: Renders Section -->
-<section class="statement-section-center" style="background-image: url('{{ asset('uploads/Renders-interiores-scaled.webp') }}');">
+<section class="statement-section-center zoom-scroll-section" style="background-image: url('{{ asset('uploads/Renders-interiores-scaled.webp') }}');">
   <div class="statement-overlay-center">
     <div class="statement-content-center">
       <h1 class="italized">Interior Design Consulting & Contracting</h1>
@@ -113,7 +136,7 @@
 
 
 <!-- Partners -->
- <section class="team" id="team">
+ <section class="team zoom-scroll-section" id="team">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-8 wow animated fadeInRight">
@@ -173,7 +196,7 @@
 
 
 <!-- END: Final Statement Section -->
-<section class="statement-section" style="background-image: url('{{ asset('uploads/joint-ventures.jpg') }}');">
+<section class="statement-section zoom-scroll-section" style="background-image: url('{{ asset('uploads/joint-ventures.jpg') }}');">
   <div class="statement-overlay">
     <div class="statement-content">
       <h2>Joint Ventures Vault</h2>
@@ -187,7 +210,7 @@
 
 
 <!-- Award -->
-<section class="award pq-bg-grey">
+<section class="award pq-bg-grey zoom-scroll-section">
     <div class="container">
         <div class="row">
             <div class="col-xl-4">
@@ -308,12 +331,12 @@
                                 </div>
                                 <div class="pq-service-description">
                                     <p>
-                                        It’s in everything we do.
+                                        It's in everything we do.
                                         We collaborate within
                                         our team, with our
                                         clients, and with all of
                                         our and suppliers.
-                                        Everybody’s ideas
+                                        Everybody's ideas
                                         count. Everybody has a
                                         voice.
                                     </p>
@@ -352,4 +375,73 @@
     </div>
 </section>
 <!-- Award -->
+
+<script>
+    // Zoom Scroll Animation JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        const zoomSections = document.querySelectorAll('.zoom-scroll-section');
+
+        // Create Intersection Observer
+        const zoomObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('zoom-visible');
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+        });
+
+        // Observe each section
+        zoomSections.forEach(section => {
+            zoomObserver.observe(section);
+        });
+
+        // Optional: Add scroll velocity-based zoom (more dramatic effect)
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateZoomOnScroll() {
+            const currentScrollY = window.scrollY;
+            const scrollDelta = currentScrollY - lastScrollY;
+
+            zoomSections.forEach(section => {
+                if (section.classList.contains('zoom-visible')) {
+                    // Subtle scale effect based on scroll velocity
+                    const scale = 1 + Math.min(Math.abs(scrollDelta) * 0.0005, 0.05);
+                    section.style.transform = `scale(${scale})`;
+
+                    // Reset after a short delay
+                    setTimeout(() => {
+                        if (section.classList.contains('zoom-visible')) {
+                            section.style.transform = 'scale(1)';
+                        }
+                    }, 100);
+                }
+            });
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateZoomOnScroll);
+                ticking = true;
+            }
+        }
+
+        // Uncomment for scroll velocity effect (more dramatic)
+        // window.addEventListener('scroll', onScroll);
+    });
+
+    // Fallback for older browsers
+    if (!window.IntersectionObserver) {
+        document.querySelectorAll('.zoom-scroll-section').forEach(section => {
+            section.classList.add('zoom-visible');
+        });
+    }
+</script>
+
 @endsection

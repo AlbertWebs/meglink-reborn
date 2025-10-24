@@ -1,28 +1,66 @@
 @extends('layouts.master-renders')
 
 @section('content')
-<section class="intro-section wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+
+<style>
+    /* Zoom Scroll Animation Styles */
+    .zoom-scroll-section {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .zoom-scroll-section.zoom-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Staggered animation delays for multiple sections */
+    .zoom-scroll-section:nth-child(1) { transition-delay: 0.1s; }
+    .zoom-scroll-section:nth-child(2) { transition-delay: 0.2s; }
+
+    /* Gallery item animations */
+    .gallery-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .zoom-visible .gallery-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Stagger gallery items */
+    .zoom-visible .gallery-item:nth-child(1) { transition-delay: 0.1s; }
+    .zoom-visible .gallery-item:nth-child(2) { transition-delay: 0.2s; }
+    .zoom-visible .gallery-item:nth-child(3) { transition-delay: 0.3s; }
+    .zoom-visible .gallery-item:nth-child(4) { transition-delay: 0.4s; }
+    .zoom-visible .gallery-item:nth-child(5) { transition-delay: 0.5s; }
+    .zoom-visible .gallery-item:nth-child(6) { transition-delay: 0.6s; }
+    .zoom-visible .gallery-item:nth-child(7) { transition-delay: 0.7s; }
+    .zoom-visible .gallery-item:nth-child(8) { transition-delay: 0.8s; }
+    .zoom-visible .gallery-item:nth-child(9) { transition-delay: 0.9s; }
+</style>
+
+<section class="intro-section zoom-scroll-section">
   <div class="intro-container">
     <div class="intro-text">
-      <h2 class="wow fadeInDown" data-wow-delay="0.4s">Meglink Renders</h2>
-      <h4 class="wow fadeInUp" data-wow-delay="0.6s">Leading Interior Designer in Kenya</h4>
+      <h2>Meglink Renders</h2>
+      <h4>Leading Interior Designer in Kenya</h4>
 
-      <p class="wow fadeIn" data-wow-delay="0.8s">
-        {{--  --}}
-Meglink Ventures specializes in creating bespoke, high-end interiors that are a true reflection of your personality and lifestyle. We believe that exceptional design is functional, elegant, and enduring. From initial concept development to the final handover, our dedicated team manages every detail—ensuring a seamless, stress-free process and a stunning final result that elevates your living or working environment into a genuine masterpiece.
-        {{--  --}}
+      <p>
+        Meglink Ventures specializes in creating bespoke, high-end interiors that are a true reflection of your personality and lifestyle. We believe that exceptional design is functional, elegant, and enduring. From initial concept development to the final handover, our dedicated team manages every detail—ensuring a seamless, stress-free process and a stunning final result that elevates your living or working environment into a genuine masterpiece.
       </p>
-      <a href="#services" class="intro-btn wow zoomIn" data-wow-delay="1s">
+      <a href="#services" class="intro-btn">
         Explore Portfolio &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
       </a>
     </div>
   </div>
 </section>
 
-
-
 <!-- START: Renders Gallery Section -->
-<section class="renders-gallery py-5 bg-light">
+<section class="renders-gallery py-5 bg-light zoom-scroll-section">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="display-6 fw-bold">Our Architectural Renders</h2>
@@ -52,9 +90,35 @@ Meglink Ventures specializes in creating bespoke, high-end interiors that are a 
 </section>
 <!-- END: Renders Gallery Section -->
 
+<script>
+    // Zoom Scroll Animation JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        const zoomSections = document.querySelectorAll('.zoom-scroll-section');
 
-<!-- END: Renders Gallery Section -->
+        // Create Intersection Observer
+        const zoomObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('zoom-visible');
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+        });
 
+        // Observe each section
+        zoomSections.forEach(section => {
+            zoomObserver.observe(section);
+        });
 
+        // Fallback for older browsers
+        if (!window.IntersectionObserver) {
+            document.querySelectorAll('.zoom-scroll-section').forEach(section => {
+                section.classList.add('zoom-visible');
+            });
+        }
+    });
+</script>
 
 @endsection

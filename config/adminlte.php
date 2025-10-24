@@ -353,12 +353,12 @@ return [
     ],
     [
         'text' => 'Lands for Sale',
-        'url'  => 'lands',
+        'url'  => 'admin/lands',
         'icon' => 'fas fa-tree',
     ],
     [
         'text' => 'Renders',
-        'url'  => 'renders',
+        'url'  => 'admin/renders',
         'icon' => 'fas fa-image',
     ],
     [

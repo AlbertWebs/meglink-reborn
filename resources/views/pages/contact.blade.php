@@ -1,7 +1,56 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="about-hero position-relative">
+
+<style>
+    /* Zoom Scroll Animation Styles */
+    .zoom-scroll-section {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .zoom-scroll-section.zoom-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Staggered animation delays for multiple sections */
+    .zoom-scroll-section:nth-child(1) { transition-delay: 0.1s; }
+    .zoom-scroll-section:nth-child(2) { transition-delay: 0.2s; }
+
+    /* Contact info item animations */
+    .pq-icon-box {
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .zoom-visible .pq-icon-box {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Stagger contact info items */
+    .zoom-visible .pq-icon-box:nth-child(1) { transition-delay: 0.1s; }
+    .zoom-visible .pq-icon-box:nth-child(2) { transition-delay: 0.2s; }
+    .zoom-visible .pq-icon-box:nth-child(3) { transition-delay: 0.3s; }
+    .zoom-visible .pq-icon-box:nth-child(4) { transition-delay: 0.4s; }
+
+    /* Map animation */
+    .pq-map {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .zoom-visible .pq-map {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>
+
+<section class="about-hero position-relative zoom-scroll-section">
   <!-- Background Image -->
    <div class="about-hero-bg" style=" background-image: url('{{ asset('uploads/IMG-20250609-WA0018.jpg') }}');"></div>
 
@@ -18,7 +67,7 @@
 </section>
 
       <!-- Contact Us -->
-    <section class="contact-us pq-pb-80">
+    <section class="contact-us pq-pb-80 zoom-scroll-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -80,10 +129,9 @@
                 </div>
             </div>
         </div>
-
-
     </section>
-    <div class="row mt-4 text-center">
+
+    <div class="row mt-4 text-center zoom-scroll-section">
         <div class="col-lg-12">
             <strong>
             <a href="">Privacy Policy</a> |
@@ -95,7 +143,35 @@
     <!-- Contact Us -->
     <br><br>
 
+<script>
+    // Zoom Scroll Animation JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        const zoomSections = document.querySelectorAll('.zoom-scroll-section');
 
+        // Create Intersection Observer
+        const zoomObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('zoom-visible');
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+        });
 
+        // Observe each section
+        zoomSections.forEach(section => {
+            zoomObserver.observe(section);
+        });
+
+        // Fallback for older browsers
+        if (!window.IntersectionObserver) {
+            document.querySelectorAll('.zoom-scroll-section').forEach(section => {
+                section.classList.add('zoom-visible');
+            });
+        }
+    });
+</script>
 
 @endsection

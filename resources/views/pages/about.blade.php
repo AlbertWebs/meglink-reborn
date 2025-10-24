@@ -2,8 +2,30 @@
 
 @section('content')
 
+<style>
+    /* Zoom Scroll Animation Styles */
+    .zoom-scroll-section {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .zoom-scroll-section.zoom-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Staggered animation delays for multiple sections */
+    .zoom-scroll-section:nth-child(1) { transition-delay: 0.1s; }
+    .zoom-scroll-section:nth-child(2) { transition-delay: 0.2s; }
+    .zoom-scroll-section:nth-child(3) { transition-delay: 0.3s; }
+    .zoom-scroll-section:nth-child(4) { transition-delay: 0.4s; }
+    .zoom-scroll-section:nth-child(5) { transition-delay: 0.5s; }
+    .zoom-scroll-section:nth-child(6) { transition-delay: 0.6s; }
+</style>
+
 <!-- START: Responsive About Us Hero Section -->
-<section class="about-hero position-relative">
+<section class="about-hero position-relative zoom-scroll-section">
   <!-- Background Image -->
   <div class="about-hero-bg" style=" background-image: url('{{ asset('uploads/Renders-interiores-scaled.webp') }}');"></div>
 
@@ -19,27 +41,24 @@
   </div>
 </section>
 
-
-
-
-<section class="intro-section wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+<section class="intro-section zoom-scroll-section">
   <div class="intro-container">
     <div class="intro-text">
-      <h2 class="wow fadeInDown" data-wow-delay="0.4s">About Us</h2>
-      <h4 class="wow fadeInUp" data-wow-delay="0.6s" style="color:#f37920">Experience Design At Its Majesty.</h4>
+      <h2>About Us</h2>
+      <h4 style="color:#f37920">Experience Design At Its Majesty.</h4>
 
-      <p class="wow fadeIn" data-wow-delay="0.8s" >
+      <p>
         Founded in 2008 as an interior design outlet
-                        studio, the Nairobi-based company has
-                        evolved into an interdisciplinary regional
-                        lifestyle brand that is leading the
-                        contemporary Interior design consulting and
-                        contracting conversation with experiential
-                        residential, hospitality, commercial and retail
-                        industry with an expansive portfolio of home
-                        product designs and brand collaborations.
+        studio, the Nairobi-based company has
+        evolved into an interdisciplinary regional
+        lifestyle brand that is leading the
+        contemporary Interior design consulting and
+        contracting conversation with experiential
+        residential, hospitality, commercial and retail
+        industry with an expansive portfolio of home
+        product designs and brand collaborations.
       </p>
-      <a href="#services" class="intro-btn wow zoomIn" data-wow-delay="1s">
+      <a href="#services" class="intro-btn">
         Explore Services &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
       </a>
     </div>
@@ -47,7 +66,7 @@
 </section>
 
 <!-- Award -->
-<section class="award pq-bg-grey">
+<section class="award pq-bg-grey zoom-scroll-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-4">
@@ -168,12 +187,12 @@
                                 </div>
                                 <div class="pq-service-description">
                                     <p>
-                                        It’s in everything we do.
+                                        It's in everything we do.
                                         We collaborate within
                                         our team, with our
                                         clients, and with all of
                                         our and suppliers.
-                                        Everybody’s ideas
+                                        Everybody's ideas
                                         count. Everybody has a
                                         voice.
                                     </p>
@@ -213,9 +232,8 @@
 </section>
 <!-- Award -->
 
-
 <!-- START: About Content Section -->
-<section class="about-content-section py-5">
+<section class="about-content-section py-5 zoom-scroll-section">
   <div class="container">
     <div class="row align-items-center">
       <!-- Left: Image -->
@@ -258,11 +276,11 @@
 </section>
 
 <!-- END: Final Statement Section -->
-<section class="statement-section wow fadeInUp" data-wow-delay="0.3s" style="background-image: url('{{ asset('uploads/joint-ventures.jpg') }}');">
+<section class="statement-section zoom-scroll-section" style="background-image: url('{{ asset('uploads/joint-ventures.jpg') }}');">
   <div class="statement-overlay">
-    <div class="statement-content wow fadeIn" data-wow-delay="0.6s">
+    <div class="statement-content">
       <h2>Joint Ventures Vault</h2>
-      <a href="{{url('/')}}/land-for-sale" class="statement-btn wow fadeInUp" data-wow-delay="0.9s">
+      <a href="{{url('/')}}/land-for-sale" class="statement-btn">
         Explore Land Portfolio &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
       </a>
     </div>
@@ -270,16 +288,16 @@
 </section>
 
   <!-- Team -->
-    <section class="team" id="team">
+    <section class="team zoom-scroll-section" id="team">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8 col-md-8 wow animated fadeInRight">
+                <div class="col-lg-8 col-md-8">
                     <div class="pq-section-title pq-style-1">
                         <span class="pq-section-sub-title">Our Team</span>
                         <h5 class="pq-section-main-title">Our Best Team Expert</h5>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 wow animated fadeInRight">
+                <div class="col-lg-4 col-md-4">
                     <div class="button-align">
                         <a class="pq-button pq-button-flat" href="{{url('/')}}/our-work">
                             <div class="pq-button-block">
@@ -294,7 +312,7 @@
                     <div class="divider pq-left-border2 pq-right-border pq-45"></div>
                 </div>
                @foreach($teams as $team)
-                    <div class="col-lg-4 col-md-6 wow animated fadeInUp">
+                    <div class="col-lg-4 col-md-6">
                         <div class="pq-team pq-team-style-1">
                             <div class="pq-team-box">
                                 <div class="pq-team-img">
@@ -321,16 +339,40 @@
                         </div>
                     </div>
                 @endforeach
-
-
             </div>
         </div>
     </section>
     <!-- Team -->
 
+<script>
+    // Zoom Scroll Animation JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        const zoomSections = document.querySelectorAll('.zoom-scroll-section');
 
+        // Create Intersection Observer
+        const zoomObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('zoom-visible');
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+        });
 
+        // Observe each section
+        zoomSections.forEach(section => {
+            zoomObserver.observe(section);
+        });
 
-
+        // Fallback for older browsers
+        if (!window.IntersectionObserver) {
+            document.querySelectorAll('.zoom-scroll-section').forEach(section => {
+                section.classList.add('zoom-visible');
+            });
+        }
+    });
+</script>
 
 @endsection
