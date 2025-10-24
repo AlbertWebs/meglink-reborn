@@ -1,6 +1,9 @@
 
  <header id="pq-header" class="pq-header-default pq-has-sticky ">
-    <div class="pq-top-header  top-style-1">
+        @php
+            $Settings = \App\Models\Setting::first();
+        @endphp
+        <div class="pq-top-header top-style-1">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -15,34 +18,53 @@
                             </div>
                             <div class="pq-header-social">
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    @if(!empty($Settings->facebook))
+                                        <li><a href="{{ $Settings->facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    @endif
+                                    @if(!empty($Settings->instagram))
+                                        <li><a href="{{ $Settings->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    @endif
+                                    @if(!empty($Settings->linkedin))
+                                        <li><a href="{{ $Settings->linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                    @endif
+                                    @if(!empty($Settings->twitter))
+                                        <li><a href="{{ $Settings->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    @endif
+                                    @if(!empty($Settings->tiktok))
+                                        <li><a href="{{ $Settings->tiktok }}" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6 text-right">
                         <div class="pq-header-contact text-right">
                             <ul>
-                                <li>
-                                    <a href="tel:+1800001658"><i class="fas fa-phone"></i>
-                                        <span> +2547 23 000 000</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="mailto:info@meglinkvenures.co.ke">
-                                        <i class="fas fa-envelope"></i>
-                                        <span>info@meglinkvenures.co.ke</span>
-                                    </a>
-                                </li>
+                                @if(!empty($Settings->phone_number))
+                                    <li>
+                                        <a href="tel:{{ $Settings->phone_number }}">
+                                            <i class="fas fa-phone"></i>
+                                            <span>{{ $Settings->phone_number }}</span>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if(!empty($Settings->email))
+                                    <li>
+                                        <a href="mailto:{{ $Settings->email }}">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>{{ $Settings->email }}</span>
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="pq-bottom-header">
             <div class="container">
                 <div class="row">
