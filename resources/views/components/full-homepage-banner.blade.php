@@ -360,99 +360,99 @@
 <!-- Your existing HTML and PHP code remains the same -->
 
 
-    <!-- START: Fullscreen Hero Slider -->
-    <section id="hero-banner" class="hero-slider">
-        @php
-            $slides = \App\Models\Slide::where('is_active', true)->get();
-        @endphp
+<!-- START: Fullscreen Hero Slider -->
+<section id="hero-banner" class="hero-slider">
+    @php
+        $slides = \App\Models\Slide::where('is_active', true)->get();
+    @endphp
 
-        @foreach($slides as $index => $slide)
-        <div class="slide {{ $index === 0 ? 'active' : '' }}"
-            style="background-image: url('{{ asset('storage/' . $slide->image) }}');">
-            <div class="slide-content">
-                <div class="text-container">
-                    <h1 class="slide-title">{{ $slide->title ?? 'Meglink Ventures' }}</h1>
-                    <p class="slide-description">{{ $slide->subtitle ?? 'We Create Timeless Interiors for Modern Living' }}</p>
-                    <a href="{{url('/')}}/our-work" class="slide-btn">Explore More</a>
-                </div>
+    @foreach($slides as $index => $slide)
+    <div class="slide {{ $index === 0 ? 'active' : '' }}"
+        style="background-image: url('{{ asset('storage/' . $slide->image) }}');">
+        <div class="slide-content">
+            <div class="text-container">
+                <h1 class="slide-title">{{ $slide->title ?? 'Meglink Ventures' }}</h1>
+                <p class="slide-description">{{ $slide->subtitle ?? 'We Create Timeless Interiors for Modern Living' }}</p>
+                <a href="{{url('/')}}/our-work" class="slide-btn">Explore More</a>
             </div>
         </div>
-        @endforeach
+    </div>
+    @endforeach
 
-        <!-- Navigation -->
-        <button class="nav prev hero-nav">&#10094;</button>
-        <button class="nav next hero-nav">&#10095;</button>
+    <!-- Navigation -->
+    <button class="nav prev hero-nav">&#10094;</button>
+    <button class="nav next hero-nav">&#10095;</button>
 
-        <!-- Dots -->
-        <div class="dots"></div>
-    </section>
+    <!-- Dots -->
+    <div class="dots"></div>
+</section>
 
 
-    <script>
-        // --- Hero Slider Script ---
-        document.addEventListener("DOMContentLoaded", function() {
-            const slides = document.querySelectorAll(".hero-slider .slide");
-            const prev = document.querySelector(".hero-slider .prev");
-            const next = document.querySelector(".hero-slider .next");
-            const dotsContainer = document.querySelector(".hero-slider .dots");
-            let current = 0;
-            let autoSlide;
+<script>
+    // --- Hero Slider Script ---
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".hero-slider .slide");
+        const prev = document.querySelector(".hero-slider .prev");
+        const next = document.querySelector(".hero-slider .next");
+        const dotsContainer = document.querySelector(".hero-slider .dots");
+        let current = 0;
+        let autoSlide;
 
-            // Create dots
-            slides.forEach((_, index) => {
-                const dot = document.createElement("span");
-                if (index === 0) dot.classList.add("active");
-                dotsContainer.appendChild(dot);
-            });
-            const dots = document.querySelectorAll(".hero-slider .dots span");
-
-            const showSlide = (index) => {
-                slides.forEach(slide => slide.classList.remove("active"));
-                dots.forEach(dot => dot.classList.remove("active"));
-                slides[index].classList.add("active");
-                dots[index].classList.add("active");
-            };
-
-            const nextSlide = () => {
-                current = (current + 1) % slides.length;
-                showSlide(current);
-            };
-
-            const prevSlide = () => {
-                current = (current - 1 + slides.length) % slides.length;
-                showSlide(current);
-            };
-
-            next.addEventListener("click", () => {
-                nextSlide();
-                resetAutoSlide();
-            });
-
-            prev.addEventListener("click", () => {
-                prevSlide();
-                resetAutoSlide();
-            });
-
-            dots.forEach((dot, index) => {
-                dot.addEventListener("click", () => {
-                    current = index;
-                    showSlide(current);
-                    resetAutoSlide();
-                });
-            });
-
-            const startAutoSlide = () => {
-                autoSlide = setInterval(nextSlide, 5000); // every 5 seconds
-            };
-
-            const resetAutoSlide = () => {
-                clearInterval(autoSlide);
-                startAutoSlide();
-            };
-
-            startAutoSlide();
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement("span");
+            if (index === 0) dot.classList.add("active");
+            dotsContainer.appendChild(dot);
         });
-    </script>
+        const dots = document.querySelectorAll(".hero-slider .dots span");
+
+        const showSlide = (index) => {
+            slides.forEach(slide => slide.classList.remove("active"));
+            dots.forEach(dot => dot.classList.remove("active"));
+            slides[index].classList.add("active");
+            dots[index].classList.add("active");
+        };
+
+        const nextSlide = () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        };
+
+        const prevSlide = () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        };
+
+        next.addEventListener("click", () => {
+            nextSlide();
+            resetAutoSlide();
+        });
+
+        prev.addEventListener("click", () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                current = index;
+                showSlide(current);
+                resetAutoSlide();
+            });
+        });
+
+        const startAutoSlide = () => {
+            autoSlide = setInterval(nextSlide, 5000); // every 5 seconds
+        };
+
+        const resetAutoSlide = () => {
+            clearInterval(autoSlide);
+            startAutoSlide();
+        };
+
+        startAutoSlide();
+    });
+</script>
     <!-- END: Fullscreen Hero Slider -->
 
 
