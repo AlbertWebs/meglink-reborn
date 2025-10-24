@@ -101,9 +101,9 @@
         display: inline-block;
         background: #f37920;
         color: #fff;
-        padding: 16px 35px;
+        padding: 8px 24px;
         text-decoration: none;
-        border-radius: 8px;
+        /* border-radius: 8px; */
         font-weight: 600;
         font-size: 1.1rem;
         transition: all 0.3s ease;

@@ -52,7 +52,7 @@
       <p>
         Meglink Ventures specializes in creating bespoke, high-end interiors that are a true reflection of your personality and lifestyle. We believe that exceptional design is functional, elegant, and enduring. From initial concept development to the final handover, our dedicated team manages every detail—ensuring a seamless, stress-free process and a stunning final result that elevates your living or working environment into a genuine masterpiece.
       </p>
-      <a href="#services" class="intro-btn">
+      <a href="{{url('/')}}/our-work" class="intro-btn">
         Explore Portfolio &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
       </a>
     </div>

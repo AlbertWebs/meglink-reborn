@@ -7538,8 +7538,8 @@ Custom Css
 .intro-btn {
   /* background-color: #f37920; */
   color: #f37920;
-  padding: 12px 30px;
-  border-radius: 25px;
+  padding: 8px 24px;
+  /* border-radius: 25px; */
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease;
@@ -7595,13 +7595,13 @@ Custom Css
 .btn-explore {
   display: inline-block;
   text-decoration: none;
-  border-radius: 30px;
+  /* border-radius: 30px; */
   font-weight: 600;
   transition: all 0.3s ease;
   border: 3px solid #fff;
   color: #fff;
   background-color: transparent;
-  padding: 12px 28px;
+  padding: 8px 24px;
 }
 
 .btn-primary:hover,
