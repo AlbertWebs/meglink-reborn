@@ -62,8 +62,10 @@ Moz Selection
 	--secondary-color: #5a4a42;
 	--grey-color: #f6f4f5;
 	--white-color: #ffffff;
-	--body-fonts: 'Plus Jakarta Sans', sans-serif;
-	--title-fonts: 'Plus Jakarta Sans', sans-serif;
+	--body-fonts: 'Playfair Display', serif;
+	--title-fonts: 'Playfair Display', serif;
+
+    /* 'Plus Jakarta Sans', sans-serif; */
 }
 
 ::-moz-selection {
