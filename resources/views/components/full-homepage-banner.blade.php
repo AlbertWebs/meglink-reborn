@@ -362,7 +362,7 @@
                 <div class="text-container">
                     <h1 class="slide-title">{{ $slide->title ?? 'Meglink Ventures' }}</h1>
                     <p class="slide-description">{{ $slide->subtitle ?? 'We Create Timeless Interiors for Modern Living' }}</p>
-                    <a href="#about" class="slide-btn">Explore More</a>
+                    <a href="{{url('/')}}/our-work" class="slide-btn">Explore More</a>
                 </div>
             </div>
         </div>
