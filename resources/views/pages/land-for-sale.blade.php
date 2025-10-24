@@ -65,8 +65,9 @@
     <div class="row align-items-center mb-5">
       <div class="col-lg-8 col-md-8">
         <div class="pq-section-title pq-style-1">
-          <span class="pq-section-sub-title">Featured Listings</span>
-          <h5 class="pq-section-main-title">Land for Sale</h5>
+          <span class="pq-section-sub-title" style="color:#f37920">Featured Listings</span>
+          <h5 class="pq-section-main-title" style="font-weight:900; color:#000000">Land for Sale</h5>
+          <div class="orange-divider mb-4"></div>
         </div>
         <h3>
             Beyond Design: Your Partner in Property & Prosperity
@@ -115,6 +116,7 @@
         <div class="pq-section-title pq-style-1">
           <span class="pq-section-sub-title">Joint Venture Opportunities</span>
           <h5 class="pq-section-main-title">Joint Ventures</h5>
+          <div class="orange-divider mb-4"></div>
         </div>
       </div>
     </div>

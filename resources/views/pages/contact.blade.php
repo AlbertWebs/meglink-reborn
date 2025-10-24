@@ -74,6 +74,7 @@
                     <div class="pq-section-title pq-style-1 pq-mb-30">
                         <span class="pq-section-sub-title">our contact</span>
                         <h5 class="pq-section-main-title">Get in touch</h5>
+                        <div class="orange-divider mb-4"></div>
                         {{-- <p class="pq-section-description">Lorem Ipsum is simply dummy text of the printing &amp; typesetting industry. Contrary to popular belief, Lorem Ipsum is not simply random text.</p> --}}
                     </div>
                     <div class="pq-icon-box pq-style-3">

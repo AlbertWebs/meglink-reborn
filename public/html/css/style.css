@@ -7938,9 +7938,10 @@ Custom Css
   color: #fff;
   font-weight: 700;
   font-size: 14px;
-  padding: 7px 14px;
-  border-radius: 30px;
+  padding: 8px 20px;
+  /* border-radius: 30px; */
   border:2px solid #ffffff;
+  min-width:100px;
 }
 
 /* Responsive design */

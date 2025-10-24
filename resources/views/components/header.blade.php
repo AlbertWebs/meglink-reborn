@@ -174,7 +174,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                                 <li class="menu-item @if($page == 'history') current-menu-item @endif">
+                                                 <li class="menu-item @if($page == 'Renders') current-menu-item @endif">
                                                     <a href="{{route('renders')}}">Renders</a>
                                                 </li>
                                             </ul>

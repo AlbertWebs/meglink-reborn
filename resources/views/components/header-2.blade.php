@@ -105,7 +105,7 @@
 
                                         </li>
 
-                                           <li class="menu-item @if($page == 'portfolio') current-menu-item @endif">
+                                           <li class="menu-item @if($page == 'Renders') current-menu-item @endif">
                                             <a href="{{route('renders')}}">Design Renders</a>
                                         </li>
 
