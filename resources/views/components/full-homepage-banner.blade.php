@@ -798,7 +798,7 @@
         margin: 0 20px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(2px);
         transform: translateX(0) scale(1);
         opacity: 1;
         transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
