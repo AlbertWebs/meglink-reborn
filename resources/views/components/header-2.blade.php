@@ -49,7 +49,7 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="{{url('/')}}">
-                                <img style="width:70px; height:auto" class="img-fluid logo" src="{{asset('uploads/logo.png')}}" alt="Meglink Ventures Limited">
+                                <img class="img-fluid logo site-logo" src="{{asset('uploads/logo.png')}}" alt="Meglink Ventures Limited">
                             </a>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <div id="pq-menu-contain" class="pq-menu-contain">
