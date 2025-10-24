@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-      Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class)->names('admin.teams');
+    Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class)->names('admin.teams');
     Route::resource('services', ServiceController::class)->names('admin.services');
     Route::resource('blogs', BlogController::class)->names('admin.blog');
     Route::resource('testimonials', TestimonialController::class)->names('admin.testimonials');
