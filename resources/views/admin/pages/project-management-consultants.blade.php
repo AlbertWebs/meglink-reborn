@@ -3,10 +3,11 @@
 @section('title', 'Project Management Consultants')
 
 @section('content_header')
-    <h1>Project Management Consultants</h1>
+    <h1><i class="fas fa-clipboard-list mr-2"></i>Project Management Consultants</h1>
 @stop
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/admin-enhanced.css') }}">
 @php
     $resolveImage = function (?string $path) {
         if (!$path) {
@@ -21,10 +22,10 @@
         return \Illuminate\Support\Facades\Storage::url($path);
     };
 @endphp
-<div class="card card-primary">
-    <div class="card-header d-flex align-items-center justify-content-between">
-        <h3 class="card-title mb-0">Page Content</h3>
-        <span class="text-muted small">Controls the public page content and SEO.</span>
+<div class="card admin-form-card">
+    <div class="card-header">
+        <h3><i class="fas fa-clipboard-list mr-2"></i>Page Content</h3>
+        <small class="text-white-50">Controls the public page content and SEO.</small>
     </div>
     <form action="{{ route('admin.pages.project-management-consultants.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -127,25 +128,115 @@
                 </div>
             </div>
             <hr>
-            <h5 class="text-muted">Consulting Table</h5>
+            <h5 class="text-muted mb-4">Expertise - Professional Disciplines</h5>
             <div class="form-group">
-                <label for="table_title">Table Title</label>
+                <label for="table_title">Section Title</label>
                 <input type="text" id="table_title" name="table_title" class="form-control" value="{{ old('table_title', $page->table_title) }}">
             </div>
             <div class="form-group">
-                <label for="table_intro">Table Intro</label>
+                <label for="table_intro">Section Intro Paragraph</label>
                 <textarea id="table_intro" name="table_intro" rows="3" class="form-control rich-text">{{ old('table_intro', $page->table_intro) }}</textarea>
+                <small class="form-text text-muted">This appears as the subtitle under "Professional Disciplines"</small>
             </div>
-            <div class="form-group">
-                <label for="table_rows">Table Rows</label>
-                <textarea id="table_rows" name="table_rows" rows="5" class="form-control">{{ old('table_rows', $page->table_rows) }}</textarea>
-                <small class="form-text text-muted">One row per line. Format: Title|Description</small>
+            <hr class="my-4">
+            <h6 class="mb-3">Disciplines (Edit images and paragraphs below)</h6>
+            @php
+                $scopeRows = collect(explode("\n", (string) $page->table_rows))
+                    ->map(function ($row) {
+                        $parts = array_map('trim', explode('|', $row));
+                        // Ensure we have at least 2 elements (title and description)
+                        if (count($parts) < 2) {
+                            $parts[] = '';
+                        }
+                        return $parts;
+                    })
+                    ->filter(function ($row) {
+                        return !empty($row[0]);
+                    })
+                    ->values();
+                $disciplineImages = collect(explode("\n", (string) $page->discipline_images))
+                    ->map(function ($row) {
+                        return trim($row);
+                    })
+                    ->filter()
+                    ->values();
+            @endphp
+            <div id="disciplines-container">
+                @forelse($scopeRows as $index => $row)
+                    <div class="card mb-3 discipline-item" data-index="{{ $index }}">
+                        <div class="card-header bg-light">
+                            <h6 class="mb-0">Discipline {{ $index + 1 }}</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Discipline Title</label>
+                                        <input type="text" 
+                                               name="discipline_titles[]" 
+                                               class="form-control" 
+                                               value="{{ old("discipline_titles.$index", $row[0] ?? '') }}"
+                                               placeholder="e.g., Architects">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Discipline Image</label>
+                                        <input type="file" 
+                                               name="discipline_image_files[]" 
+                                               class="form-control-file discipline-image-input"
+                                               accept="image/*"
+                                               data-index="{{ $index }}">
+                                        @if(isset($disciplineImages[$index]) && $disciplineImages[$index])
+                                            <small class="form-text text-muted d-block mt-1">Current: {{ $disciplineImages[$index] }}</small>
+                                            <div class="mt-2">
+                                                <img src="{{ $resolveImage($disciplineImages[$index]) }}" 
+                                                     alt="Discipline {{ $index + 1 }} preview"
+                                                     class="discipline-preview"
+                                                     data-index="{{ $index }}"
+                                                     style="max-width: 200px; border-radius: 8px; border: 1px solid rgba(16, 19, 24, 0.12);">
+                                            </div>
+                                        @else
+                                            <div class="mt-2">
+                                                <img src="" 
+                                                     alt="Discipline {{ $index + 1 }} preview"
+                                                     class="discipline-preview"
+                                                     data-index="{{ $index }}"
+                                                     style="max-width: 200px; border-radius: 8px; border: 1px solid rgba(16, 19, 24, 0.12); display: none;">
+                                            </div>
+                                        @endif
+                                        <input type="hidden" 
+                                               name="discipline_image_paths[]" 
+                                               value="{{ old("discipline_image_paths.$index", $disciplineImages[$index] ?? '') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Discipline Description (Paragraph)</label>
+                                <textarea name="discipline_descriptions[]" 
+                                          class="form-control" 
+                                          rows="3"
+                                          placeholder="Enter the description paragraph for this discipline...">{{ old("discipline_descriptions.$index", $row[1] ?? '') }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle mr-2"></i>No disciplines added yet. Click "Add Another Discipline" to get started.
+                    </div>
+                @endforelse
             </div>
-            <div class="form-group">
-                <label for="discipline_images">Discipline Images</label>
-                <textarea id="discipline_images" name="discipline_images" rows="4" class="form-control">{{ old('discipline_images', $page->discipline_images) }}</textarea>
-                <small class="form-text text-muted">One image path per line, in the same order as the rows.</small>
+            <div class="mb-3">
+                <button type="button" class="btn btn-sm btn-secondary" id="add-discipline">
+                    <i class="fas fa-plus mr-1"></i>Add Another Discipline
+                </button>
+                <button type="button" class="btn btn-sm btn-danger" id="remove-discipline">
+                    <i class="fas fa-minus mr-1"></i>Remove Last Discipline
+                </button>
             </div>
+            <!-- Hidden fields to maintain backward compatibility -->
+            <input type="hidden" id="table_rows" name="table_rows" value="{{ old('table_rows', $page->table_rows) }}">
+            <input type="hidden" id="discipline_images" name="discipline_images" value="{{ old('discipline_images', $page->discipline_images) }}">
             <hr>
             <h5 class="text-muted">Engagement Highlights</h5>
             <div class="form-group">
@@ -209,8 +300,8 @@
             </div>
         </div>
         <div class="card-footer d-flex justify-content-end">
-            <button class="btn btn-primary">
-                <i class="fas fa-save mr-1"></i>Save Page
+            <button type="submit" class="admin-btn-primary">
+                <i class="fas fa-save mr-2"></i>Save Page
             </button>
         </div>
     </form>
@@ -263,5 +354,133 @@
 
         bindPreview('image_one_file', 'image-one-preview');
         bindPreview('image_two_file', 'image-two-preview');
+
+        // Handle discipline image previews
+        document.querySelectorAll('.discipline-image-input').forEach((input) => {
+            input.addEventListener('change', function() {
+                const index = this.getAttribute('data-index');
+                const preview = document.querySelector(`.discipline-preview[data-index="${index}"]`);
+                const file = this.files && this.files[0];
+                if (file && preview) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        preview.src = event.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+
+        // Add new discipline
+        let disciplineIndex = {{ max(0, $scopeRows->count()) }};
+        document.getElementById('add-discipline')?.addEventListener('click', function() {
+            const container = document.getElementById('disciplines-container');
+            const newItem = document.createElement('div');
+            newItem.className = 'card mb-3 discipline-item';
+            newItem.setAttribute('data-index', disciplineIndex);
+            newItem.innerHTML = `
+                <div class="card-header bg-light">
+                    <h6 class="mb-0">Discipline ${disciplineIndex + 1}</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Discipline Title</label>
+                                <input type="text" 
+                                       name="discipline_titles[]" 
+                                       class="form-control" 
+                                       placeholder="e.g., Architects">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Discipline Image</label>
+                                <input type="file" 
+                                       name="discipline_image_files[]" 
+                                       class="form-control-file discipline-image-input"
+                                       accept="image/*"
+                                       data-index="${disciplineIndex}">
+                                <input type="hidden" name="discipline_image_paths[]" value="">
+                                <div class="mt-2">
+                                    <img src="" 
+                                         alt="Discipline ${disciplineIndex + 1} preview"
+                                         class="discipline-preview"
+                                         data-index="${disciplineIndex}"
+                                         style="max-width: 200px; border-radius: 8px; border: 1px solid rgba(16, 19, 24, 0.12); display: none;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Discipline Description (Paragraph)</label>
+                        <textarea name="discipline_descriptions[]" 
+                                  class="form-control" 
+                                  rows="3"
+                                  placeholder="Enter the description paragraph for this discipline..."></textarea>
+                    </div>
+                </div>
+            `;
+            container.appendChild(newItem);
+            
+            // Bind preview for new input
+            const newInput = newItem.querySelector('.discipline-image-input');
+            newInput.addEventListener('change', function() {
+                const index = this.getAttribute('data-index');
+                const preview = document.querySelector(`.discipline-preview[data-index="${index}"]`);
+                const file = this.files && this.files[0];
+                if (file && preview) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        preview.src = event.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            disciplineIndex++;
+        });
+
+        // Remove last discipline
+        document.getElementById('remove-discipline')?.addEventListener('click', function() {
+            const container = document.getElementById('disciplines-container');
+            const items = container.querySelectorAll('.discipline-item');
+            if (items.length > 0) {
+                items[items.length - 1].remove();
+                disciplineIndex = Math.max(0, disciplineIndex - 1);
+            }
+        });
+
+        // Update hidden fields before form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function() {
+                // Update editors
+                editors.forEach((editor, element) => {
+                    element.value = editor.getData();
+                });
+                
+                // Build table_rows and discipline_images from form data
+                const titles = Array.from(document.querySelectorAll('input[name="discipline_titles[]"]')).map(i => i.value.trim());
+                const descriptions = Array.from(document.querySelectorAll('textarea[name="discipline_descriptions[]"]')).map(t => t.value.trim());
+                const imagePaths = Array.from(document.querySelectorAll('input[name="discipline_image_paths[]"]')).map(i => i.value.trim());
+                
+                // Only update if we have at least one discipline with a title
+                const validRows = titles.map((title, i) => {
+                    if (title) {
+                        return `${title}|${descriptions[i] || ''}`;
+                    }
+                    return null;
+                }).filter(row => row !== null);
+                
+                if (validRows.length > 0) {
+                    document.getElementById('table_rows').value = validRows.join('\n');
+                    const validImages = imagePaths.filter((p, i) => p && titles[i]).join('\n');
+                    document.getElementById('discipline_images').value = validImages;
+                }
+            });
+        }
     </script>
 @endsection

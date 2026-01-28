@@ -3,10 +3,11 @@
 @section('title', 'Realtors')
 
 @section('content_header')
-    <h1>Realtors</h1>
+    <h1><i class="fas fa-building mr-2"></i>Realtors</h1>
 @stop
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/admin-enhanced.css') }}">
 @php
     $resolveImage = function (?string $path) {
         if (!$path) {
@@ -21,10 +22,10 @@
         return \Illuminate\Support\Facades\Storage::url($path);
     };
 @endphp
-<div class="card card-primary">
-    <div class="card-header d-flex align-items-center justify-content-between">
-        <h3 class="card-title mb-0">Page Content</h3>
-        <span class="text-muted small">Controls the public page content and SEO.</span>
+<div class="card admin-form-card">
+    <div class="card-header">
+        <h3><i class="fas fa-building mr-2"></i>Page Content</h3>
+        <small class="text-white-50">Controls the public page content and SEO.</small>
     </div>
     <form action="{{ route('admin.pages.realtors.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -187,8 +188,8 @@
             </div>
         </div>
         <div class="card-footer d-flex justify-content-end">
-            <button class="btn btn-primary">
-                <i class="fas fa-save mr-1"></i>Save Page
+            <button type="submit" class="admin-btn-primary">
+                <i class="fas fa-save mr-2"></i>Save Page
             </button>
         </div>
     </form>

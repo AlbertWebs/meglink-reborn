@@ -110,7 +110,8 @@ class HomeController extends Controller
       public function updates()
     {
         $page = 'updates';
-        return view('pages.blog', compact('page'));
+        $blogs = \App\Models\Blog::latest()->paginate(12);
+        return view('pages.blog', compact('page', 'blogs'));
     }
 
     public function renders()

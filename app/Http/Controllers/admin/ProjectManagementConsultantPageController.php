@@ -37,6 +37,14 @@ class ProjectManagementConsultantPageController extends Controller
             'table_intro' => ['nullable', 'string'],
             'table_rows' => ['nullable', 'string'],
             'discipline_images' => ['nullable', 'string'],
+            'discipline_titles' => ['nullable', 'array'],
+            'discipline_titles.*' => ['nullable', 'string', 'max:255'],
+            'discipline_descriptions' => ['nullable', 'array'],
+            'discipline_descriptions.*' => ['nullable', 'string'],
+            'discipline_image_files' => ['nullable', 'array'],
+            'discipline_image_files.*' => ['nullable', 'image', 'max:4096'],
+            'discipline_image_paths' => ['nullable', 'array'],
+            'discipline_image_paths.*' => ['nullable', 'string'],
             'highlights_title' => ['nullable', 'string', 'max:255'],
             'highlights_items' => ['nullable', 'string'],
             'metrics_title' => ['nullable', 'string', 'max:255'],
@@ -59,6 +67,38 @@ class ProjectManagementConsultantPageController extends Controller
             $data['image_two'] = $this->storePublicUpload($request->file('image_two_file'));
         } elseif ($request->hasFile('image_two')) {
             $data['image_two'] = $this->storePublicUpload($request->file('image_two'));
+        }
+
+        // Process discipline images and rebuild table_rows and discipline_images
+        if ($request->has('discipline_titles') && is_array($request->discipline_titles)) {
+            $titles = $request->discipline_titles;
+            $descriptions = $request->discipline_descriptions ?? [];
+            $imageFiles = $request->file('discipline_image_files', []);
+            $imagePaths = $request->discipline_image_paths ?? [];
+            
+            $rows = [];
+            $images = [];
+            
+            foreach ($titles as $index => $title) {
+                if (empty(trim($title))) {
+                    continue;
+                }
+                
+                $description = $descriptions[$index] ?? '';
+                $rows[] = trim($title) . '|' . trim($description);
+                
+                // Handle image upload
+                if (isset($imageFiles[$index]) && $imageFiles[$index]->isValid()) {
+                    $images[] = $this->storePublicUpload($imageFiles[$index]);
+                } elseif (isset($imagePaths[$index]) && !empty(trim($imagePaths[$index]))) {
+                    $images[] = trim($imagePaths[$index]);
+                } else {
+                    $images[] = '';
+                }
+            }
+            
+            $data['table_rows'] = implode("\n", $rows);
+            $data['discipline_images'] = implode("\n", $images);
         }
 
         $page->update($data);

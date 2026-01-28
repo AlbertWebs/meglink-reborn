@@ -50,40 +50,42 @@
         transform: translateY(0);
     }
 
+    /* Enhanced Portfolio Filter */
     .portfolio-filter-wrap {
-        background: #0f1218;
-        border-radius: 22px;
-        padding: 22px;
-        box-shadow: 0 20px 50px rgba(16, 19, 24, 0.18);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(135deg, #101318 0%, #1a1f28 100%);
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 20px 60px rgba(16, 19, 24, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         position: sticky;
         top: 90px;
         z-index: 20;
+        margin-bottom: 60px;
     }
     .portfolio-filter-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        margin-bottom: 18px;
+        margin-bottom: 24px;
     }
     .portfolio-filter-title {
-        font-weight: 700;
+        font-weight: 800;
         color: #ffffff;
-        letter-spacing: 0.24em;
+        letter-spacing: 0.3em;
         text-transform: uppercase;
-        font-size: 11px;
+        font-size: 12px;
         margin: 0;
     }
     .portfolio-filter-hint {
         color: rgba(255, 255, 255, 0.6);
-        font-size: 13px;
+        font-size: 14px;
         margin: 0;
     }
     .portfolio-filters {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 14px;
         margin: 0;
     }
     .portfolio-filter-link {
@@ -91,40 +93,97 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
-        padding: 12px 14px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 600;
-        font-size: 13px;
+        padding: 14px 18px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 700;
+        font-size: 14px;
         text-decoration: none;
-        background: rgba(255, 255, 255, 0.04);
-        transition: all 0.2s ease;
+        background: rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
     }
     .portfolio-filter-link:hover {
-        border-color: rgba(243, 121, 32, 0.7);
+        border-color: rgba(243, 121, 32, 0.8);
         color: #ffffff;
-        background: rgba(243, 121, 32, 0.18);
+        background: rgba(243, 121, 32, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(243, 121, 32, 0.2);
     }
     .portfolio-filter-link.active {
-        background: #f37920;
+        background: linear-gradient(135deg, #f37920 0%, #d6681a 100%);
         border-color: #f37920;
-        color: #101318;
-        box-shadow: 0 10px 20px rgba(243, 121, 32, 0.25);
+        color: #ffffff;
+        box-shadow: 0 10px 25px rgba(243, 121, 32, 0.35);
     }
     .portfolio-filter-count {
         font-size: 11px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.55);
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 600;
     }
     .portfolio-filter-link.active .portfolio-filter-count {
-        color: rgba(16, 19, 24, 0.7);
+        color: rgba(255, 255, 255, 0.9);
     }
+
+    /* Enhanced Gallery */
+    .portfolio-gallery-section {
+        padding: 80px 0;
+        background: #ffffff;
+    }
+    .portfolio-gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(16, 19, 24, 0.1);
+        transition: all 0.4s ease;
+        height: 100%;
+        min-height: 380px;
+    }
+    .portfolio-gallery-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(16, 19, 24, 0.2);
+    }
+    .portfolio-gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+    .portfolio-gallery-item:hover img {
+        transform: scale(1.1);
+    }
+    .portfolio-gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(16, 19, 24, 0.95), rgba(16, 19, 24, 0.7), transparent);
+        padding: 32px 24px 24px;
+        color: #ffffff;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+    }
+    .portfolio-gallery-item:hover .portfolio-gallery-overlay {
+        transform: translateY(0);
+    }
+    .portfolio-gallery-overlay h5 {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 8px;
+        color: #ffffff;
+    }
+    .portfolio-gallery-overlay p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+    }
+
     @media (max-width: 767px) {
-        .portfolio-filters {
-            flex-wrap: wrap;
-            justify-content: flex-start;
+        .portfolio-filter-wrap {
+            padding: 24px;
+            margin-bottom: 40px;
         }
         .portfolio-filter-header {
             flex-direction: column;
@@ -134,7 +193,11 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .portfolio-filter-link {
-            padding: 10px 12px;
+            padding: 12px 14px;
+            font-size: 13px;
+        }
+        .portfolio-gallery-section {
+            padding: 50px 0;
         }
     }
     @media (max-width: 480px) {
@@ -144,128 +207,131 @@
     }
 </style>
 
-    <section class="about-hero position-relative zoom-scroll-section">
-        <!-- Background Image -->
-        <div class="about-hero-bg" style=" background-image: url('{{ asset('uploads/kitchen.jpg') }}');"></div>
+<section class="about-hero position-relative zoom-scroll-section">
+    <!-- Background Image -->
+    <div class="about-hero-bg" style="background-image: url('{{ asset('uploads/kitchen.jpg') }}');"></div>
 
-        <!-- Overlay -->
-        <div class="about-hero-overlay"></div>
+    <!-- Overlay -->
+    <div class="about-hero-overlay"></div>
 
-        <!-- Text Content -->
-        <div class="container position-relative about-hero-content">
-            <h1 class="about-title">
-                Our Portfolio
-                <span class="about-underline"></span>
-            </h1>
-        </div>
-    </section>
+    <!-- Text Content -->
+    <div class="container position-relative about-hero-content">
+        <h1 class="about-title">
+            Our Portfolio
+            <span class="about-underline"></span>
+        </h1>
+    </div>
+</section>
 
-    
-
-    <section>
-        <div class="container">
-            <div class="portfolio-filter-wrap">
-                <div class="portfolio-filter-header">
-                    <p class="portfolio-filter-title">Filter by category</p>
-                    <p class="portfolio-filter-hint">Select a service to view its portfolio set.</p>
-                </div>
-                <div class="portfolio-filters">
-                    <a class="portfolio-filter-link active" href="{{ route('our-work') }}">
-                        All <span class="portfolio-filter-count">All</span>
+<section class="zoom-scroll-section">
+    <div class="container">
+        <div class="portfolio-filter-wrap">
+            <div class="portfolio-filter-header">
+                <p class="portfolio-filter-title">Filter by category</p>
+                <p class="portfolio-filter-hint">Select a service to view its portfolio set.</p>
+            </div>
+            <div class="portfolio-filters">
+                <a class="portfolio-filter-link active" href="{{ route('our-work') }}">
+                    All <span class="portfolio-filter-count">All</span>
+                </a>
+                @foreach($services as $service)
+                    <a class="portfolio-filter-link" href="{{ route('portfolio-service', $service->slung) }}">
+                        {{ $service->title }}
+                        <span class="portfolio-filter-count">View</span>
                     </a>
-                    @foreach($services as $service)
-                        <a class="portfolio-filter-link" href="{{ route('portfolio-service', $service->slung) }}">
-                            {{ $service->title }}
-                            <span class="portfolio-filter-count">View</span>
-                        </a>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- START: Renders Gallery Section -->
-    <section class="renders-gallery py-5 bg-light zoom-scroll-section">
-        <div class="container">
-            <div class="row g-4 popup-gallery">
-                @forelse($Portfolio as $render)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item reveal-on-scroll position-relative overflow-hidden">
-                            <a href="{{ asset('storage/' . $render->image) }}" title="{{ $render->title }}">
-                                <img src="{{ asset('storage/' . $render->image) }}" alt="{{ $render->title }}"
-                                    class="img-fluid rounded" style="height: 320px; object-fit: cover;">
-                                <div class="gallery-overlay position-absolute bottom-0 start-0 w-100 p-3"
-                                    style="background: rgba(0,0,0,0.6); color: #f37920;">
-                                    <h5 class="m-0 fw-semibold text-white">{{ $render->title }}</h5>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                @empty
-                    <div class="col-12 text-center reveal-on-scroll">
-                        <p class="text-muted">No renders available at the moment. Check back soon!</p>
-                    </div>
-                @endforelse
-            </div>
-        </div>
-    </section>
-    <!-- END: Renders Gallery Section -->
-
-    @if(isset($methodologies) && $methodologies->count() > 0)
-    <!-- START: Our Methodology Section -->
-    <section class="our-process-cards py-5 zoom-scroll-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-subtitle">Our Methodology</span>
-                <h2 class="section-title">Interior Design Consultation Process</h2>
-                <p class="section-description">A comprehensive journey from concept to completion, delivering exceptional interior spaces</p>
-            </div>
-
-            <div class="row g-4">
-                @foreach($methodologies as $methodology)
-                <div class="col-lg-4 col-md-6">
-                    <div class="process-card">
-                        <div class="card-icon">
-                            <div class="icon-wrapper">
-                                <i class="{{ $methodology->icon }}"></i>
-                            </div>
-                            <span class="step-badge">{{ str_pad($methodology->step_number, 2, '0', STR_PAD_LEFT) }}</span>
-                        </div>
-                        <h5>{{ $methodology->title }}</h5>
-                        <p>{{ $methodology->description }}</p>
-                        @if($methodology->features && count($methodology->features) > 0)
-                        <div class="card-features">
-                            @foreach($methodology->features as $feature)
-                            <span>{{ $feature }}</span>
-                            @endforeach
-                        </div>
-                        @endif
-                    </div>
-                </div>
                 @endforeach
             </div>
         </div>
-    </section>
-    <!-- END: Our Methodology Section -->
-    @endif
+    </div>
+</section>
 
-    <section class="intro-section zoom-scroll-section reveal-on-scroll">
-        <div class="intro-container">
-            <div class="intro-text">
-                <h2>Our Work</h2>
-                <h4 style="color:#f37920">Design excellence, crafted with intent.</h4>
-
-                <p>
-                    Since 2008, Meglink has grown from a focused interior studio into a regional design partner delivering
-                    residential, hospitality, commercial, and retail experiences. Our portfolio reflects a disciplined craft
-                    ethos, thoughtful material curation, and collaborations that elevate everyday spaces.
-                </p>
-                <a href="{{ url('/') }}/contact-us" class="intro-btn">
-                    Contact Us &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
+<!-- START: Portfolio Gallery Section -->
+<section class="portfolio-gallery-section zoom-scroll-section">
+    <div class="container">
+        <div class="row g-4 popup-gallery">
+            @forelse($Portfolio as $render)
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item reveal-on-scroll">
+                        <a href="{{ asset('storage/' . $render->image) }}" title="{{ $render->title }}" class="portfolio-gallery-item">
+                            <img src="{{ asset('storage/' . $render->image) }}" alt="{{ $render->title }}">
+                            <div class="portfolio-gallery-overlay">
+                                <h5>{{ $render->title }}</h5>
+                                @if($render->service)
+                                    <p>{{ $render->service->title }}</p>
+                                @endif
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @empty
+                <div class="col-12 text-center reveal-on-scroll">
+                    <div style="padding: 80px 20px;">
+                        <i class="fas fa-images" style="font-size: 64px; color: #e9ecef; margin-bottom: 20px;"></i>
+                        <h4 style="color: #5c6570; margin-bottom: 12px;">No Portfolio Items Yet</h4>
+                        <p class="text-muted">Check back soon for our latest work!</p>
+                    </div>
+                </div>
+            @endforelse
         </div>
-    </section>
+    </div>
+</section>
+<!-- END: Portfolio Gallery Section -->
+
+@if(isset($methodologies) && $methodologies->count() > 0)
+<!-- START: Our Methodology Section -->
+<section class="our-process-cards py-5 zoom-scroll-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-subtitle">Our Methodology</span>
+            <h2 class="section-title">Interior Design Consultation Process</h2>
+            <p class="section-description">A comprehensive journey from concept to completion, delivering exceptional interior spaces</p>
+        </div>
+
+        <div class="row g-4">
+            @foreach($methodologies as $methodology)
+            <div class="col-lg-4 col-md-6">
+                <div class="process-card">
+                    <div class="card-icon">
+                        <div class="icon-wrapper">
+                            <i class="{{ $methodology->icon }}"></i>
+                        </div>
+                        <span class="step-badge">{{ str_pad($methodology->step_number, 2, '0', STR_PAD_LEFT) }}</span>
+                    </div>
+                    <h5>{{ $methodology->title }}</h5>
+                    <p>{{ $methodology->description }}</p>
+                    @if($methodology->features && count($methodology->features) > 0)
+                    <div class="card-features">
+                        @foreach($methodology->features as $feature)
+                        <span>{{ $feature }}</span>
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- END: Our Methodology Section -->
+@endif
+
+<section class="intro-section zoom-scroll-section reveal-on-scroll">
+    <div class="intro-container">
+        <div class="intro-text">
+            <h2>Our Work</h2>
+            <h4 style="color:#f37920">Design excellence, crafted with intent.</h4>
+
+            <p>
+                Since 2008, Meglink has grown from a focused interior studio into a regional design partner delivering
+                residential, hospitality, commercial, and retail experiences. Our portfolio reflects a disciplined craft
+                ethos, thoughtful material curation, and collaborations that elevate everyday spaces.
+            </p>
+            <a href="{{ url('/') }}/contact-us" class="intro-btn">
+                Contact Us &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
 <script>
     // Zoom Scroll Animation JavaScript
@@ -280,8 +346,8 @@
                 }
             });
         }, {
-            threshold: 0.1, // Trigger when 10% of the element is visible
-            rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
 
         // Observe each section

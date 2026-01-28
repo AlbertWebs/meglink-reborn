@@ -3,23 +3,24 @@
 @section('title', 'Land Resources')
 
 @section('content_header')
-    <h1>Land Resources</h1>
+    <h1><i class="fas fa-book mr-2"></i>Land Resources</h1>
 @stop
 
 @section('content')
-<div class="card card-primary">
+<link rel="stylesheet" href="{{ asset('css/admin-enhanced.css') }}">
+<div class="card admin-form-card">
     <div class="card-header">
-        <h3 class="card-title">Edit Land Resources Content</h3>
+        <h3><i class="fas fa-book mr-2"></i>Edit Land Resources Content</h3>
     </div>
     <form action="{{ route('admin.land-resources.update') }}" method="POST">
         @csrf
         @method('PUT')
         <div class="card-body">
             @if(session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
+                <div class="alert alert-success alert-enhanced">{{ session('success') }}</div>
             @endif
             @if($errors->any())
-                <div class="alert alert-danger">
+                <div class="alert alert-danger alert-enhanced">
                     <ul class="mb-0">
                         @foreach($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -68,9 +69,9 @@
                 <small class="form-text text-muted">Information about joint venture opportunities.</small>
             </div>
         </div>
-        <div class="card-footer">
-            <button class="btn btn-primary">
-                <i class="fas fa-save mr-1"></i>Save Changes
+        <div class="card-footer d-flex justify-content-end">
+            <button type="submit" class="admin-btn-primary">
+                <i class="fas fa-save mr-2"></i>Save Changes
             </button>
         </div>
     </form>

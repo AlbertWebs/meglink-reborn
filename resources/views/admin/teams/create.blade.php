@@ -1,45 +1,19 @@
 @extends('adminlte::page')
 
+@section('title', 'Create Team Member')
+
+@section('content_header')
+    <h1><i class="fas fa-plus-circle mr-2"></i>Create New Team Member</h1>
+@stop
+
 @section('content')
-@if ($errors->any())
-  <div class="alert alert-danger">
-      <ul>
-          @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-          @endforeach
-      </ul>
-  </div>
-@endif
-<div class="container py-4">
-    <h2>Add Team Member</h2>
-    <form action="{{ route('admin.teams.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-3">
-            <label>Name</label>
-            <input name="name" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label>Designation</label>
-            <input name="designation" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label>Instagram</label>
-            <input name="instagram" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label>Twitter</label>
-            <input name="twitter" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label>LinkedIn</label>
-            <input name="linkedin" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label>Image</label>
-            <input type="file" name="image" class="form-control">
-        </div>
-        <button class="btn btn-success">Save</button>
-        <a href="{{ route('admin.teams.index') }}" class="btn btn-secondary">Cancel</a>
-    </form>
+<link rel="stylesheet" href="{{ asset('css/admin-enhanced.css') }}">
+<div class="card admin-form-card">
+    <div class="card-header">
+        <h3><i class="fas fa-users mr-2"></i>New Team Member</h3>
+    </div>
+    <div class="card-body">
+        @include('admin.teams._form')
+    </div>
 </div>
 @endsection
