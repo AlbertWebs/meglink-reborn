@@ -342,6 +342,11 @@ return [
         'icon' => 'fas fa-cogs',
     ],
     [
+        'text' => 'Our Methodology',
+        'url'  => 'admin/methodologies',
+        'icon' => 'fas fa-clipboard-list',
+    ],
+    [
         'text' => 'Testimonials',
         'url'  => 'admin/testimonials',
         'icon' => 'fas fa-comments',

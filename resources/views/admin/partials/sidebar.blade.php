@@ -45,6 +45,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('admin.methodologies.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Our Methodology</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('admin.pages.project-management-consultant-projects.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>PMC Projects</p>
