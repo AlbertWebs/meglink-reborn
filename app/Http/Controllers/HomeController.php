@@ -80,7 +80,8 @@ class HomeController extends Controller
     {
         $page = 'pm-consultants';
         $pmcPage = $this->getProjectManagementConsultantPage();
-        return view('pages.project-management-consultants', compact('page', 'pmcPage'));
+        $pmcProjects = ProjectManagementConsultantProject::latest()->get();
+        return view('pages.project-management-consultants', compact('page', 'pmcPage', 'pmcProjects'));
     }
 
     public function project_management_consultant_project($slug)
