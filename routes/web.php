@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ProjectManagementConsultantPageController;
 use App\Http\Controllers\Admin\RealtorPageController;
 use App\Http\Controllers\Admin\ProjectManagementConsultantProjectController;
 use App\Http\Controllers\Admin\RealtorListingController;
+use App\Http\Controllers\Admin\LandResourceController;
 use App\Http\Controllers\LandController;
 use App\Http\Controllers\RenderController;
 
@@ -22,6 +23,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/renders', [App\Http\Controllers\HomeController::class, 'renders'])->name('renders');
 Route::get('/land-for-sale', [App\Http\Controllers\HomeController::class, 'land'])->name('land-for-sale');
+Route::get('/land-resources', [App\Http\Controllers\HomeController::class, 'land_resources'])->name('land-resources');
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
 Route::get('/services/{slung}', [App\Http\Controllers\HomeController::class, 'service'])->name('service');
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
@@ -77,6 +79,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('pages/realtor-listings', RealtorListingController::class)
         ->parameters(['realtor-listings' => 'listing'])
         ->names('admin.pages.realtor-listings');
+    Route::get('pages/land-resources', [LandResourceController::class, 'edit'])
+        ->name('admin.land-resources.edit');
+    Route::put('pages/land-resources', [LandResourceController::class, 'update'])
+        ->name('admin.land-resources.update');
 
     Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 

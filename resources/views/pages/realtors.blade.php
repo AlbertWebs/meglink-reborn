@@ -34,6 +34,25 @@
     background: #101318;
     color: #ffffff;
     padding: 110px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .realtors-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('{{ asset('uploads/kitchen.jpg') }}') center/cover no-repeat;
+    opacity: 0.25;
+  }
+  .realtors-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 19, 24, 0.75);
+  }
+  .realtors-hero .container {
+    position: relative;
+    z-index: 1;
   }
   .realtors-hero h1 {
     font-size: 46px;
@@ -78,57 +97,226 @@
     min-height: 220px;
   }
   .realtors-services {
-    padding: 70px 0;
-    background: #f6f7f8;
+    padding: 90px 0;
+    background: #ffffff;
+  }
+  .realtors-services .section-header {
+    margin-bottom: 50px;
+  }
+  .realtors-services .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(16, 19, 24, 0.5);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .realtors-services h3 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #101318;
+    margin-bottom: 16px;
+  }
+  .realtors-services .section-intro {
+    font-size: 17px;
+    color: #5c6570;
+    line-height: 1.7;
   }
   .realtors-service-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
   }
   .realtors-service-card {
     background: #ffffff;
     border: 1px solid rgba(16, 19, 24, 0.12);
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: 0 14px 26px rgba(16, 19, 24, 0.06);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 12px 28px rgba(16, 19, 24, 0.06);
     height: 100%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .realtors-service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #f37920;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
   }
   .realtors-service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 36px rgba(16, 19, 24, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(16, 19, 24, 0.12);
+    border-color: rgba(243, 121, 32, 0.2);
+  }
+  .realtors-service-card:hover::before {
+    transform: scaleY(1);
+  }
+  .realtors-service-card .service-icon {
+    width: 56px;
+    height: 56px;
+    background: #f7f4ef;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+  .realtors-service-card:hover .service-icon {
+    background: #f37920;
+    transform: scale(1.1);
+  }
+  .realtors-service-card .service-icon i {
+    font-size: 24px;
+    color: #f37920;
+    transition: color 0.3s ease;
+  }
+  .realtors-service-card:hover .service-icon i {
+    color: #ffffff;
+  }
+  .realtors-service-card .service-label {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(16, 19, 24, 0.5);
+    margin-bottom: 12px;
+    display: block;
   }
   .realtors-service-card h5 {
-    font-weight: 700;
-    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #101318;
+    line-height: 1.3;
   }
   .realtors-service-card p {
     color: #5c6570;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 0;
   }
   .realtors-projects {
-    padding: 70px 0;
-    background: #ffffff;
+    padding: 90px 0;
+    background: #f7f4ef;
+  }
+  .realtors-projects .section-header {
+    margin-bottom: 50px;
+  }
+  .realtors-projects .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(16, 19, 24, 0.5);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .realtors-projects h3 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #101318;
+    margin-bottom: 16px;
+  }
+  .realtors-projects .section-intro {
+    font-size: 17px;
+    color: #5c6570;
+    line-height: 1.7;
   }
   .realtors-projects .project-card {
+    background: #ffffff;
     border: 1px solid rgba(16, 19, 24, 0.12);
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: 0 14px 26px rgba(16, 19, 24, 0.06);
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 12px 28px rgba(16, 19, 24, 0.08);
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    text-decoration: none;
+    color: inherit;
+  }
+  .realtors-projects .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(16, 19, 24, 0.15);
+    border-color: rgba(243, 121, 32, 0.3);
+    text-decoration: none;
+    color: inherit;
   }
   .realtors-projects .project-card img {
     width: 100%;
-    height: 180px;
-    border-radius: 14px;
+    height: 260px;
+    border-radius: 0;
     object-fit: cover;
+    transition: transform 0.5s ease;
   }
-  .realtors-projects .project-card .badge {
+  .realtors-projects .project-card:hover img {
+    transform: scale(1.05);
+  }
+  .realtors-projects .project-card .card-body {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .realtors-projects .project-card .listing-label {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(16, 19, 24, 0.5);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .realtors-projects .project-card h5 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #101318;
+    line-height: 1.3;
+  }
+  .realtors-projects .project-card .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .realtors-projects .project-card .card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #5c6570;
+    font-weight: 500;
+  }
+  .realtors-projects .project-card .card-meta-item i {
+    color: #f37920;
+    font-size: 16px;
+  }
+  .realtors-projects .project-card .timeline-badge {
     background: #101318;
     color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    align-self: flex-start;
+  }
+  .realtors-projects .project-card .timeline-badge i {
+    font-size: 12px;
   }
   .realtors-cta {
     background: #101318;
@@ -208,18 +396,30 @@
 
 <section class="realtors-services">
   <div class="container">
-    <div class="row align-items-end mb-4">
-      <div class="col-lg-7">
-        <h3 class="mb-2">{{ $realtorPage->table_title }}</h3>
-        <div class="text-muted mb-0">{!! $realtorPage->table_intro !!}</div>
-      </div>
+    <div class="section-header">
+      <span class="eyebrow">Our Services</span>
+      <h3>{{ $realtorPage->table_title }}</h3>
+      <div class="section-intro">{!! $realtorPage->table_intro !!}</div>
     </div>
     <div class="realtors-service-cards">
-      @foreach($serviceRows as $row)
+      @php
+        $serviceIcons = [
+          'fas fa-paint-brush',
+          'fas fa-tools',
+          'fas fa-home',
+          'fas fa-phone-alt',
+          'fas fa-lightbulb',
+          'fas fa-couch'
+        ];
+      @endphp
+      @foreach($serviceRows as $index => $row)
         <div class="realtors-service-card">
-          <span class="eyebrow text-uppercase" style="letter-spacing: 0.3em; font-size: 11px; color: rgba(16, 19, 24, 0.5);">Service</span>
-          <h5 class="mt-2">{{ $row[0] }}</h5>
-          <p class="mb-0">{{ $row[1] }}</p>
+          <div class="service-icon">
+            <i class="{{ $serviceIcons[$index % count($serviceIcons)] }}"></i>
+          </div>
+          <span class="service-label">Service</span>
+          <h5>{{ $row[0] }}</h5>
+          <p>{{ $row[1] }}</p>
         </div>
       @endforeach
     </div>
@@ -228,25 +428,38 @@
 
 <section class="realtors-projects">
   <div class="container">
-    <div class="row align-items-end mb-4">
-      <div class="col-lg-7">
-        <h3 class="mb-2">{{ $realtorPage->sample_projects_title }}</h3>
-        <div class="text-muted mb-0">{!! $realtorPage->sample_projects_intro !!}</div>
-      </div>
+    <div class="section-header">
+      <span class="eyebrow">Portfolio</span>
+      <h3>{{ $realtorPage->sample_projects_title }}</h3>
+      <div class="section-intro">{!! $realtorPage->sample_projects_intro !!}</div>
     </div>
     <div class="row g-4">
       @if(isset($realtorListings) && $realtorListings->isNotEmpty())
         @foreach($realtorListings as $index => $listing)
           <div class="col-lg-4">
-            <a class="project-card text-decoration-none text-dark" href="{{ route('realtors.listing', $listing->slug) }}">
+            <a class="project-card" href="{{ route('realtors.listing', $listing->slug) }}">
               @php
                 $image = $listing->image ?: ($listingImages[$index] ?? $realtorPage->image_one ?? 'uploads/kitchen.jpg');
               @endphp
               <img src="{{ $resolveImage($image) }}" alt="{{ $listing->title }} sample listing">
-              <span class="eyebrow text-uppercase" style="letter-spacing: 0.3em; font-size: 11px; color: rgba(16, 19, 24, 0.6);">Sample Listing</span>
-              <h5 class="mt-2 mb-1">{{ $listing->title }}</h5>
-              <p class="mb-2 text-muted">{{ $listing->location }}</p>
-              <span class="badge px-3 py-2 align-self-start">{{ $listing->timeline }}</span>
+              <div class="card-body">
+                <span class="listing-label">Sample Listing</span>
+                <h5>{{ $listing->title }}</h5>
+                <div class="card-meta">
+                  @if($listing->location)
+                    <div class="card-meta-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>{{ $listing->location }}</span>
+                    </div>
+                  @endif
+                </div>
+                @if($listing->timeline)
+                  <span class="timeline-badge">
+                    <i class="fas fa-clock"></i>
+                    {{ $listing->timeline }}
+                  </span>
+                @endif
+              </div>
             </a>
           </div>
         @endforeach
@@ -258,10 +471,20 @@
                 $image = $listingImages[$index] ?? $realtorPage->image_one ?? 'uploads/kitchen.jpg';
               @endphp
               <img src="{{ $resolveImage($image) }}" alt="{{ $row[0] }} sample listing">
-              <span class="eyebrow text-uppercase" style="letter-spacing: 0.3em; font-size: 11px; color: rgba(16, 19, 24, 0.6);">Sample Listing</span>
-              <h5 class="mt-2 mb-1">{{ $row[0] }}</h5>
-              <p class="mb-2 text-muted">{{ $row[1] }}</p>
-              <span class="badge px-3 py-2 align-self-start">{{ $row[2] }}</span>
+              <div class="card-body">
+                <span class="listing-label">Sample Listing</span>
+                <h5>{{ $row[0] }}</h5>
+                <div class="card-meta">
+                  <div class="card-meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ $row[1] }}</span>
+                  </div>
+                </div>
+                <span class="timeline-badge">
+                  <i class="fas fa-clock"></i>
+                  {{ $row[2] }}
+                </span>
+              </div>
             </div>
           </div>
         @endforeach

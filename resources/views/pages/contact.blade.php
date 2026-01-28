@@ -123,9 +123,38 @@
                     </div>
 
                 </div>
-                <div class="col-lg-6 mt-4 mt-lg-0 p-xl-0">
-                    <div class="pq-map pq-me-330">
-                        <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.836488961483!2d36.7980905!3d-1.2711255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f171550f35839%3A0xf75d6f20df03463e!2sMeglink%20Ventures%20Limited!5e0!3m2!1sen!2ske!4v1758621913663!5m2!1sen!2ske" title="London Eye, London, United Kingdom" aria-label="London Eye, London, United Kingdom"></iframe>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="mb-3">Send an Inquiry</h5>
+                            <form id="contact-inquiry-form">
+                                <div class="form-group mb-3">
+                                    <label for="inquiry_name">Full Name</label>
+                                    <input type="text" class="form-control" id="inquiry_name" placeholder="Your name" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="inquiry_email">Email</label>
+                                    <input type="email" class="form-control" id="inquiry_email" placeholder="you@example.com" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="inquiry_phone">Phone (optional)</label>
+                                    <input type="text" class="form-control" id="inquiry_phone" placeholder="+254 700 000 000">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="inquiry_subject">Subject</label>
+                                    <input type="text" class="form-control" id="inquiry_subject" value="{{ request('subject', '') }}" placeholder="Walkthrough Inquiry">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="inquiry_message">Message</label>
+                                    <textarea class="form-control" id="inquiry_message" rows="4" placeholder="Share details about your listing or request."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                                <small class="d-block text-muted mt-2">This opens your email client with the inquiry details.</small>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="pq-map mt-4">
+                        <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.836488961483!2d36.7980905!3d-1.2711255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f171550f35839%3A0xf75d6f20df03463e!2sMeglink%20Ventures%20Limited!5e0!3m2!1sen!2ske!4v1758621913663!5m2!1sen!2ske" title="Meglink Ventures Limited" aria-label="Meglink Ventures Limited"></iframe>
                     </div>
                 </div>
             </div>
@@ -172,6 +201,33 @@
                 section.classList.add('zoom-visible');
             });
         }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contact-inquiry-form');
+        if (!form) return;
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('inquiry_name').value.trim();
+            const email = document.getElementById('inquiry_email').value.trim();
+            const phone = document.getElementById('inquiry_phone').value.trim();
+            const subject = document.getElementById('inquiry_subject').value.trim() || 'Walkthrough Inquiry';
+            const message = document.getElementById('inquiry_message').value.trim();
+
+            const bodyLines = [
+                `Name: ${name}`,
+                `Email: ${email}`,
+                phone ? `Phone: ${phone}` : null,
+                '',
+                message,
+            ].filter(Boolean);
+
+            const mailto = `mailto:info@meglinkventures.co.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\\n'))}`;
+            window.location.href = mailto;
+        });
     });
 </script>
 

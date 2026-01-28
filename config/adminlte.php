@@ -357,6 +357,11 @@ return [
         'icon' => 'fas fa-tree',
     ],
     [
+        'text' => 'Land Resources',
+        'url'  => 'admin/pages/land-resources',
+        'icon' => 'fas fa-book',
+    ],
+    [
         'text' => 'Renders',
         'url'  => 'admin/renders',
         'icon' => 'fas fa-image',
@@ -371,8 +376,11 @@ return [
         'url'  => 'admin/settings',
         'icon' => 'fas fa-tools',
     ],
+    
+    // Project Management Consultants Section
+    ['header' => 'Project Management'],
     [
-        'text' => 'Project Mgmt Page',
+        'text' => 'PMC Page Content',
         'url'  => 'admin/pages/project-management-consultants',
         'icon' => 'fas fa-clipboard-list',
     ],
@@ -381,8 +389,11 @@ return [
         'url'  => 'admin/pages/project-management-consultant-projects',
         'icon' => 'fas fa-folder-open',
     ],
+    
+    // Realtors Section
+    ['header' => 'Realtors'],
     [
-        'text' => 'Realtors Page',
+        'text' => 'Realtors Page Content',
         'url'  => 'admin/pages/realtors',
         'icon' => 'fas fa-building',
     ],
@@ -489,6 +500,16 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js',
+                ],
+            ],
+        ],
+        'AdminCustom' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'css/admin-custom.css',
                 ],
             ],
         ],

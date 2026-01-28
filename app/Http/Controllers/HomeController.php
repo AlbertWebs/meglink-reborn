@@ -15,6 +15,7 @@ use App\Models\RealtorListing;
 use App\Models\Render;
 
 use App\Models\Land;
+use App\Models\LandResource;
 
 class HomeController extends Controller
 {
@@ -93,8 +94,12 @@ class HomeController extends Controller
     {
         $page = 'realtors';
         $listing = RealtorListing::where('slug', $slug)->firstOrFail();
+        $relatedListings = RealtorListing::where('id', '!=', $listing->id)
+            ->latest()
+            ->take(3)
+            ->get();
 
-        return view('pages.realtor-listing', compact('page', 'listing'));
+        return view('pages.realtor-listing', compact('page', 'listing', 'relatedListings'));
     }
 
       public function updates()
@@ -176,10 +181,27 @@ class HomeController extends Controller
     {
         $page = 'land';
 
-       $landsForSale = Land::where('type', 'sale')->latest()->take(4)->get();
-       $jointVentures = Land::where('type', 'joint_venture')->latest()->take(4)->get();
+       $landsForSale = Land::where('type', 'sale')->latest()->get();
+       $jointVentures = Land::where('type', 'joint_venture')->latest()->get();
+       $allLands = Land::latest()->take(6)->get();
+       $realtorListings = RealtorListing::latest()->take(6)->get();
 
-       return view('pages.land-for-sale', compact('landsForSale', 'jointVentures','page'));
+       return view('pages.land-for-sale', compact('landsForSale', 'jointVentures', 'allLands', 'realtorListings', 'page'));
+    }
+
+    public function land_resources()
+    {
+        $page = 'land';
+        $resource = LandResource::firstOrCreate([], [
+            'title' => 'Land Resources',
+            'land_purchaser_notice' => 'Before purchasing land, ensure you have conducted a thorough due diligence process. This includes verifying the title deed, checking for any encumbrances or liens, confirming the land is not subject to any disputes, and ensuring all necessary approvals and permits are in place. It is also essential to engage a qualified surveyor to confirm the exact boundaries and acreage of the property.',
+            'land_seller' => 'As a land seller, you must provide clear documentation including a valid title deed, survey plans, and any relevant approvals. Ensure the property is free from encumbrances, disputes, or legal complications. It is recommended to have all necessary documentation verified by a legal professional before listing the property for sale.',
+            'joint_ventures' => 'Joint Ventures offer a strategic partnership model where resources, risks, and profits are shared between parties. This arrangement is ideal for landowners who want to maximize their property\'s potential without bearing all the development costs alone. Joint ventures typically involve clear agreements on roles, responsibilities, profit-sharing, and exit strategies.',
+            'seo_title' => 'Land Resources & Information | Meglink Ventures',
+            'seo_description' => 'Essential information for land purchasers, sellers, and joint venture partners. Learn about prerequisites, requirements, and partnership opportunities.',
+        ]);
+
+        return view('pages.land-resources', compact('page', 'resource'));
     }
 
     private function getProjectManagementConsultantPage(): ProjectManagementConsultantPage

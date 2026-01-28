@@ -12,7 +12,10 @@ class RealtorListing extends Model
         'location',
         'timeline',
         'image',
+        'video_mp4',
+        'video_youtube',
         'excerpt',
         'body',
+        'closing_content',
     ];
 }

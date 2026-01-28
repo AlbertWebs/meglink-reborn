@@ -80,6 +80,10 @@
     @include('components.footer')
     <!-- Footer -->
 
+    <!-- Mobile Bottom Navigation -->
+    @include('components.mobile-bottom-nav')
+    <!-- Mobile Bottom Navigation -->
+
     <!-- Back To Top -->
     <div id="back-to-top" class="active">
         <a class="top" id="top" href="#top">

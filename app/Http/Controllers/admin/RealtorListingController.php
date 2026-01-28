@@ -26,6 +26,7 @@ class RealtorListingController extends Controller
         $data = $this->validateData($request);
         $data['slug'] = $this->makeSlug($data['title']);
         $data['image'] = $this->storeImage($request) ?? null;
+        $data['video_mp4'] = $this->storeVideo($request) ?? null;
 
         RealtorListing::create($data);
 
@@ -46,6 +47,10 @@ class RealtorListingController extends Controller
         $image = $this->storeImage($request);
         if ($image) {
             $data['image'] = $image;
+        }
+        $video = $this->storeVideo($request);
+        if ($video) {
+            $data['video_mp4'] = $video;
         }
 
         $listing->update($data);
@@ -71,8 +76,11 @@ class RealtorListingController extends Controller
             'location' => ['nullable', 'string', 'max:255'],
             'timeline' => ['nullable', 'string', 'max:255'],
             'image_file' => ['nullable', 'image', 'max:4096'],
+            'video_mp4_file' => ['nullable', 'mimetypes:video/mp4', 'max:51200'],
+            'video_youtube' => ['nullable', 'string', 'max:255'],
             'excerpt' => ['nullable', 'string'],
             'body' => ['nullable', 'string'],
+            'closing_content' => ['nullable', 'string'],
         ]);
     }
 
@@ -108,5 +116,22 @@ class RealtorListingController extends Controller
         $file->move($destination, $name);
 
         return 'uploads/realtor-listings/' . $name;
+    }
+
+    private function storeVideo(Request $request): ?string
+    {
+        if (!$request->hasFile('video_mp4_file')) {
+            return null;
+        }
+
+        $file = $request->file('video_mp4_file');
+        $name = Str::random(32) . '.' . $file->getClientOriginalExtension();
+        $destination = public_path('uploads/realtor-listings/videos');
+        if (!is_dir($destination)) {
+            mkdir($destination, 0755, true);
+        }
+        $file->move($destination, $name);
+
+        return 'uploads/realtor-listings/videos/' . $name;
     }
 }

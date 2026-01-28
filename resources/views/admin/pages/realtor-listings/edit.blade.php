@@ -15,6 +15,15 @@
         @csrf
         @method('PUT')
         <div class="card-body">
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             @include('admin.pages.realtor-listings.form', ['listing' => $listing])
         </div>
         <div class="card-footer">
@@ -25,7 +34,19 @@
 @endsection
 
 @section('js')
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script>
+        const editors = new Map();
+        document.querySelectorAll('.rich-text').forEach((element) => {
+            ClassicEditor.create(element, {
+                toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo']
+            }).then((editor) => {
+                editors.set(element, editor);
+            }).catch((error) => {
+                console.error(error);
+            });
+        });
+
         const imageInput = document.getElementById('image_file');
         const preview = document.getElementById('listing-image-preview');
         if (imageInput && preview) {
@@ -40,6 +61,15 @@
                     preview.style.display = 'inline-block';
                 };
                 reader.readAsDataURL(file);
+            });
+        }
+
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', () => {
+                editors.forEach((editor, element) => {
+                    element.value = editor.getData();
+                });
             });
         }
     </script>

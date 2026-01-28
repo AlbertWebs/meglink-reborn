@@ -56,5 +56,59 @@
 </div>
 <div class="form-group">
     <label for="body">Full Description</label>
-    <textarea id="body" name="body" rows="6" class="form-control">{{ old('body', $listing->body ?? '') }}</textarea>
+    <textarea id="body" name="body" rows="6" class="form-control rich-text">{{ old('body', $listing->body ?? '') }}</textarea>
+</div>
+<div class="form-group">
+    <label for="video_mp4_file">Video Tour (MP4)</label>
+    <input type="file" id="video_mp4_file" name="video_mp4_file" class="form-control-file" accept="video/mp4">
+    @if(!empty($listing?->video_mp4))
+        <small class="form-text text-muted">Current: {{ $listing->video_mp4 }}</small>
+        @php
+            $videoPath = $listing->video_mp4;
+            if (\Illuminate\Support\Str::startsWith($videoPath, ['http://', 'https://'])) {
+                $videoUrl = $videoPath;
+            } elseif (\Illuminate\Support\Str::startsWith($videoPath, 'uploads/')) {
+                $videoUrl = asset($videoPath);
+            } else {
+                $videoUrl = \Illuminate\Support\Facades\Storage::url($videoPath);
+            }
+        @endphp
+        <div class="mt-2">
+            <video controls style="max-width: 320px; border-radius: 10px; border: 1px solid rgba(16, 19, 24, 0.12);">
+                <source src="{{ $videoUrl }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    @endif
+</div>
+<div class="form-group">
+    <label for="video_youtube">YouTube Link</label>
+    <input type="url" id="video_youtube" name="video_youtube" class="form-control" value="{{ old('video_youtube', $listing->video_youtube ?? '') }}" placeholder="https://www.youtube.com/watch?v=...">
+    @if(!empty($listing?->video_youtube))
+        @php
+            $youtubeId = null;
+            if (preg_match('~(youtu\\.be/|v=)([^&]+)~', $listing->video_youtube, $matches)) {
+                $youtubeId = $matches[2];
+            }
+        @endphp
+        @if($youtubeId)
+            <div class="mt-2">
+                <iframe
+                    width="320"
+                    height="180"
+                    src="https://www.youtube.com/embed/{{ $youtubeId }}"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    style="border-radius: 10px; border: 1px solid rgba(16, 19, 24, 0.12);"
+                ></iframe>
+            </div>
+        @endif
+    @endif
+</div>
+<div class="form-group">
+    <label for="closing_content">Closing Content (Displayed before "Other Sample Listings")</label>
+    <textarea id="closing_content" name="closing_content" rows="8" class="form-control rich-text">{{ old('closing_content', $listing->closing_content ?? '') }}</textarea>
+    <small class="form-text text-muted">This content will appear as a full paragraph section just before the "Other Sample Listings" section on the listing detail page.</small>
 </div>

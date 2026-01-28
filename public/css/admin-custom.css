@@ -1,0 +1,131 @@
+/* Admin Sidebar and Content Independent Scrolling */
+
+/* Ensure body and html don't scroll */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Wrapper takes full viewport height */
+.wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sidebar independent scrolling */
+.main-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1030;
+}
+
+/* Sidebar scrollbar styling */
+.main-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main-sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.main-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.main-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Sidebar content area */
+.sidebar {
+  height: calc(100vh - 57px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 20px;
+}
+
+/* Content wrapper independent scrolling */
+.content-wrapper {
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Content scrollbar styling */
+.content-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* When sidebar is collapsed */
+.sidebar-collapse .content-wrapper {
+  margin-left: 78px;
+}
+
+/* Ensure navbar doesn't interfere */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1031;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar-collapse .main-header {
+  margin-left: 78px;
+}
+
+/* Adjust content padding for navbar */
+.content-wrapper {
+  padding-top: 57px;
+}
+
+/* Content area */
+.content {
+  padding: 15px;
+}
+
+/* Mobile responsive */
+@media (max-width: 991.98px) {
+  .main-sidebar {
+    margin-left: -250px;
+  }
+  
+  .content-wrapper,
+  .main-header {
+    margin-left: 0 !important;
+  }
+  
+  .sidebar-open .main-sidebar {
+    margin-left: 0;
+  }
+  
+  .sidebar {
+    height: calc(100vh - 57px);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
