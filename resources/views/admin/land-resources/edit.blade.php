@@ -29,21 +29,21 @@
                 </div>
             @endif
 
-            <div class="form-group">
+            <div class="admin-form-group">
                 <label for="title">Page Title</label>
                 <input type="text" id="title" name="title" class="form-control" value="{{ old('title', $resource->title) }}">
             </div>
 
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="admin-form-group">
                         <label for="seo_title">SEO Title</label>
                         <input type="text" id="seo_title" name="seo_title" class="form-control" value="{{ old('seo_title', $resource->seo_title) }}">
                     </div>
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="admin-form-group">
                 <label for="seo_description">SEO Description</label>
                 <textarea id="seo_description" name="seo_description" rows="2" class="form-control">{{ old('seo_description', $resource->seo_description) }}</textarea>
             </div>
@@ -51,19 +51,19 @@
             <hr>
             <h5 class="text-muted">Content Sections</h5>
 
-            <div class="form-group">
+            <div class="admin-form-group">
                 <label for="land_purchaser_notice">Land Purchaser Notice</label>
                 <textarea id="land_purchaser_notice" name="land_purchaser_notice" rows="12" class="form-control rich-text">{{ old('land_purchaser_notice', $resource->land_purchaser_notice) }}</textarea>
                 <small class="form-text text-muted">Explains prerequisites for land purchasers.</small>
             </div>
 
-            <div class="form-group">
+            <div class="admin-form-group">
                 <label for="land_seller">Land Seller Requirements</label>
                 <textarea id="land_seller" name="land_seller" rows="12" class="form-control rich-text">{{ old('land_seller', $resource->land_seller) }}</textarea>
                 <small class="form-text text-muted">What's required for land sellers.</small>
             </div>
 
-            <div class="form-group">
+            <div class="admin-form-group">
                 <label for="joint_ventures">Joint Ventures</label>
                 <textarea id="joint_ventures" name="joint_ventures" rows="12" class="form-control rich-text">{{ old('joint_ventures', $resource->joint_ventures) }}</textarea>
                 <small class="form-text text-muted">Information about joint venture opportunities.</small>

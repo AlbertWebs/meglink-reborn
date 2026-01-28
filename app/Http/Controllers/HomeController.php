@@ -69,33 +69,35 @@ class HomeController extends Controller
         return view('pages.history', compact('page'));
     }
 
+    public function team()
+    {
+        $page = 'team';
+        $teams = Team::all();
+        return view('pages.team', compact('page', 'teams'));
+    }
+
     public function consultants()
     {
         $page = 'pm-consultants';
         $pmcPage = $this->getProjectManagementConsultantPage();
-        $pmcProjects = $this->getProjectManagementConsultantProjects();
+        return view('pages.project-management-consultants', compact('page', 'pmcPage'));
+    }
 
-        return view('pages.project-management-consultants', compact('page', 'pmcPage', 'pmcProjects'));
+    public function project_management_consultant_project($slug)
+    {
+        $page = 'pm-consultants';
+        $project = ProjectManagementConsultantProject::where('slug', $slug)->firstOrFail();
+        return view('pages.project-management-consultant-project', compact('page', 'project'));
     }
 
     public function realtors()
     {
         $page = 'realtors';
         $realtorPage = $this->getRealtorPage();
-        $realtorListings = $this->getRealtorListings();
-
-        return view('pages.realtors', compact('page', 'realtorPage', 'realtorListings'));
+        return view('pages.realtors', compact('page', 'realtorPage'));
     }
 
-    public function project_management_consultant_project(string $slug)
-    {
-        $page = 'pm-consultants';
-        $project = ProjectManagementConsultantProject::where('slug', $slug)->firstOrFail();
-
-        return view('pages.project-management-consultant-project', compact('page', 'project'));
-    }
-
-    public function realtor_listing(string $slug)
+    public function realtor_listing($slug)
     {
         $page = 'realtors';
         $listing = RealtorListing::where('slug', $slug)->firstOrFail();
@@ -222,20 +224,11 @@ class HomeController extends Controller
             'image_one' => 'uploads/kitchen.jpg',
             'image_two' => 'uploads/wardrobe.jpeg',
             'table_title' => 'Professional Disciplines',
-            'table_intro' => 'Specialist leadership across every technical touchpoint.',
-            'table_rows' => "Architects|Design leadership, documentation, compliance, and spatial precision.\nElectrical Engineers|Power distribution, lighting strategy, and safety planning.\nMechanical Engineers|HVAC integration, ventilation, and system performance.\nCivil Engineers|Structural integrity, site coordination, and long-term durability.",
-            'discipline_images' => "uploads/kitchen.jpg\nuploads/wardrobe.jpeg\nuploads/vanity.jpg\nuploads/kitchen.jpg",
-            'highlights_title' => 'Engagement Highlights',
-            'highlights_items' => "Registered professionals guiding every discipline.\nClear scope, reporting, and milestone control.\nProcurement and contractor coordination handled end to end.\nQuality inspections and detailed close-out documentation.",
-            'metrics_title' => 'Delivery Metrics',
-            'metrics_items' => "Projects Led|120+\nAverage Schedule Adherence|96%\nTrade Partners Coordinated|40+\nAverage Client Satisfaction|4.9/5",
-            'sample_projects_title' => 'Sample Projects',
-            'sample_projects_intro' => 'Recent engagements that highlight our approach and attention to detail.',
-            'sample_projects' => "Executive Office Fit-Out|Nairobi|12 weeks\nLuxury Apartment Renovation|Westlands|8 weeks\nRetail Showroom Launch|Karen|6 weeks",
-            'cta_title' => 'Need a consultant to protect your timeline and budget?',
-            'cta_body' => 'Let’s define a strategy that keeps your build efficient, transparent, and beautifully executed.',
-            'cta_button_text' => 'Book a Consultation',
-            'cta_button_link' => '/contact-us',
+            'table_intro' => 'Our registered professionals bring deep expertise across architecture, engineering, and project coordination.',
+            'sample_projects_intro' => 'Recent projects that showcase our ability to deliver complex interiors on time and within budget.',
+            'cta_title' => 'Ready to start your project?',
+            'cta_body' => 'Let\'s discuss how our project management approach can streamline your next interior fit-out or renovation.',
+            'cta_button_text' => 'Schedule a Consultation',
         ]);
     }
 
@@ -243,114 +236,19 @@ class HomeController extends Controller
     {
         return RealtorPage::firstOrCreate([], [
             'title' => 'Realtors',
-            'seo_title' => 'Realtor Partnerships | Meglink Ventures',
-            'seo_description' => 'Realtor support services that elevate listings with staging, styling, and value-driven upgrades.',
+            'seo_title' => 'Realtor Services | Meglink Ventures',
+            'seo_description' => 'Fast turnarounds, curated staging, and value-driven upgrades that elevate each listing.',
             'hero_title' => 'Listings that feel curated, confident, and ready to close.',
             'hero_subtitle' => 'We collaborate with realtors to sharpen presentation, elevate perception, and increase buyer interest.',
-            'intro' => 'We help realtors present properties at their best. From targeted improvements to full refreshes, we support listing performance with a practical, brand-aligned approach.',
+            'intro' => 'Our realtor services are designed for speed and impact. We understand that listings need to stand out quickly, so we focus on high-impact improvements that make properties more marketable and appealing to potential buyers.',
             'image_one' => 'uploads/kitchen.jpg',
-            'image_two' => 'uploads/vanity.jpg',
+            'image_two' => 'uploads/wardrobe.jpeg',
             'table_title' => 'Realtor Services',
             'table_intro' => 'Focused support designed for quick turnarounds and market impact.',
-            'table_rows' => "Listing Prep & Styling|Curate lighting, textures, and focal points for standout showings.\nValue-Driven Upgrades|Identify quick improvements with the highest buyer impact.\nPre-Sale Refreshes|Coordinate paint, flooring, and fixture updates efficiently.\nOn-Call Support|Fast response for urgent walkthroughs and re-listing needs.",
-            'sample_projects_title' => 'Sample Listings',
             'sample_projects_intro' => 'Showcase-ready transformations completed with speed and care.',
-            'sample_listing_images' => "uploads/kitchen.jpg\nuploads/wardrobe.jpeg\nuploads/vanity.jpg",
-            'sample_projects' => "Two-Bed Apartment Refresh|Kilimani|3 weeks\nTownhouse Staging & Styling|Lavington|2 weeks\nLuxury Rental Upgrade|Kileleshwa|4 weeks",
             'cta_title' => 'Want to make your next listing stand out?',
             'cta_body' => 'Partner with us to elevate your property presentation and close faster.',
             'cta_button_text' => 'Schedule a Walkthrough',
-            'cta_button_link' => '/contact-us',
         ]);
-    }
-
-    private function getProjectManagementConsultantProjects()
-    {
-        $projects = ProjectManagementConsultantProject::latest()->get();
-
-        if ($projects->isNotEmpty()) {
-            return $projects;
-        }
-
-        $defaults = [
-            [
-                'title' => 'Executive Office Fit-Out',
-                'location' => 'Nairobi',
-                'timeline' => '12 weeks',
-                'image' => 'uploads/kitchen.jpg',
-                'excerpt' => 'Full project leadership covering spatial planning, coordination, and executive-grade finishing.',
-                'body' => "We managed scope, contractor sequencing, and material approvals to deliver a premium executive environment with zero downtime.\n\nOur team led coordination across architectural, electrical, and mechanical scopes while maintaining quality control.",
-            ],
-            [
-                'title' => 'Luxury Apartment Renovation',
-                'location' => 'Westlands',
-                'timeline' => '8 weeks',
-                'image' => 'uploads/wardrobe.jpeg',
-                'excerpt' => 'High-end renovation delivering refined finishes, custom joinery, and lighting upgrades.',
-                'body' => "Our consultants aligned suppliers and trades to meet a tight programme while protecting the client’s design intent throughout.",
-            ],
-            [
-                'title' => 'Retail Showroom Launch',
-                'location' => 'Karen',
-                'timeline' => '6 weeks',
-                'image' => 'uploads/vanity.jpg',
-                'excerpt' => 'Turnkey fit-out with rapid procurement and coordinated shopfitting.',
-                'body' => "We delivered a fast-track programme with milestone reporting, ensuring the brand opened on schedule.",
-            ],
-        ];
-
-        foreach ($defaults as $default) {
-            ProjectManagementConsultantProject::create([
-                ...$default,
-                'slug' => \Illuminate\Support\Str::slug($default['title']),
-            ]);
-        }
-
-        return ProjectManagementConsultantProject::latest()->get();
-    }
-
-    private function getRealtorListings()
-    {
-        $listings = RealtorListing::latest()->get();
-
-        if ($listings->isNotEmpty()) {
-            return $listings;
-        }
-
-        $defaults = [
-            [
-                'title' => 'Two-Bed Apartment Refresh',
-                'location' => 'Kilimani',
-                'timeline' => '3 weeks',
-                'image' => 'uploads/kitchen.jpg',
-                'excerpt' => 'Staging and finish updates crafted for fast buyer interest.',
-                'body' => "We refreshed lighting, hardware, and paint to reposition the unit for a premium rental audience.\n\nOur team coordinated the staging schedule and ensured photography-ready delivery.",
-            ],
-            [
-                'title' => 'Townhouse Staging & Styling',
-                'location' => 'Lavington',
-                'timeline' => '2 weeks',
-                'image' => 'uploads/wardrobe.jpeg',
-                'excerpt' => 'Targeted upgrades and styling to highlight open-plan flow.',
-                'body' => "We focused on focal point enhancements, lighting adjustments, and light-touch repairs to elevate the buyer walkthrough experience.",
-            ],
-            [
-                'title' => 'Luxury Rental Upgrade',
-                'location' => 'Kileleshwa',
-                'timeline' => '4 weeks',
-                'image' => 'uploads/vanity.jpg',
-                'excerpt' => 'Premium finishing and styling to support a high-value rental listing.',
-                'body' => "We coordinated joinery updates, fixture replacement, and on-brand staging to secure a faster lease.",
-            ],
-        ];
-
-        foreach ($defaults as $default) {
-            RealtorListing::create([
-                ...$default,
-                'slug' => \Illuminate\Support\Str::slug($default['title']),
-            ]);
-        }
-
-        return RealtorListing::latest()->get();
     }
 }
