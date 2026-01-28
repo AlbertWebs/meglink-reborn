@@ -140,6 +140,41 @@
     color: #101318;
     font-weight: 700;
   }
+  .resource-section-cta {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(16, 19, 24, 0.08);
+  }
+  .resource-section-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #f37920;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+    border: 2px solid rgba(243, 121, 32, 0.2);
+    border-radius: 10px;
+    background: rgba(243, 121, 32, 0.05);
+  }
+  .resource-section-cta-link:hover {
+    color: #ffffff;
+    background: #f37920;
+    border-color: #f37920;
+    gap: 14px;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(243, 121, 32, 0.2);
+  }
+  .resource-section-cta-link i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
+  .resource-section-cta-link:hover i {
+    transform: translateX(2px);
+  }
   @media (max-width: 991px) {
     .land-resources-hero {
       padding: 100px 0 80px;
@@ -205,6 +240,11 @@
       <div class="resource-section-content">
         {!! $resource->land_purchaser_notice !!}
       </div>
+      <div class="resource-section-cta">
+        <a href="{{ route('contact') }}?subject={{ urlencode('Land Purchase Inquiry') }}" class="resource-section-cta-link">
+          Get in Touch <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
     @endif
 
@@ -217,6 +257,11 @@
       <div class="resource-section-content">
         {!! $resource->land_seller !!}
       </div>
+      <div class="resource-section-cta">
+        <a href="{{ route('contact') }}?subject={{ urlencode('Land Sale Inquiry') }}" class="resource-section-cta-link">
+          Get in Touch <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
     @endif
 
@@ -228,6 +273,11 @@
       </div>
       <div class="resource-section-content">
         {!! $resource->joint_ventures !!}
+      </div>
+      <div class="resource-section-cta">
+        <a href="{{ route('contact') }}?subject={{ urlencode('Joint Venture Inquiry') }}" class="resource-section-cta-link">
+          Get in Touch <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
     @endif
