@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Create Blog Post')
+@section('title', 'Edit Methodology Step')
 
 @section('content_header')
-    <h1><i class="fas fa-plus-circle mr-2"></i>Create New Blog Post</h1>
+    <h1><i class="fas fa-edit mr-2"></i>Edit Methodology Step</h1>
 @stop
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/admin-enhanced.css') }}">
 <div class="card admin-form-card">
     <div class="card-header">
-        <h3><i class="fas fa-blog mr-2"></i>New Blog Post</h3>
+        <h3><i class="fas fa-clipboard-list mr-2"></i>Edit Methodology Step</h3>
     </div>
     <div class="card-body">
-        @include('admin.blogs._form')
+        @include('admin.methodologies._form', ['methodology' => $methodology])
     </div>
 </div>
 @endsection

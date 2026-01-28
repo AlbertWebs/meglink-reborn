@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\RealtorPageController;
 use App\Http\Controllers\Admin\ProjectManagementConsultantProjectController;
 use App\Http\Controllers\Admin\RealtorListingController;
 use App\Http\Controllers\Admin\LandResourceController;
+use App\Http\Controllers\Admin\MethodologyController;
 use App\Http\Controllers\LandController;
 use App\Http\Controllers\RenderController;
 
@@ -56,6 +57,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('blogs', BlogController::class)->names('admin.blog');
     Route::resource('testimonials', TestimonialController::class)->names('admin.testimonials');
     Route::resource('slides', \App\Http\Controllers\SlideController::class)->names('admin.slides');
+    Route::resource('methodologies', MethodologyController::class)->names('admin.methodologies');
 
 
     Route::resource('portfolios', PortfoliosController::class)->names('admin.portfolio');

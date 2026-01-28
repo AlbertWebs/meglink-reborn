@@ -211,6 +211,44 @@
     </section>
     <!-- END: Renders Gallery Section -->
 
+    @if(isset($methodologies) && $methodologies->count() > 0)
+    <!-- START: Our Methodology Section -->
+    <section class="our-process-cards py-5 zoom-scroll-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-subtitle">Our Methodology</span>
+                <h2 class="section-title">Interior Design Consultation Process</h2>
+                <p class="section-description">A comprehensive journey from concept to completion, delivering exceptional interior spaces</p>
+            </div>
+
+            <div class="row g-4">
+                @foreach($methodologies as $methodology)
+                <div class="col-lg-4 col-md-6">
+                    <div class="process-card">
+                        <div class="card-icon">
+                            <div class="icon-wrapper">
+                                <i class="{{ $methodology->icon }}"></i>
+                            </div>
+                            <span class="step-badge">{{ str_pad($methodology->step_number, 2, '0', STR_PAD_LEFT) }}</span>
+                        </div>
+                        <h5>{{ $methodology->title }}</h5>
+                        <p>{{ $methodology->description }}</p>
+                        @if($methodology->features && count($methodology->features) > 0)
+                        <div class="card-features">
+                            @foreach($methodology->features as $feature)
+                            <span>{{ $feature }}</span>
+                            @endforeach
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- END: Our Methodology Section -->
+    @endif
+
     <section class="intro-section zoom-scroll-section reveal-on-scroll">
         <div class="intro-container">
             <div class="intro-text">

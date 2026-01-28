@@ -26,6 +26,27 @@
     .zoom-scroll-section:nth-child(4) { transition-delay: 0.4s; }
     .zoom-scroll-section:nth-child(5) { transition-delay: 0.5s; }
     .zoom-scroll-section:nth-child(6) { transition-delay: 0.6s; }
+
+    /* Independent hover effects for card-features spans */
+    .card-features span {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .card-features span:hover {
+        background: #f37920 !important;
+        color: white !important;
+        border-color: #f37920 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(243, 121, 32, 0.3);
+    }
+
+    /* Remove the card-level hover effect for spans */
+    .process-card:hover .card-features span {
+        background: #f8f9fa;
+        color: #495057;
+        border-color: #e9ecef;
+    }
 </style>
 
 <!-- START: Intro Section -->
@@ -191,11 +212,13 @@
                         </div>
                         <span class="step-badge">03</span>
                     </div>
-                    <h5>Virtual Tour</h5>
-                    <p>An immersive 3D virtual presentation of interior spaces, bringing your design to life with realistic visualization.</p>
+                    <h5>Virtual Tour & 3D Renders</h5>
+                    <p>An immersive 3D virtual presentation of interior spaces, bringing your design to life with realistic visualization. High-quality still images compiled from the approved virtual tour, providing detailed visual references for implementation.</p>
                     <div class="card-features">
                         <span>3D Visualization</span>
                         <span>Immersive Experience</span>
+                        <span>Still Images</span>
+                        <span>Detailed Views</span>
                         <span>2 Revisions Included</span>
                     </div>
                 </div>
@@ -206,28 +229,9 @@
                 <div class="process-card">
                     <div class="card-icon">
                         <div class="icon-wrapper">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <span class="step-badge">04</span>
-                    </div>
-                    <h5>3D Renders</h5>
-                    <p>High-quality still images compiled from the approved virtual tour, providing detailed visual references for implementation.</p>
-                    <div class="card-features">
-                        <span>Still Images</span>
-                        <span>Detailed Views</span>
-                        <span>Approved Designs</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="process-card">
-                    <div class="card-icon">
-                        <div class="icon-wrapper">
                             <i class="fas fa-drafting-compass"></i>
                         </div>
-                        <span class="step-badge">05</span>
+                        <span class="step-badge">04</span>
                     </div>
                     <h5>Working Drawings</h5>
                     <p>Technical layouts and elevations for installation purposes covering all critical aspects of the interior design.</p>
@@ -239,14 +243,14 @@
                 </div>
             </div>
 
-            <!-- Step 6 -->
+            <!-- Step 5 -->
             <div class="col-lg-4 col-md-6">
                 <div class="process-card">
                     <div class="card-icon">
                         <div class="icon-wrapper">
                             <i class="fas fa-clipboard-check"></i>
                         </div>
-                        <span class="step-badge">06</span>
+                        <span class="step-badge">05</span>
                     </div>
                     <h5>Project Management</h5>
                     <p>Dedicated project manager stationed on-site to ensure quality standards and coordinate all installation processes.</p>

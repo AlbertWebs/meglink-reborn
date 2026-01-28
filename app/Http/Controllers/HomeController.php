@@ -16,6 +16,7 @@ use App\Models\Render;
 
 use App\Models\Land;
 use App\Models\LandResource;
+use App\Models\Methodology;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,11 @@ class HomeController extends Controller
         $page = 'portfolio';
         $Portfolio = Portfolio::all();
         $services = Service::orderBy('title')->get();
-        return view('pages.portfolio', compact('page','Portfolio','services'));
+        $methodologies = Methodology::where('is_active', true)
+            ->orderBy('order')
+            ->orderBy('step_number')
+            ->get();
+        return view('pages.portfolio', compact('page','Portfolio','services','methodologies'));
     }
 
     public function services(){
