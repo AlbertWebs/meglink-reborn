@@ -52,19 +52,19 @@
 
             <div class="form-group">
                 <label for="land_purchaser_notice">Land Purchaser Notice</label>
-                <textarea id="land_purchaser_notice" name="land_purchaser_notice" rows="6" class="form-control rich-text">{{ old('land_purchaser_notice', $resource->land_purchaser_notice) }}</textarea>
+                <textarea id="land_purchaser_notice" name="land_purchaser_notice" rows="12" class="form-control rich-text">{{ old('land_purchaser_notice', $resource->land_purchaser_notice) }}</textarea>
                 <small class="form-text text-muted">Explains prerequisites for land purchasers.</small>
             </div>
 
             <div class="form-group">
                 <label for="land_seller">Land Seller Requirements</label>
-                <textarea id="land_seller" name="land_seller" rows="6" class="form-control rich-text">{{ old('land_seller', $resource->land_seller) }}</textarea>
+                <textarea id="land_seller" name="land_seller" rows="12" class="form-control rich-text">{{ old('land_seller', $resource->land_seller) }}</textarea>
                 <small class="form-text text-muted">What's required for land sellers.</small>
             </div>
 
             <div class="form-group">
                 <label for="joint_ventures">Joint Ventures</label>
-                <textarea id="joint_ventures" name="joint_ventures" rows="6" class="form-control rich-text">{{ old('joint_ventures', $resource->joint_ventures) }}</textarea>
+                <textarea id="joint_ventures" name="joint_ventures" rows="12" class="form-control rich-text">{{ old('joint_ventures', $resource->joint_ventures) }}</textarea>
                 <small class="form-text text-muted">Information about joint venture opportunities.</small>
             </div>
         </div>
@@ -77,6 +77,17 @@
 </div>
 @endsection
 
+@section('css')
+<style>
+    .rich-text {
+        min-height: 400px;
+    }
+    .ck-editor__editable {
+        min-height: 400px !important;
+    }
+</style>
+@endsection
+
 @section('js')
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script>
@@ -87,6 +98,10 @@
                 toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo']
             }).then((editor) => {
                 editors.set(element, editor);
+                // Set minimum height for the editor
+                editor.editing.view.change((writer) => {
+                    writer.setStyle('min-height', '400px', editor.editing.view.document.getRoot());
+                });
             }).catch((error) => {
                 console.error(error);
             });
