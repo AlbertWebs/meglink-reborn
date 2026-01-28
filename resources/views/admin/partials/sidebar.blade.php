@@ -17,6 +17,41 @@
                         <p>Blogs</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.settings.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-file-alt"></i>
+                        <p>
+                            Pages
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.pages.project-management-consultants.edit') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Project Mgmt Consultants</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.pages.project-management-consultant-projects.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>PMC Projects</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.pages.realtors.edit') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Realtors</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>

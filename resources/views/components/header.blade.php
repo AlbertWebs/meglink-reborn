@@ -131,7 +131,7 @@
                                             <a href="{{route('about')}}" aria-current="page">About Us</a>
                                         </li> --}}
 
-                                        <li class="menu-item @if($page == 'about'  || $page == 'history') current-menu-item @endif menu-item-has-children">
+                                        <li class="menu-item @if($page == 'about'  || $page == 'history' || $page == 'pm-consultants' || $page == 'realtors') current-menu-item @endif menu-item-has-children">
                                             <a href="{{route('about')}}" aria-current="page">About Us</a><i
                                                 class="fa fa-chevron-down pq-submenu-icon"></i>
                                             <ul class="sub-menu">
@@ -140,6 +140,12 @@
                                                 </li>
                                                 <li class="menu-item @if($page == 'history') current-menu-item @endif">
                                                     <a href="{{route('history')}}">Our History</a>
+                                                </li>
+                                                <li class="menu-item @if($page == 'pm-consultants') current-menu-item @endif">
+                                                    <a href="{{route('project-management-consultants')}}">Project Management Consultants</a>
+                                                </li>
+                                                <li class="menu-item @if($page == 'realtors') current-menu-item @endif">
+                                                    <a href="{{route('realtors')}}">Realtors</a>
                                                 </li>
                                             </ul>
                                         </li>

@@ -372,6 +372,26 @@ return [
         'icon' => 'fas fa-tools',
     ],
     [
+        'text' => 'Project Mgmt Page',
+        'url'  => 'admin/pages/project-management-consultants',
+        'icon' => 'fas fa-clipboard-list',
+    ],
+    [
+        'text' => 'PMC Projects',
+        'url'  => 'admin/pages/project-management-consultant-projects',
+        'icon' => 'fas fa-folder-open',
+    ],
+    [
+        'text' => 'Realtors Page',
+        'url'  => 'admin/pages/realtors',
+        'icon' => 'fas fa-building',
+    ],
+    [
+        'text' => 'Realtor Listings',
+        'url'  => 'admin/pages/realtor-listings',
+        'icon' => 'fas fa-home',
+    ],
+    [
         'text' => 'Public Website',
         'url'  => '/',
         'icon' => 'fas fa-globe',

@@ -2,26 +2,7 @@
 
 @section('content')
 
-<style>
-    /* Zoom Scroll Animation Styles */
-    .zoom-scroll-section {
-        opacity: 0;
-        transform: scale(0.95);
-        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    .zoom-scroll-section.zoom-visible {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    /* Staggered animation delays for multiple sections */
-    .zoom-scroll-section:nth-child(1) { transition-delay: 0.1s; }
-    .zoom-scroll-section:nth-child(2) { transition-delay: 0.2s; }
-    .zoom-scroll-section:nth-child(3) { transition-delay: 0.3s; }
-</style>
-
-<section class="about-hero position-relative zoom-scroll-section">
+<section class="about-hero position-relative">
   <!-- Background Image -->
    <div class="about-hero-bg" style=" background-image: url('{{ asset('storage/'.$service->image) }}');"></div>
 
@@ -36,234 +17,288 @@
     </h1>
   </div>
 </section>
-    {{--  --}}
+<style>
+  .service-intro {
+    padding: 80px 0 70px;
+    background: #ffffff;
+  }
+  .service-intro .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(16, 19, 24, 0.55);
+  }
+  .service-intro h2 {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 12px 0 16px;
+  }
+  .service-intro p {
+    color: #5c6570;
+    line-height: 1.8;
+  }
+  .service-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .service-summary {
+    background: #101318;
+    color: #ffffff;
+    padding: 36px;
+    border-radius: 18px;
+    box-shadow: 0 18px 35px rgba(16, 19, 24, 0.2);
+  }
+  .service-summary h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  .service-summary p {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0;
+  }
+  .service-detail {
+    padding: 70px 0;
+    background: #f7f4ef;
+  }
+  .service-detail .image-frame {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 24px 40px rgba(16, 19, 24, 0.12);
+  }
+  .service-detail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .service-content-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 36px;
+    box-shadow: 0 18px 35px rgba(16, 19, 24, 0.08);
+  }
+  .service-content-card h4 {
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .deliverables {
+    padding: 80px 0;
+    background: #ffffff;
+  }
+  .deliverable-card {
+    background: #f9f9f7;
+    border-radius: 18px;
+    padding: 26px;
+    height: 100%;
+    border: 1px solid rgba(16, 19, 24, 0.08);
+  }
+  .deliverable-card h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .service-timeline {
+    background: #101318;
+    color: #ffffff;
+    padding: 80px 0;
+  }
+  .service-timeline h2,
+  .service-timeline h5,
+  .service-timeline p {
+    color: rgba(255, 255, 255, 0.88);
+  }
+  .service-timeline h2 {
+    color: #ffffff;
+  }
+  .timeline-step {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 24px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .timeline-step span {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .related-services {
+    padding: 70px 0 90px;
+    background: #ffffff;
+  }
+  .related-card {
+    background: #f7f4ef;
+    border-radius: 18px;
+    padding: 22px;
+    height: 100%;
+  }
+  @media (max-width: 991px) {
+    .service-intro h2 {
+      font-size: 32px;
+    }
+    .service-summary {
+      margin-top: 24px;
+    }
+  }
+</style>
 
-<section class="intro-section zoom-scroll-section">
-  <div class="intro-container">
-    <div class="intro-text">
-      <h2>Our Services</h2>
-      <h4 style="color:#f37920"> {{$service->title}}</h4>
+@php
+  $serviceSummary = $service->meta ? strip_tags($service->meta) : '';
+  $serviceSummary = \Illuminate\Support\Str::length($serviceSummary) > 30
+    ? $serviceSummary
+    : 'We deliver tailored interior solutions with disciplined craft and modern execution.';
+  $serviceBody = $service->content ? $service->content : '<p>Our team crafts custom solutions that balance aesthetics, durability, and function for every space.</p>';
+  $relatedServices = \App\Models\Service::where('id', '!=', $service->id)->take(3)->get();
+@endphp
 
-      <p>
-        {{$service->meta}}
-      </p>
-      <a href="{{url('our-work')}}" class="intro-btn">
-        Explore {{$service->title}} Portfolio &nbsp; &nbsp; <i class="fa fa-arrow-right"></i>
-      </a>
+<section class="service-intro">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <span class="eyebrow">Service Detail</span>
+        <h2>{{ $service->title }}</h2>
+        <p>{{ $serviceSummary }}</p>
+        <div class="service-actions">
+          <a href="{{ url('/contact-us') }}" class="btn btn-orange">Book Consultation</a>
+          <a href="{{ url('our-work') }}" class="btn btn-outline-dark">See Portfolio</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="service-summary">
+          <h5>What you get</h5>
+          <p>Design guidance, curated materials, precise installation, and a finished space that fits your lifestyle.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-     <!-- About Us -->
-    <section class="about-us .pq-about-bg-color pq-bg-grey zoom-scroll-section">
-
-        <div class="container-fluid">
-
-
-            <div class="row">
-                <div class="col-xl-6 padding-reset">
-                    <div class="about-us-img">
-                        <img src="{{ asset('storage/'.$service->image) }}" class="service-images pq-image1" alt="">
-                    </div>
-                </div>
-                <div class="col-xl-6 pq-about-us-padding d-flex flex-column justify-content-center pq-about-bg-colors">
-                    <div class="pq-section-title pq-style-1 pq-mb-35">
-                         <h5  style="text-transform: capitalize; color:#f37920; font-weight:800;">{{$service->title}}</h5>
-
-                        <p class="pq-section-description about-us-text text-black">
-                          {!! $service->title !!}
-                        </p>
-
-                    </div>
-
-                </div>
-            </div>
-
-
+<section class="service-detail">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <div class="image-frame">
+          <img src="{{ asset('storage/'.$service->image) }}" alt="{{ $service->title }}">
         </div>
-    </section>
-    <!-- About Us -->
-    <!-- START: Our Process Section - Interior Design Consultation -->
-<section class="our-process-cards py-5 zoom-scroll-section">
-    <div class="container">
-        <div class="text-center mb-5">
-            <span class="section-subtitle">Our Methodology</span>
-            <h2 class="section-title">Interior Design Consultation Process</h2>
-            <p class="section-description">A comprehensive journey from concept to completion, delivering exceptional interior spaces</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="service-content-card">
+          <h4>Designed for enduring quality.</h4>
+          <div class="service-body">
+            {!! $serviceBody !!}
+          </div>
         </div>
-
-        <div class="row g-4">
-            <!-- Step 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="process-card">
-                    <div class="card-icon">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <span class="step-badge">01</span>
-                    </div>
-                    <h5>Concept Mood Board</h5>
-                    <p>Internet sourced images for inspiration and reference, creating a visual direction that captures your vision and project requirements.</p>
-                    <div class="card-features">
-                        <span>Visual Inspiration</span>
-                        <span>Style Direction</span>
-                        <span>Reference Images</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="process-card">
-                    <div class="card-icon">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-ruler-combined"></i>
-                        </div>
-                        <span class="step-badge">02</span>
-                    </div>
-                    <h5>Proposed Layout</h5>
-                    <p>Detailed layout report with demolitions and furniture arrangement proposals discussed during our first site visit.</p>
-                    <div class="card-features">
-                        <span>Space Planning</span>
-                        <span>Furniture Layout</span>
-                        <span>Demolition Plans</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="process-card">
-                    <div class="card-icon">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-vr-cardboard"></i>
-                        </div>
-                        <span class="step-badge">03</span>
-                    </div>
-                    <h5>Virtual Tour</h5>
-                    <p>An immersive 3D virtual presentation of interior spaces, bringing your design to life with realistic visualization.</p>
-                    <div class="card-features">
-                        <span>3D Visualization</span>
-                        <span>Immersive Experience</span>
-                        <span>2 Revisions Included</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="process-card">
-                    <div class="card-icon">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <span class="step-badge">04</span>
-                    </div>
-                    <h5>3D Renders</h5>
-                    <p>High-quality still images compiled from the approved virtual tour, providing detailed visual references for implementation.</p>
-                    <div class="card-features">
-                        <span>Still Images</span>
-                        <span>Detailed Views</span>
-                        <span>Approved Designs</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="process-card">
-                    <div class="card-icon">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-drafting-compass"></i>
-                        </div>
-                        <span class="step-badge">05</span>
-                    </div>
-                    <h5>Working Drawings</h5>
-                    <p>Technical layouts and elevations for installation purposes covering all critical aspects of the interior design.</p>
-                    <div class="card-features">
-                        <span>Ceiling Plans</span>
-                        <span>Lighting Layouts</span>
-                        <span>Plumbing & Tile Works</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="process-card">
-                    <div class="card-icon">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <span class="step-badge">06</span>
-                    </div>
-                    <h5>Project Management</h5>
-                    <p>Dedicated project manager stationed on-site to ensure quality standards and coordinate all installation processes.</p>
-                    <div class="card-features">
-                        <span>Quality Control</span>
-                        <span>Team Coordination</span>
-                        <span>Material Standards</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Process Summary -->
-        <div class="process-summary mt-5">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h4 class="summary-title">Complete Interior Design Solution</h4>
-                    <p class="summary-text">
-                        Our comprehensive consultation package ensures every aspect of your interior design project is professionally managed,
-                        from initial concept development to final installation, delivering spaces that exceed expectations.
-                    </p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a href="{{ url('/contact-us') }}" class="btn btn-orange btn-lg">
-                        Start Your Project <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </section>
 
+<section class="deliverables">
+  <div class="container">
+    <div class="row align-items-end mb-4">
+      <div class="col-lg-6">
+        <span class="eyebrow">Deliverables</span>
+        <h2>Everything needed for a complete finish.</h2>
+      </div>
+      <div class="col-lg-6">
+        <p>We align material selection, detailing, and on-site coordination to keep the delivery precise and consistent.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="deliverable-card">
+          <h5>Material Guidance</h5>
+          <p>Curated options and durability checks that match your lifestyle and budget.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="deliverable-card">
+          <h5>Installation Precision</h5>
+          <p>Skilled installation teams maintain clean edges, consistent finishes, and lasting performance.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="deliverable-card">
+          <h5>On-Site Oversight</h5>
+          <p>We coordinate trades, check quality, and ensure every detail aligns with the approved plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="service-timeline">
+  <div class="container">
+    <div class="row align-items-end mb-4">
+      <div class="col-lg-7">
+        <span class="eyebrow">How We Work</span>
+        <h2>Clear steps, refined outcomes.</h2>
+      </div>
+      <div class="col-lg-5">
+        <p>From early discovery to final installation, we guide the process with clarity and pace.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="timeline-step">
+          <span>Step 01</span>
+          <h5>Consult & Plan</h5>
+          <p>We capture requirements, site conditions, and desired finish levels.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="timeline-step">
+          <span>Step 02</span>
+          <h5>Spec & Source</h5>
+          <p>Materials and detailing are confirmed with transparent recommendations.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="timeline-step">
+          <span>Step 03</span>
+          <h5>Build & Install</h5>
+          <p>Our team executes with quality checks at each milestone.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="timeline-step">
+          <span>Step 04</span>
+          <h5>Final Review</h5>
+          <p>We walk the space with you to confirm every finish is complete.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Add Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<script>
-    // Zoom Scroll Animation JavaScript
-    document.addEventListener('DOMContentLoaded', function() {
-        const zoomSections = document.querySelectorAll('.zoom-scroll-section');
-
-        // Create Intersection Observer
-        const zoomObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('zoom-visible');
-                }
-            });
-        }, {
-            threshold: 0.1, // Trigger when 10% of the element is visible
-            rootMargin: '0px 0px -50px 0px' // Adjust trigger point
-        });
-
-        // Observe each section
-        zoomSections.forEach(section => {
-            zoomObserver.observe(section);
-        });
-
-        // Fallback for older browsers
-        if (!window.IntersectionObserver) {
-            document.querySelectorAll('.zoom-scroll-section').forEach(section => {
-                section.classList.add('zoom-visible');
-            });
-        }
-    });
-</script>
+<section class="related-services">
+  <div class="container">
+    <div class="row align-items-end mb-4">
+      <div class="col-lg-7">
+        <span class="eyebrow">Explore More</span>
+        <h2>Other services to consider.</h2>
+      </div>
+      <div class="col-lg-5">
+        <p>Complementary offerings that pair well with {{ $service->title }} projects.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      @foreach ($relatedServices as $related)
+        <div class="col-lg-4">
+          <div class="related-card">
+            <h5>{{ $related->title }}</h5>
+            <p>{{ \Illuminate\Support\Str::limit(strip_tags($related->meta ?? ''), 110) }}</p>
+            <a href="{{ route('service', $related->slung) }}" class="service-link">
+              View Details <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      @endforeach
+    </div>
+  </div>
+</section>
 
 @endsection

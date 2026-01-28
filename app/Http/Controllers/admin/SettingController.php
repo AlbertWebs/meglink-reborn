@@ -17,14 +17,15 @@ class SettingController extends Controller
     public function update(Request $request)
     {
         $data = $request->validate([
-            'phone_number' => 'nullable|string',
-            'email'        => 'nullable|email',
-            'website'      => 'nullable|url',
-            'facebook'     => 'nullable|url',
-            'instagram'    => 'nullable|url',
-            'linkedin'     => 'nullable|url',
-            'tiktok'       => 'nullable|url',
-            'twitter'      => 'nullable|url',
+            'phone_number'           => 'nullable|string',
+            'phone_number_secondary' => 'nullable|string',
+            'email'                  => 'nullable|email',
+            'website'                => 'nullable|url',
+            'facebook'               => 'nullable|url',
+            'instagram'              => 'nullable|url',
+            'linkedin'               => 'nullable|url',
+            'tiktok'                 => 'nullable|url',
+            'twitter'                => 'nullable|url',
         ]);
 
         $settings = Setting::first();

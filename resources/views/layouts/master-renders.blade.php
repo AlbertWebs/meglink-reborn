@@ -123,6 +123,48 @@
     <!-- Magnific Popup CSS CDN (add in <head>) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
+    <style>
+      .mfp-bg {
+        background: rgba(10, 12, 18, 0.92);
+      }
+      .mfp-figure:after {
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+        background: #0f1218;
+      }
+      .mfp-figure {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .mfp-img {
+        border-radius: 14px;
+      }
+      .mfp-title {
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .mfp-counter {
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .mfp-close {
+        color: #ffffff;
+        opacity: 0.8;
+        font-size: 28px;
+        right: 8px;
+        top: 6px;
+      }
+      .mfp-close:hover {
+        opacity: 1;
+      }
+      .mfp-arrow {
+        opacity: 0.7;
+      }
+      .mfp-arrow:hover {
+        opacity: 1;
+      }
+    </style>
+
     <!-- Your Popup Gallery Script -->
     <script>
     $(document).ready(function() {
