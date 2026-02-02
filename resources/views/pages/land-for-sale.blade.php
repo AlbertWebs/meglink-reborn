@@ -523,7 +523,7 @@
                 </div>
               @endif
               @if($land->description)
-                <p class="land-card-description">{{ \Illuminate\Support\Str::limit($land->description, 120) }}</p>
+                <p class="land-card-description">{{ \Illuminate\Support\Str::limit(strip_tags($land->description), 120) }}</p>
               @endif
               @if($land->price)
                 <div class="land-card-price">
@@ -565,7 +565,7 @@
                 </div>
               @endif
               @if($land->description)
-                <p class="land-card-description">{{ \Illuminate\Support\Str::limit($land->description, 120) }}</p>
+                <p class="land-card-description">{{ \Illuminate\Support\Str::limit(strip_tags($land->description), 120) }}</p>
               @endif
               @if($land->price)
                 <div class="land-card-price">
@@ -609,7 +609,7 @@
                 </div>
               @endif
               @if($land->description)
-                <p class="land-card-description">{{ \Illuminate\Support\Str::limit($land->description, 100) }}</p>
+                <p class="land-card-description">{{ \Illuminate\Support\Str::limit(strip_tags($land->description), 100) }}</p>
               @endif
               @if($land->price)
                 <div class="land-card-price">
