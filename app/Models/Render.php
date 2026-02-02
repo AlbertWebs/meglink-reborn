@@ -10,4 +10,9 @@ class Render extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'description', 'image'];
+
+    public function images()
+    {
+        return $this->hasMany(RenderImage::class);
+    }
 }

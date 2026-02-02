@@ -120,7 +120,7 @@ class HomeController extends Controller
     public function renders()
     {
         $page = 'Renders';
-        $renders = Render::latest()->get();
+        $renders = Render::with('images')->latest()->get();
         return view('pages.renders', compact('renders','page'));
     }
 

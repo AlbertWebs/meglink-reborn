@@ -104,6 +104,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/{render}/edit', [App\Http\Controllers\RenderController::class, 'edit'])->name('renders.edit');
         Route::put('/{render}', [App\Http\Controllers\RenderController::class, 'update'])->name('renders.update');
         Route::delete('/{render}', [App\Http\Controllers\RenderController::class, 'destroy'])->name('renders.destroy');
+        Route::delete('render-images/{renderImage}', [RenderController::class, 'destroyImage'])->name('render-images.destroy');
     });
 });
 

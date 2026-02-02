@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Render;
+use App\Models\RenderImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RenderController extends Controller
 {
     public function index()
     {
-        $renders = Render::latest()->get();
+        $renders = Render::with('images')->latest()->get();
         return view('admin.renders.index', compact('renders'));
     }
 
@@ -23,16 +25,25 @@ class RenderController extends Controller
         $request->validate([
             'title'       => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image'       => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'images'      => 'required|array|min:1',
+            'images.*'    => 'image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
-        $path = $request->file('image')->store('renders', 'public');
+        // Create render with first image as main image (for backward compatibility)
+        $firstImage = $request->file('images')[0];
+        $mainImagePath = $firstImage->store('renders', 'public');
 
-        Render::create([
+        $render = Render::create([
             'title'       => $request->title,
             'description' => $request->description,
-            'image'       => $path,
+            'image'       => $mainImagePath,
         ]);
+
+        // Store all images
+        foreach ($request->file('images') as $image) {
+            $path = $image->store('renders/gallery', 'public');
+            $render->images()->create(['image_link' => $path]);
+        }
 
         return redirect()->route('renders.index')->with('success', 'Render uploaded successfully!');
     }
@@ -40,6 +51,7 @@ class RenderController extends Controller
     // Show edit form
     public function edit(Render $render)
     {
+        $render->load('images');
         return view('admin.renders.edit', compact('render'));
     }
 
@@ -49,24 +61,21 @@ class RenderController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'images.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
-
-        // Replace image if new one is uploaded
-        if ($request->hasFile('image')) {
-            // Delete old image
-            if ($render->image && Storage::disk('public')->exists($render->image)) {
-                Storage::disk('public')->delete($render->image);
-            }
-
-            $path = $request->file('image')->store('renders', 'public');
-            $render->image = $path;
-        }
 
         // Update text fields
         $render->title = $validated['title'];
         $render->description = $validated['description'] ?? '';
         $render->save();
+
+        // Handle additional images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('renders/gallery', 'public');
+                $render->images()->create(['image_link' => $path]);
+            }
+        }
 
         return redirect()->route('renders.index')->with('success', 'Render updated successfully.');
     }
@@ -78,8 +87,27 @@ class RenderController extends Controller
             Storage::disk('public')->delete($render->image);
         }
 
+        // Delete all associated images
+        foreach ($render->images as $image) {
+            if (Storage::disk('public')->exists($image->image_link)) {
+                Storage::disk('public')->delete($image->image_link);
+            }
+        }
+
         $render->delete();
 
         return redirect()->route('renders.index')->with('success', 'Render deleted successfully.');
+    }
+
+    // Delete a single render image
+    public function destroyImage(RenderImage $renderImage)
+    {
+        if (Storage::disk('public')->exists($renderImage->image_link)) {
+            Storage::disk('public')->delete($renderImage->image_link);
+        }
+
+        $renderImage->delete();
+
+        return back()->with('success', 'Image removed successfully.');
     }
 }
