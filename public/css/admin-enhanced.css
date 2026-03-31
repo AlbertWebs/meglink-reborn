@@ -123,6 +123,8 @@
     border-radius: 8px;
     padding: 12px 16px;
     font-size: 15px;
+    color: #212529;
+    background-color: #ffffff;
     transition: all 0.3s ease;
 }
 
@@ -133,8 +135,15 @@
 }
 
 .admin-form-group textarea.form-control {
-    min-height: 150px;
+    min-height: 220px;
     resize: vertical;
+}
+
+/* Keep select/options readable across themes */
+.admin-form-group select.form-control,
+.admin-form-group select.form-control option {
+    color: #212529 !important;
+    background-color: #ffffff !important;
 }
 
 .admin-form-group .form-control-file {
@@ -259,6 +268,11 @@
 
 .rich-text-container .ck-editor__editable {
     min-height: 300px;
+}
+
+/* Larger writing area for CKEditor used in forms */
+.ck-editor__editable_inline {
+    min-height: 320px;
 }
 
 /* File Upload Area */

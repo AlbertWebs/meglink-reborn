@@ -50,6 +50,56 @@ html, body {
   padding-bottom: 20px;
 }
 
+/* Darker sidebar theme */
+.main-sidebar {
+  background: #0f172a !important;
+}
+
+.main-sidebar .brand-link {
+  background: #0b1220 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.main-sidebar .brand-text,
+.main-sidebar .user-panel .info,
+.main-sidebar .nav-header {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+/* Sidebar links */
+.main-sidebar .nav-sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.78) !important;
+  border-radius: 8px;
+  margin: 2px 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-sidebar .nav-sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* Active parent/open menu link */
+.main-sidebar .nav-sidebar .nav-item.menu-open > .nav-link,
+.main-sidebar .nav-sidebar .nav-link.active {
+  background: linear-gradient(135deg, #f37920 0%, #d6681a 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(243, 121, 32, 0.35);
+}
+
+/* Active child link in tree view */
+.main-sidebar .nav-treeview > .nav-item > .nav-link.active {
+  background: rgba(243, 121, 32, 0.2) !important;
+  border-left: 3px solid #f37920;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.main-sidebar .nav-sidebar .nav-icon {
+  color: inherit !important;
+}
+
 /* Content wrapper independent scrolling */
 .content-wrapper {
   min-height: 100vh;
