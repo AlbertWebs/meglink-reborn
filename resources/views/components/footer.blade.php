@@ -36,7 +36,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 align-self-center">
-                            <span class="pq-copyright">Copyright &copy {{date('Y')}} Meglink Ventures Limited | All Rights Reserved.</span>
+                            <span class="pq-copyright">Copyright &copy {{date('Y')}} Meglink Ventures Limited All Rights Reserved. | Powered by <a href="https://www.designekta.com" target="_blank">Designekta Studios</a></span>
                         </div>
                     </div>
                 </div>
