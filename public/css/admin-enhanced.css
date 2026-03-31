@@ -146,6 +146,13 @@
     background-color: #ffffff !important;
 }
 
+.admin-form-group select.form-control {
+    height: 48px;
+    line-height: 1.2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .admin-form-group .form-control-file {
     padding: 8px;
     background: #f8f9fa;
@@ -273,6 +280,11 @@
 /* Larger writing area for CKEditor used in forms */
 .ck-editor__editable_inline {
     min-height: 320px;
+}
+
+.portfolio-form .ck-editor__editable,
+.portfolio-form .ck-editor__editable_inline {
+    min-height: 420px !important;
 }
 
 /* File Upload Area */
